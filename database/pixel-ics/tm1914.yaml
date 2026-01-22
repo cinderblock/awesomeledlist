@@ -1,5 +1,6 @@
 id: tm1914
 name: TM1914
+manufacturer: Titan Micro Electronics
 pwm_frequency: 666Hz
 channels: 3
 channel_bits: "8"

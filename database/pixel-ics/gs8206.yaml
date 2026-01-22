@@ -1,5 +1,6 @@
 id: gs8206
 name: GS8206
+manufacturer: Shenzhen Greesit Technology
 pwm_frequency: 8.0kHz
 channels: 3
 channel_bits: "8"

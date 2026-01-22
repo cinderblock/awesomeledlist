@@ -1,5 +1,6 @@
 id: my9291
 name: MY9291
+manufacturer: MY-Semi
 pwm_frequency: 2.0kHz
 channels: 4
 channel_bits: "16"

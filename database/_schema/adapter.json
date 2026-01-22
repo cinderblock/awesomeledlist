@@ -48,6 +48,22 @@
     },
     "url": {
       "type": ["string", "null"]
+    },
+    "image": {
+      "$ref": "common.json#/definitions/image"
+    },
+    "images": {
+      "$ref": "common.json#/definitions/images"
+    },
+    "related_microboards": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "IDs of compatible microboard entries"
+    },
+    "related_connectors": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "IDs of related connector entries"
     }
   }
 }

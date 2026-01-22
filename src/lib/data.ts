@@ -15,6 +15,8 @@ import { parse } from "yaml";
 export interface BaseEntry {
   id: string;
   name: string;
+  image?: string | null;
+  images?: string[] | null;
   [key: string]: unknown;
 }
 
@@ -72,6 +74,34 @@ export function getEntryById<T extends BaseEntry>(category: string, id: string):
 
 export function getCategoryCount(category: string): number {
   return getCategoryData(category).length;
+}
+
+// Get image URL for an entry
+export function getImageUrl(category: string, imagePath: string): string {
+  return `/images/${category}/${imagePath}`;
+}
+
+// Get entries that have images
+export function getEntriesWithImages<T extends BaseEntry>(category: string): T[] {
+  const data = getCategoryData<T>(category);
+  return data.filter((entry) => entry.image || (entry.images && entry.images.length > 0));
+}
+
+// Get random entries with images (for home page preview)
+export function getRandomEntriesWithImages<T extends BaseEntry>(
+  category: string,
+  count: number
+): T[] {
+  const withImages = getEntriesWithImages<T>(category);
+  if (withImages.length <= count) return withImages;
+
+  // Fisher-Yates shuffle and take first `count`
+  const shuffled = [...withImages];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j]!, shuffled[i]!];
+  }
+  return shuffled.slice(0, count);
 }
 
 // Type definitions for each category
@@ -201,4 +231,99 @@ export interface CommercialSystem extends BaseEntry {
   color_type: string | null;
   price_range: string | null;
   notes: string | null;
+}
+
+// Cross-reference configuration
+export interface RelatedItemConfig {
+  field: string; // Field name in the entry (e.g., "related_connectors")
+  targetCategory: string; // Category ID to look up (e.g., "connectors")
+  label: string; // Display label (e.g., "Compatible Connectors")
+}
+
+// Get related item configs for a category
+export function getRelatedItemConfigs(categoryId: string): RelatedItemConfig[] {
+  const configMap: Record<string, RelatedItemConfig[]> = {
+    controllers: [
+      { field: "related_connectors", targetCategory: "connectors", label: "Compatible Connectors" },
+      { field: "related_pixel_ics", targetCategory: "pixel-ics", label: "Compatible Pixel ICs" },
+      { field: "related_microboards", targetCategory: "microboards", label: "Related Microboards" },
+    ],
+    adapters: [
+      {
+        field: "related_microboards",
+        targetCategory: "microboards",
+        label: "Compatible Microboards",
+      },
+      { field: "related_connectors", targetCategory: "connectors", label: "Output Connectors" },
+    ],
+    "pixel-decoders": [
+      { field: "related_connectors", targetCategory: "connectors", label: "Connectors" },
+    ],
+    microboards: [
+      { field: "related_adapters", targetCategory: "adapters", label: "Compatible Adapters" },
+    ],
+  };
+
+  return configMap[categoryId] || [];
+}
+
+// Resolve related entries
+export interface RelatedEntry {
+  id: string;
+  name: string;
+  category: string;
+  categoryPath: string;
+}
+
+export function getRelatedEntries(entry: BaseEntry, config: RelatedItemConfig): RelatedEntry[] {
+  const ids = entry[config.field];
+  if (!Array.isArray(ids) || ids.length === 0) return [];
+
+  const data = getCategoryData(config.targetCategory);
+  const categoryPath = `/${config.targetCategory}`;
+
+  return ids
+    .map((id) => {
+      const found = data.find((e) => e.id === id);
+      if (!found) return null;
+      return {
+        id: found.id,
+        name: found.name,
+        category: config.targetCategory,
+        categoryPath,
+      };
+    })
+    .filter(Boolean) as RelatedEntry[];
+}
+
+// Get entries that reference this entry (reverse lookup)
+export function getReferencingEntries(
+  entryId: string,
+  targetCategory: string
+): { entry: BaseEntry; sourceCategory: string; sourcePath: string }[] {
+  const results: { entry: BaseEntry; sourceCategory: string; sourcePath: string }[] = [];
+  const allData = getAllData();
+
+  for (const [sourceCategory, entries] of Object.entries(allData)) {
+    const configs = getRelatedItemConfigs(sourceCategory);
+    const relevantConfigs = configs.filter((c) => c.targetCategory === targetCategory);
+
+    if (relevantConfigs.length === 0) continue;
+
+    for (const entry of entries) {
+      for (const config of relevantConfigs) {
+        const refs = entry[config.field];
+        if (Array.isArray(refs) && refs.includes(entryId)) {
+          results.push({
+            entry,
+            sourceCategory,
+            sourcePath: `/${sourceCategory}`,
+          });
+          break; // Only add once per entry
+        }
+      }
+    }
+  }
+
+  return results;
 }

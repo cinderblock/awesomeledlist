@@ -1,5 +1,6 @@
 id: mbi6020
 name: MBI6020
+manufacturer: Macroblock
 pwm_frequency: 9.8kHz
 channels: 3
 channel_bits: "10"

@@ -1,5 +1,6 @@
 id: lpd8806
 name: LPD8806
+manufacturer: Greeled Electronic
 pwm_frequency: 9.4kHz
 channels: 3
 channel_bits: "8"

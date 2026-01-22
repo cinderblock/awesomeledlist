@@ -1,5 +1,6 @@
 id: tm1804
 name: TM1804
+manufacturer: Titan Micro Electronics
 pwm_frequency: 286Hz
 channels: 3
 channel_bits: "8"

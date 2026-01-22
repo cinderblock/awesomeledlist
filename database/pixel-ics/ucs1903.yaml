@@ -1,5 +1,6 @@
 id: ucs1903
 name: UCS1903
+manufacturer: Normand Electronics
 pwm_frequency: 400Hz
 channels: 3
 channel_bits: "8"

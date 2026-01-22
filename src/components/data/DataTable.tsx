@@ -12,12 +12,20 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronUp, ChevronDown, ExternalLink, X } from "lucide-react";
+import {
+  ColumnFilter,
+  analyzeColumn,
+  applyColumnFilters,
+  parseColumnFiltersFromURL,
+  serializeColumnFiltersToURL,
+} from "@/components/data/ColumnFilter";
 import type { BaseEntry } from "@/lib/data";
 
 export interface Column<T> {
   key: keyof T | string;
   label: string;
   sortable?: boolean;
+  filterable?: boolean; // Set to false to disable filter for this column
   render?: (value: unknown, item: T) => React.ReactNode;
   className?: string;
 }
@@ -43,6 +51,23 @@ export function DataTable<T extends BaseEntry>({
   const sortKey = searchParams.get("sort") || null;
   const sortDir = (searchParams.get("dir") as SortDirection) || null;
 
+  // Get filterable column keys (exclude links, name, and explicitly non-filterable columns)
+  const filterableColumnKeys = useMemo(() => {
+    return columns
+      .filter((col) => {
+        if (col.filterable === false) return false;
+        if (col.key === "name" || col.key === "links") return false;
+        return true;
+      })
+      .map((col) => String(col.key));
+  }, [columns]);
+
+  // Parse column filters from URL
+  const columnFilters = useMemo(
+    () => parseColumnFiltersFromURL(searchParams, filterableColumnKeys),
+    [searchParams, filterableColumnKeys]
+  );
+
   const updateParams = useCallback(
     (updates: Record<string, string | null>) => {
       setSearchParams((prev) => {
@@ -67,18 +92,41 @@ export function DataTable<T extends BaseEntry>({
     [updateParams]
   );
 
+  const handleColumnFilterChange = useCallback(
+    (key: string, values: string[] | null) => {
+      const newFilters = { ...columnFilters, [key]: values };
+      updateParams(serializeColumnFiltersToURL(newFilters));
+    },
+    [columnFilters, updateParams]
+  );
+
+  const clearAllFilters = useCallback(() => {
+    const clearParams: Record<string, null> = { q: null, sort: null, dir: null };
+    // Clear all column filters
+    for (const key of filterableColumnKeys) {
+      clearParams[`f_${key}`] = null;
+    }
+    updateParams(clearParams);
+  }, [filterableColumnKeys, updateParams]);
+
+  // Apply column filters first
+  const columnFilteredData = useMemo(() => {
+    return applyColumnFilters(data, columnFilters);
+  }, [data, columnFilters]);
+
+  // Then apply text search
   const filteredData = useMemo(() => {
-    if (!search.trim()) return data;
+    if (!search.trim()) return columnFilteredData;
 
     const searchLower = search.toLowerCase();
-    return data.filter((item) =>
+    return columnFilteredData.filter((item) =>
       searchKeys.some((key) => {
         const value = item[key];
         if (value == null) return false;
         return String(value).toLowerCase().includes(searchLower);
       })
     );
-  }, [data, search, searchKeys]);
+  }, [columnFilteredData, search, searchKeys]);
 
   const sortedData = useMemo(() => {
     if (!sortKey || !sortDir) return filteredData;
@@ -114,11 +162,22 @@ export function DataTable<T extends BaseEntry>({
     }
   };
 
-  const clearFilters = () => {
-    updateParams({ q: null, sort: null, dir: null });
-  };
+  // Check if any filters are active
+  const hasActiveFilters = useMemo(() => {
+    return Object.values(columnFilters).some((v) => v && v.length > 0);
+  }, [columnFilters]);
 
-  const hasFilters = search || sortKey;
+  const hasFilters = search || sortKey || hasActiveFilters;
+
+  // Pre-compute which columns should show filters
+  const columnFilterAnalysis = useMemo(() => {
+    const analysis: Record<string, boolean> = {};
+    for (const key of filterableColumnKeys) {
+      const result = analyzeColumn(data, key);
+      analysis[key] = result !== null;
+    }
+    return analysis;
+  }, [data, filterableColumnKeys]);
 
   const getValue = (item: T, key: string): unknown => {
     const parts = key.split(".");
@@ -132,7 +191,7 @@ export function DataTable<T extends BaseEntry>({
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <Input
           placeholder="Search..."
           value={search}
@@ -143,9 +202,9 @@ export function DataTable<T extends BaseEntry>({
           {sortedData.length} of {data.length} entries
         </span>
         {hasFilters && (
-          <Button variant="ghost" size="sm" onClick={clearFilters} className="h-8 px-2">
+          <Button variant="ghost" size="sm" onClick={clearAllFilters} className="h-8 px-2">
             <X className="mr-1 h-4 w-4" />
-            Clear
+            Clear all
           </Button>
         )}
       </div>
@@ -154,28 +213,47 @@ export function DataTable<T extends BaseEntry>({
         <Table>
           <TableHeader>
             <TableRow>
-              {columns.map((col) => (
-                <TableHead key={String(col.key)} className={col.className}>
-                  {col.sortable !== false ? (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="-ml-3 h-8"
-                      onClick={() => handleSort(String(col.key))}
-                    >
-                      {col.label}
-                      {sortKey === String(col.key) && sortDir === "asc" && (
-                        <ChevronUp className="ml-1 h-4 w-4" />
+              {columns.map((col) => {
+                const colKey = String(col.key);
+                const showFilter =
+                  col.filterable !== false &&
+                  colKey !== "name" &&
+                  colKey !== "links" &&
+                  columnFilterAnalysis[colKey];
+
+                return (
+                  <TableHead key={colKey} className={col.className}>
+                    <div className="flex items-center gap-1">
+                      {col.sortable !== false ? (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="-ml-3 h-8"
+                          onClick={() => handleSort(colKey)}
+                        >
+                          {col.label}
+                          {sortKey === colKey && sortDir === "asc" && (
+                            <ChevronUp className="ml-1 h-4 w-4" />
+                          )}
+                          {sortKey === colKey && sortDir === "desc" && (
+                            <ChevronDown className="ml-1 h-4 w-4" />
+                          )}
+                        </Button>
+                      ) : (
+                        <span>{col.label}</span>
                       )}
-                      {sortKey === String(col.key) && sortDir === "desc" && (
-                        <ChevronDown className="ml-1 h-4 w-4" />
+                      {showFilter && (
+                        <ColumnFilter
+                          columnKey={colKey}
+                          data={data}
+                          currentFilter={columnFilters[colKey] || null}
+                          onFilterChange={handleColumnFilterChange}
+                        />
                       )}
-                    </Button>
-                  ) : (
-                    col.label
-                  )}
-                </TableHead>
-              ))}
+                    </div>
+                  </TableHead>
+                );
+              })}
             </TableRow>
           </TableHeader>
           <TableBody>

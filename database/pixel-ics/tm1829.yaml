@@ -1,5 +1,6 @@
 id: tm1829
 name: TM1829
+manufacturer: Titan Micro Electronics
 pwm_frequency: 7.0kHz
 channels: 3
 channel_bits: "8"

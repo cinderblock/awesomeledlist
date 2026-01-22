@@ -10,6 +10,15 @@
       "type": "string",
       "format": "uri"
     },
+    "image": {
+      "description": "Filename of image in the images/ subdirectory",
+      "type": ["string", "null"]
+    },
+    "images": {
+      "description": "Array of image filenames in the images/ subdirectory",
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
     "price": {
       "oneOf": [
         { "type": "number", "minimum": 0 },

@@ -17,7 +17,19 @@
       "Bash(do [ -d \"$dir\" ])",
       "Bash([ \"$dir\" != \"_schema/\" ])",
       "Bash(ls:*)",
-      "Bash(Awesome LED List\"\\)\n- Add keywords meta tag for search engines\n- Add canonical URL tag\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(Awesome LED List\"\\)\n- Add keywords meta tag for search engines\n- Add canonical URL tag\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npx xlsx-cli:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(bun typecheck:*)",
+      "Bash(timeout 10 bun dev:*)",
+      "Bash(bun build:*)",
+      "Bash(npm run build:*)",
+      "Bash(for file in database/pixel-ics/*.yaml)",
+      "Bash(do grep -l \"^manufacturer:\" \"$file\")",
+      "Bash(done)",
+      "Bash(timeout:*)",
+      "Bash(grep:*)"
     ]
   }
 }

@@ -8,6 +8,7 @@ interfaces:
   - SD Card
 storage: SD
 standalone: true
+standalone_notes: "SHOWTime - https://www.advateklights.com/advatek-showtime-2022"
 pixel_types: both
 max_voltage: 24V
 max_current: 28A
@@ -18,6 +19,14 @@ waterproof: null
 auxiliary_outputs: DMX In/Out
 wled_compatible: null
 notes: Electronic fusing; dithering and gamma on 8-bit/color pixels, "hundreds of FPS"
+power_features:
+  - "Electronic fusing"
+  - "Dithering"
+  - "Gamma correction on 8-bit/color pixels"
+technical_notes:
+  - "Standalone playback via SHOWTime software"
+  - "High frame rate capability - 'hundreds of FPS'"
+  - "Built-in dithering improves color transitions on 8-bit pixels"
 warranty: null
 release_year: 2021
 status: active

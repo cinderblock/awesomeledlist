@@ -1,5 +1,6 @@
 id: ws2805
 name: WS2805
+manufacturer: WorldSemi
 pwm_frequency: null
 channels: 5
 channel_bits: "8"

@@ -1,5 +1,6 @@
 id: ucs2903
 name: UCS2903
+manufacturer: Normand Electronics
 pwm_frequency: 1.6kHz
 channels: 3
 channel_bits: "8"

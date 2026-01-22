@@ -1,5 +1,6 @@
 id: ucs9812
 name: UCS9812
+manufacturer: Normand Electronics
 pwm_frequency: 1.0kHz
 channels: 3
 channel_bits: "16"

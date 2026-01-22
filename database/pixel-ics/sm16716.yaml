@@ -1,5 +1,6 @@
 id: sm16716
 name: SM16716
+manufacturer: Shenzhen Sunmoon Microelectronics
 pwm_frequency: 2.5kHz
 channels: 3
 channel_bits: "8"

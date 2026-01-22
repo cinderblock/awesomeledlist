@@ -1,5 +1,6 @@
 id: ucs8904
 name: UCS8904
+manufacturer: Normand Electronics
 pwm_frequency: 1.0kHz
 channels: 4
 channel_bits: "16"

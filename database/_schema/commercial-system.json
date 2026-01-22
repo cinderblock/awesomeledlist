@@ -46,6 +46,15 @@
     },
     "notes": {
       "type": ["string", "null"]
+    },
+    "url": {
+      "type": ["string", "null"]
+    },
+    "image": {
+      "$ref": "common.json#/definitions/image"
+    },
+    "images": {
+      "$ref": "common.json#/definitions/images"
     }
   }
 }

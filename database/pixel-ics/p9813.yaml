@@ -1,5 +1,6 @@
 id: p9813
 name: P9813
+manufacturer: WorldSemi
 pwm_frequency: 4.7kHz
 channels: 3
 channel_bits: "8"

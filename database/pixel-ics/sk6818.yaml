@@ -1,5 +1,6 @@
 id: sk6818
 name: SK6818
+manufacturer: Opsco Optoelectronics
 pwm_frequency: 1.2kHz
 channels: 4
 channel_bits: "8"

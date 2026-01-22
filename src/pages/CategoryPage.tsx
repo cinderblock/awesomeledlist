@@ -99,6 +99,7 @@ export function CategoryPage() {
           data={data}
           fields={tileFields}
           categoryPath={category.path}
+          categoryId={category.id}
           searchKeys={searchKeys}
         />
       ) : (

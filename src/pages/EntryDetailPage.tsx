@@ -42,6 +42,7 @@ export function EntryDetailPage() {
       fields={fields}
       categoryName={category.name}
       categoryPath={category.path}
+      categoryId={category.id}
     />
   );
 }

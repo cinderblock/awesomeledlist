@@ -1,5 +1,6 @@
 id: my9231
 name: MY9231
+manufacturer: MY-Semi
 pwm_frequency: 2.0kHz
 channels: 3
 channel_bits: 8/12/14/16

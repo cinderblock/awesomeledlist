@@ -1,5 +1,6 @@
 id: ucs512b
 name: UCS512B
+manufacturer: Normand Electronics
 pwm_frequency: 3.0kHz
 channels: 3
 channel_bits: "8"
