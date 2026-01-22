@@ -6,11 +6,16 @@ import { getTileFieldsForCategory } from "@/lib/tile-fields";
 import { DataTable, TileView } from "@/components/data";
 import { Button } from "@/components/ui/button";
 import { LayoutGrid, List } from "lucide-react";
+import { useViewPreference } from "@/hooks";
 
 export function CategoryPage() {
   const { categoryId } = useParams<{ categoryId: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const category = CATEGORIES.find((c) => c.path === `/${categoryId}`);
+
+  // Get stored preference, but URL param takes precedence
+  const urlView = searchParams.get("view");
+  const [storedView, setStoredView] = useViewPreference(categoryId || "", urlView);
 
   if (!category) {
     return (
@@ -29,9 +34,13 @@ export function CategoryPage() {
   const searchKeys = getSearchKeysForCategory(category.id);
 
   const supportsViews = category.viewType === "both";
-  const currentView = searchParams.get("view") || "table";
+  const currentView = urlView || storedView;
 
   const setView = (view: string) => {
+    // Save preference to localStorage
+    setStoredView(view);
+
+    // Update URL params
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
       if (view === "table") {
@@ -65,6 +74,7 @@ export function CategoryPage() {
                 size="sm"
                 onClick={() => setView("table")}
                 className="h-8 px-2"
+                title="Table view"
               >
                 <List className="h-4 w-4" />
               </Button>
@@ -73,6 +83,7 @@ export function CategoryPage() {
                 size="sm"
                 onClick={() => setView("tile")}
                 className="h-8 px-2"
+                title="Tile view"
               >
                 <LayoutGrid className="h-4 w-4" />
               </Button>

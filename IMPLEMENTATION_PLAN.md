@@ -581,6 +581,12 @@ jobs:
 - Graceful degradation if JS fails
 - Error boundaries in React
 
+### UI Refinements
+
+- Match system dark/light mode
+- Smooth transitions for theme changes
+- Polished hover/focus states
+
 ---
 
 ## Data Relationships (for future reference)
