@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { CATEGORIES } from "@/lib/types";
-import { Badge } from "@/components/ui/badge";
+import { getCategoryData } from "@/lib/data";
+import { getColumnsForCategory, getSearchKeysForCategory } from "@/lib/columns";
+import { DataTable } from "@/components/data";
 
 export function CategoryPage() {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -17,6 +19,10 @@ export function CategoryPage() {
     );
   }
 
+  const data = getCategoryData(category.id);
+  const columns = getColumnsForCategory(category.id);
+  const searchKeys = getSearchKeysForCategory(category.id);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6">
@@ -31,15 +37,12 @@ export function CategoryPage() {
         <p className="text-muted-foreground">{category.description}</p>
       </div>
 
-      <div className="rounded-lg border p-8 text-center">
-        <Badge variant="secondary" className="mb-4">
-          Coming Soon
-        </Badge>
-        <p className="text-muted-foreground">
-          Data for {category.name.toLowerCase()} will be displayed here once the database migration
-          is complete.
-        </p>
-      </div>
+      <DataTable
+        data={data}
+        columns={columns}
+        categoryPath={category.path}
+        searchKeys={searchKeys}
+      />
     </div>
   );
 }
