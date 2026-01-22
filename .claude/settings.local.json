@@ -15,7 +15,8 @@
       "Bash(find:*)",
       "Bash(for dir in */)",
       "Bash(do [ -d \"$dir\" ])",
-      "Bash([ \"$dir\" != \"_schema/\" ])"
+      "Bash([ \"$dir\" != \"_schema/\" ])",
+      "Bash(ls:*)"
     ]
   }
 }
