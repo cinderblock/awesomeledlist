@@ -2,7 +2,7 @@ id: alphapix-classic-16-v3
 name: AlphaPix Classic 16 V3
 manufacturer: HolidayCoro
 max_pixels: 5440
-price: $175
+price: 175
 max_outputs: 16
 interfaces:
   - Ethernet

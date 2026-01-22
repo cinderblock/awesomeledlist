@@ -3,7 +3,7 @@ name: Pixel 2 Things Servo
 manufacturer: David Peace
 max_channels: 15
 pixel_types: Converts pixel data into hobby servo outputs
-price: $99.99
+price: 99.99
 output_connectors: Phoenix Screw
 outputs: PWM
 diy_or_ots: OTS

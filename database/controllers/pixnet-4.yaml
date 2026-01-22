@@ -2,11 +2,11 @@ id: pixnet-4
 name: PixNet 4+
 manufacturer: PixNet Control
 max_pixels: 8160
-price: $450
+price: 450
 max_outputs: 8
 interfaces:
   - USB
-storage: no
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 48V
@@ -15,7 +15,7 @@ buffered: true
 output_connectors: Phoenix Screw
 outputs: Single and Clock &DMX
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: Powerd POE or Screw Terminals 5- 48 Volt
 warranty: null

@@ -2,11 +2,11 @@ id: luminaxa
 name: Luminaxa
 manufacturer: Luminaxa
 max_pixels: 600
-price: $50
+price: 50
 max_outputs: 1
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: true
 pixel_types: async
 max_voltage: 5V

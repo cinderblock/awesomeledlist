@@ -2,7 +2,7 @@ id: 8-port-led-distro
 name: 8 Port LED Distro
 manufacturer: Bong69
 max_pixels: 4800
-price: $55
+price: 55
 max_outputs: 8
 interfaces:
   - Ethernet

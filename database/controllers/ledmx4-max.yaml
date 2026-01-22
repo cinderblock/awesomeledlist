@@ -2,7 +2,7 @@ id: ledmx4-max
 name: LeDMX4 MAX
 manufacturer: DMXking
 max_pixels: 4080
-price: $299
+price: 299
 max_outputs: 4
 interfaces:
   - FPP

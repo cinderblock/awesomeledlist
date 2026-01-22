@@ -2,7 +2,7 @@ id: mini-8-port-controller
 name: Mini 8 Port Controller
 manufacturer: Wasatch Pixels
 max_pixels: 4800
-price: $45
+price: 45
 max_outputs: 8
 interfaces:
   - Ethernet

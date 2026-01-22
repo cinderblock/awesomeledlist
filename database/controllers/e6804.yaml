@@ -2,11 +2,11 @@ id: e6804
 name: E6804
 manufacturer: SanDevices
 max_pixels: 2040
-price: $100
+price: 100
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 12V

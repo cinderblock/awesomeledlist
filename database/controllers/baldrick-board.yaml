@@ -2,11 +2,11 @@ id: baldrick-board
 name: Baldrick Board
 manufacturer: Build A Light Show
 max_pixels: 6000
-price: $75
+price: 75
 max_outputs: 8
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: null
 pixel_types: async
 max_voltage: 24V

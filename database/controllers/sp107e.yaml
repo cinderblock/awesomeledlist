@@ -2,7 +2,7 @@ id: sp107e
 name: SP107E
 manufacturer: Sperll
 max_pixels: 960
-price: $25
+price: 25
 max_outputs: 1
 interfaces:
   - DMX
@@ -15,7 +15,7 @@ buffered: null
 output_connectors: Screw
 outputs: Single and Clock
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: null
 warranty: null

@@ -2,9 +2,9 @@ id: sp102e
 name: SP102E
 manufacturer: Sperll
 max_pixels: 1024
-price: $13
+price: 13
 max_outputs: 1
-storage: No
+storage: null
 standalone: null
 max_voltage: 12V
 max_current: null
@@ -12,7 +12,7 @@ buffered: null
 output_connectors: Screw
 outputs: Singnal and Clock
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: null
 warranty: null

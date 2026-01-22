@@ -2,11 +2,11 @@ id: pixie
 name: Pixie
 manufacturer: SmartShow
 max_pixels: 170
-price: $47
+price: 47
 max_outputs: 1
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 max_voltage: 5V
 max_current: null

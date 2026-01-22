@@ -2,11 +2,11 @@ id: pixlite-4-rugged-mk2
 name: PixLite 4 Rugged Mk2
 manufacturer: Advatek
 max_pixels: 680
-price: $440
+price: 440
 max_outputs: 8
 interfaces:
   - USB
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 12V

@@ -6,7 +6,7 @@ platforms:
   - Windows
   - macOS
 live: true
-designer: Yes
+designer: true
 visualizer: 2D
 protocols:
   artnet: null

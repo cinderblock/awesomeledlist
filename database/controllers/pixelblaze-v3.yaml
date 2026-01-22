@@ -2,11 +2,11 @@ id: pixelblaze-v3
 name: Pixelblaze V3
 manufacturer: ElectroMage
 max_pixels: 5000
-price: $35
+price: 35
 max_outputs: 1
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: 5V

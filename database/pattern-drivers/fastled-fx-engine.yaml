@@ -9,7 +9,7 @@ platforms:
   - RP
   - Browser
 live: false
-designer: Yes
+designer: true
 visualizer: Browser wasm Preview
 protocols:
   artnet: null

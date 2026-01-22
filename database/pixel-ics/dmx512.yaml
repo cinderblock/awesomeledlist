@@ -3,7 +3,7 @@ name: DMX512
 manufacturer: null
 pwm_frequency: 3.0kHz
 channels: 3
-channel_bits: "8"
+channel_bits: 8
 aggregate_bits: null
 clocked: false
 data_bitrate: 650kHz
@@ -16,7 +16,7 @@ gpio_max: null
 max_current: null
 quiescent_current: null
 package_size: SOP8
-pin_count: "8"
+pin_count: 8
 data_type: DMX512P
 backup_data_line: false
 max_pixels_per_string: null

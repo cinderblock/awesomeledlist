@@ -2,13 +2,13 @@ id: octo-mk2
 name: Octo Mk2
 manufacturer: ENTTEC
 max_pixels: 2720
-price: $330
+price: 330
 max_outputs: 2
 interfaces:
   - FPP
   - USB Ethernet
   - Wifi
-storage: No
+storage: null
 standalone: true
 pixel_types: both
 max_voltage: 60V

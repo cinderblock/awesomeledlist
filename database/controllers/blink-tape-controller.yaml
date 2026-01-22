@@ -2,7 +2,7 @@ id: blink-tape-controller
 name: Blink tape Controller
 manufacturer: Blinkinlabs
 max_pixels: 512
-price: $16
+price: 16
 max_outputs: 1
 interfaces:
   - Bluetooth

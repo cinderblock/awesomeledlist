@@ -1,11 +1,11 @@
 id: arkaos
 name: ArKaos
 developer: ArKaos S.A.
-price: $299
+price: 299
 platforms:
   - Windows
 live: true
-designer: Yes
+designer: true
 visualizer: null
 protocols:
   artnet: null

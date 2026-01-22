@@ -2,7 +2,7 @@ id: falcon-f48
 name: Falcon F48
 manufacturer: PixelController, LLC
 max_pixels: 16384
-price: $200
+price: 200
 max_outputs: 48
 interfaces:
   - Ethernet

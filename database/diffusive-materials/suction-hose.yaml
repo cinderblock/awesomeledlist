@@ -1,8 +1,8 @@
 id: suction-hose
 name: Suction Hose
 url: http://hose-products.com/suction-hose.html
-color_rendition: "4"
-light_transmission: "4"
+color_rendition: 4
+light_transmission: 4
 flexible: F
 purpose_made: false
 properties: Diffusive

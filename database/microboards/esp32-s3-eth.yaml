@@ -21,7 +21,7 @@ bluetooth: null
 storage: microSD
 bms: null
 imu: null
-price: $17
+price: 17
 release_year: 2024
 url: https://www.waveshare.com/product/arduino/boards-kits/esp32/esp32-s3-eth.htm?sku=28771
 notes: PoE sield available

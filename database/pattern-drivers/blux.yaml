@@ -8,8 +8,8 @@ platforms:
   - Linux
   - Raspberry Pi
 live: true
-designer: Yes
-visualizer: Yes
+designer: true
+visualizer: true
 protocols:
   artnet: Both
   sacn: Both

@@ -2,7 +2,7 @@ id: esp32-wled-controller-8chan
 name: ESP32 WLED Controller 8chan
 manufacturer: Giovanni's Domotica Store
 max_pixels: 4800
-price: $45
+price: 45
 max_outputs: 8
 interfaces:
   - Ethernet

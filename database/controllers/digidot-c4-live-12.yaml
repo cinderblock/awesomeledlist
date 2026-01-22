@@ -2,13 +2,13 @@ id: digidot-c4-live-12
 name: DiGidot C4 Live 12
 manufacturer: DiGidot
 max_pixels: 8192
-price: $330
+price: 330
 max_outputs: 4
 interfaces:
   - FPP
   - USB Ethernet
   - Wifi
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

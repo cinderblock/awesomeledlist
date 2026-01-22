@@ -6,7 +6,7 @@ price: $1,490
 max_outputs: 32
 interfaces:
   - WiFi
-storage: no
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: null
@@ -15,7 +15,7 @@ buffered: null
 output_connectors: RJ45
 outputs: Single and Clock
 waterproof: null
-auxiliary_outputs: no
+auxiliary_outputs: null
 wled_compatible: null
 notes: null
 warranty: null

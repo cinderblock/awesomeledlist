@@ -9,7 +9,7 @@ ip_rating: IP68
 locking: Screw Lock
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 6 AWG
 largest_gauge: 16 AWG
 pitch: null

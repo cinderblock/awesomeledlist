@@ -2,11 +2,11 @@ id: alphapix-flex-with-expansion
 name: AlphaPix Flex with Expansion
 manufacturer: HolidayCoro
 max_pixels: 16320
-price: $190
+price: 190
 max_outputs: 48
 interfaces:
   - Ethernet ArtNet
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

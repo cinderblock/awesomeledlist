@@ -6,7 +6,7 @@ platforms:
   - ESP8266
   - ESP32
 live: true
-designer: No
+designer: false
 visualizer: Limited 1D
 protocols:
   artnet: Input

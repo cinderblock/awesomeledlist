@@ -16,7 +16,7 @@ buffered: true
 output_connectors: Push Terminal
 outputs: null
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: 19mm Slim Din Rail mount, Internal Ethernet Switch for daisychain
 warranty: null

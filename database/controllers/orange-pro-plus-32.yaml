@@ -2,7 +2,7 @@ id: orange-pro-plus-32
 name: Orange Pro Plus 32
 manufacturer: Winterlights India
 max_pixels: 48000
-price: $275
+price: 275
 max_outputs: 32
 interfaces:
   - FPP

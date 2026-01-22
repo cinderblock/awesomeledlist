@@ -6,7 +6,7 @@ pixel_types: Fet power output
 max_voltage: 24V
 max_current: null
 parent: WeMos D1 Mini (ESP32/ESP8266)
-price: $12.00
+price: 12
 output_connectors: Screw Terminals
 outputs: null
 diy_or_ots: OTS

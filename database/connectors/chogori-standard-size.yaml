@@ -9,7 +9,7 @@ ip_rating: IP68
 locking: Latching
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: null
 largest_gauge: null
 pitch: null

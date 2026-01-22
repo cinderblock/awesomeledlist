@@ -3,7 +3,7 @@ name: WS2801
 manufacturer: WorldSemi
 pwm_frequency: 2.5kHz
 channels: 3
-channel_bits: "8"
+channel_bits: 8
 aggregate_bits: null
 clocked: true
 data_bitrate: 25MHz
@@ -16,10 +16,10 @@ gpio_max: 5V
 max_current: 50mA
 quiescent_current: 1.5mA
 package_size: SO14/DIP14
-pin_count: "14"
+pin_count: 14
 data_type: WS2801
 backup_data_line: false
-max_pixels_per_string: "1024"
+max_pixels_per_string: 1024
 release_year: 2010
 notes: Early Addressable LED controller still common on 4 wire pixel and puck strings
 third_party_testing: null

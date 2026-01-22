@@ -6,7 +6,7 @@ platforms:
   - Windows
   - Linux
 live: false
-designer: Yes
+designer: true
 visualizer: null
 protocols:
   artnet: null

@@ -2,11 +2,11 @@ id: standard-differential-receiver
 name: Standard Differential  Receiver
 manufacturer: Microcyb
 max_pixels: 6400
-price: $22
+price: 22
 max_outputs: 4
 interfaces:
   - DMX
-storage: No
+storage: null
 standalone: true
 pixel_types: both
 max_voltage: 12V

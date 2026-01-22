@@ -5,7 +5,7 @@ price: LED Strip Studio Software
 platforms:
   - Windows
 live: true
-designer: Yes
+designer: true
 visualizer: 2D
 protocols:
   artnet: Both

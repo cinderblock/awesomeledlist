@@ -3,7 +3,7 @@ name: TM1914
 manufacturer: Titan Micro Electronics
 pwm_frequency: 666Hz
 channels: 3
-channel_bits: "8"
+channel_bits: 8
 aggregate_bits: null
 clocked: false
 data_bitrate: null
@@ -16,7 +16,7 @@ gpio_max: null
 max_current: null
 quiescent_current: null
 package_size: SOP10
-pin_count: "10"
+pin_count: 10
 data_type: null
 backup_data_line: null
 max_pixels_per_string: null

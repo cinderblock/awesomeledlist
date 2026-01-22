@@ -2,11 +2,11 @@ id: quinled-dig-quad
 name: QuinLED-Dig-Quad
 manufacturer: Quindor / Intermittent Technology
 max_pixels: 4096
-price: $38
+price: 38
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: true
 pixel_types: both
 max_voltage: 24V

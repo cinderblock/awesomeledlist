@@ -2,12 +2,12 @@ id: protopixel-1-channel-wifi
 name: ProtoPixel 1 channel WiFi
 manufacturer: ProtoPixel
 max_pixels: 600
-price: $221
+price: 221
 max_outputs: 1
 interfaces:
   - Ethernet
   - DMX
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 12V

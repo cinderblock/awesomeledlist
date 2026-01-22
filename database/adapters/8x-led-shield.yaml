@@ -6,7 +6,7 @@ pixel_types: Single or Clocked
 max_voltage: 5V
 max_current: null
 parent: Adafruit Feather
-price: $7
+price: 7
 output_connectors: Solder
 outputs: null
 diy_or_ots: DIY

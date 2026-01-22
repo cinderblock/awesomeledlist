@@ -2,11 +2,11 @@ id: pixlite-16-mk2-control-board
 name: PixLite 16 Mk2 Control Board
 manufacturer: Advatek
 max_pixels: 16320
-price: $450
+price: 450
 max_outputs: 32
 interfaces:
   - USB
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

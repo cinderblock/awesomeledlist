@@ -2,11 +2,11 @@ id: k4-pb
 name: K4-PB
 manufacturer: KulpLights, LLC
 max_pixels: 6400
-price: $70
+price: 70
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 12V

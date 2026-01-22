@@ -2,11 +2,11 @@ id: angio-4
 name: Angio 4
 manufacturer: chroma.tech
 max_pixels: 4080
-price: $99
+price: 99
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

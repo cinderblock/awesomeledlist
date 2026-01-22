@@ -22,7 +22,7 @@ board_fingers: false
 gendered: true
 min_pins: 2
 max_pins: 12
-rows: "2"
+rows: 2
 year_introduced: null
 pinout: null
 convention: null

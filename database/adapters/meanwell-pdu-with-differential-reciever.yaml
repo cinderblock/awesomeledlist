@@ -6,7 +6,7 @@ pixel_types: single
 max_voltage: 12V
 max_current: null
 parent: Meanwell 350w PSU
-price: $18
+price: 18
 output_connectors: Phoenix Screw
 outputs: null
 diy_or_ots: OTS

@@ -2,11 +2,11 @@ id: lightkraken
 name: Lightkraken
 manufacturer: Obtainium Consulting
 max_pixels: 1020
-price: $69
+price: 69
 max_outputs: 1
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: null
 pixel_types: async
 max_voltage: 24V

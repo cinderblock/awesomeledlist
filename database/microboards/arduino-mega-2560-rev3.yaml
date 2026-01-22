@@ -14,14 +14,14 @@ max_input_voltage: 20V
 gpio_voltage: null
 usb: Power + UART
 ttl_serial: null
-wifi: No
+wifi: false
 poe: null
 ethernet: null
 bluetooth: null
 storage: null
-bms: No
-imu: No
-price: $40
+bms: false
+imu: false
+price: 40
 release_year: null
 url: https://store-usa.arduino.cc/collections/boards/products/arduino-mega-2560-rev3
 notes: null

@@ -3,7 +3,7 @@ name: QED3001
 manufacturer: Unknown
 pwm_frequency: 1.0kHz
 channels: 3
-channel_bits: "12"
+channel_bits: 12
 aggregate_bits: null
 clocked: false
 data_bitrate: null

@@ -2,11 +2,11 @@ id: twinpixx16
 name: TwinPixx16
 manufacturer: DMX4All
 max_pixels: 2720
-price: $399
+price: 399
 max_outputs: 2
 interfaces:
   - Switch Trigger
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 5V

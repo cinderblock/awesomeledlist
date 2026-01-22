@@ -9,7 +9,7 @@ ip_rating: IP55
 locking: Friction
 panel_mount: false
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 20 AWG
 largest_gauge: 18 AWG
 pitch: null

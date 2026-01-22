@@ -6,7 +6,7 @@ pixel_types: null
 max_voltage: 24V
 max_current: null
 parent: Raspberry Pi
-price: $35
+price: 35
 output_connectors: null
 outputs: Both
 diy_or_ots: OTS

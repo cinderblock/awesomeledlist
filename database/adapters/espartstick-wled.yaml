@@ -6,7 +6,7 @@ pixel_types: null
 max_voltage: 12V
 max_current: 15A
 parent: Wemos D1 Mini (ESP32/ESP8266)
-price: $24
+price: 24
 output_connectors: Phoenix Screw
 outputs: Single
 diy_or_ots: DIY

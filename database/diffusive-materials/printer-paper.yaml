@@ -1,15 +1,15 @@
 id: printer-paper
 name: Printer Paper
 url: null
-color_rendition: "2"
-light_transmission: "2"
+color_rendition: 2
+light_transmission: 2
 flexible: F
 purpose_made: false
 properties: Diffusive
 fire_retardant: false
 tinted: null
 sample_thickness: "0.004"
-diffusivity: "3"
+diffusivity: 3
 sizes_available: null
 material_type: Wood Pulp
 price_range: $

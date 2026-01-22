@@ -2,7 +2,7 @@ id: reactivo-2
 name: Reactivo 2
 manufacturer: LED Strip Studio
 max_pixels: 1024
-price: $225
+price: 225
 max_outputs: 1
 interfaces:
   - Ethernet

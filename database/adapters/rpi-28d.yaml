@@ -6,7 +6,7 @@ pixel_types: Single and Clocked
 max_voltage: 12V
 max_current: null
 parent: Raspberry Pi
-price: $22
+price: 22
 output_connectors: Phoenix Screw
 outputs: Both
 diy_or_ots: OTS

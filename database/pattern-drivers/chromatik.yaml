@@ -5,7 +5,7 @@ price: Free - 399
 platforms:
   - Windows MacOS
 live: true
-designer: Yes
+designer: true
 visualizer: 3D
 protocols:
   artnet: Output

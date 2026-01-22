@@ -2,11 +2,11 @@ id: netpixel-quad
 name: Netpixel Quad
 manufacturer: SmartShow
 max_pixels: 2720
-price: $140
+price: 140
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: async
 max_voltage: 5V

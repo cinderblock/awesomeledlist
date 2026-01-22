@@ -9,7 +9,7 @@ ip_rating: IP67
 locking: Detent
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 28 AWG
 largest_gauge: 22 AWG
 pitch: null

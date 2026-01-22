@@ -2,7 +2,7 @@ id: lightbox
 name: LightBox
 manufacturer: RocketLife
 max_pixels: null
-price: $99
+price: 99
 max_outputs: 1
 interfaces:
   - Ethernet

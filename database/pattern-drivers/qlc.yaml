@@ -8,7 +8,7 @@ platforms:
   - Linux
   - Raspberry Pi
 live: true
-designer: Yes
+designer: true
 visualizer: 3D view available in V5
 protocols:
   artnet: Both

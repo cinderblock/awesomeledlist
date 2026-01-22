@@ -1,11 +1,11 @@
 id: pixelblaze
 name: Pixelblaze
 developer: ElectroMage
-price: $39
+price: 39
 platforms:
   - Pixelblaze (in-browser)
 live: true
-designer: Yes
+designer: true
 visualizer: 3D
 protocols:
   artnet: null

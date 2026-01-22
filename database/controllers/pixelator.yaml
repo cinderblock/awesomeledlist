@@ -7,7 +7,7 @@ max_outputs: null
 interfaces:
   - WiFi
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: null

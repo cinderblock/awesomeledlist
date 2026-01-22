@@ -2,7 +2,7 @@ id: nled-pixel-controller-mini
 name: NLed Pixel Controller Mini
 manufacturer: Northern Lights Electronic Design
 max_pixels: 170
-price: $14
+price: 14
 max_outputs: 1
 interfaces:
   - ArtNet Ethernet

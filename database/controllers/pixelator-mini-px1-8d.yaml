@@ -2,7 +2,7 @@ id: pixelator-mini-px1-8d
 name: Pixelator Mini PX1-8D
 manufacturer: ENTTEC
 max_pixels: 2730
-price: $700
+price: 700
 max_outputs: 24
 interfaces:
   - WiFi

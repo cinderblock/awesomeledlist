@@ -2,11 +2,11 @@ id: protopixel-8-channel-controller
 name: ProtoPixel 8 channel controller
 manufacturer: ProtoPixel
 max_pixels: 4800
-price: $573
+price: 573
 max_outputs: 8
 interfaces:
   - USB
-storage: No
+storage: null
 standalone: false
 pixel_types: async
 max_voltage: null

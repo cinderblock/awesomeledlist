@@ -3,7 +3,7 @@ name: MY9291
 manufacturer: MY-Semi
 pwm_frequency: 2.0kHz
 channels: 4
-channel_bits: "16"
+channel_bits: 16
 aggregate_bits: null
 clocked: true
 data_bitrate: null

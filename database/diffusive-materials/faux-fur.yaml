@@ -2,7 +2,7 @@ id: faux-fur
 name: Faux Fur
 url: https://en.wikipedia.org/wiki/Fake_fur
 color_rendition: null
-light_transmission: "4"
+light_transmission: 4
 flexible: F
 purpose_made: false
 properties: Backlight

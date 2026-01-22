@@ -2,7 +2,7 @@ id: pixelbox
 name: Pixelbox
 manufacturer: Lumikit
 max_pixels: 2730
-price: $199
+price: 199
 max_outputs: null
 interfaces:
   - Ethernet

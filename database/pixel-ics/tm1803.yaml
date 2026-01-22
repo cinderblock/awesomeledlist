@@ -3,7 +3,7 @@ name: TM1803
 manufacturer: Titan Micro Electronics
 pwm_frequency: 400Hz
 channels: 3
-channel_bits: "8"
+channel_bits: 8
 aggregate_bits: null
 clocked: false
 data_bitrate: null
@@ -16,7 +16,7 @@ gpio_max: null
 max_current: null
 quiescent_current: null
 package_size: SOP8
-pin_count: "8"
+pin_count: 8
 data_type: null
 backup_data_line: null
 max_pixels_per_string: null

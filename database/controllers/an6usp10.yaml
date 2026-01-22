@@ -2,11 +2,11 @@ id: an6usp10
 name: AN6USP10
 manufacturer: Electron Design
 max_pixels: 1020
-price: $97
+price: 97
 max_outputs: 6
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

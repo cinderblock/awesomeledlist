@@ -2,13 +2,13 @@ id: smartshow-pro-one
 name: SmartShow Pro One
 manufacturer: SmartShow
 max_pixels: 5440
-price: $300
+price: 300
 max_outputs: 8
 interfaces:
   - FPP
   - Ethernet
   - Wifi
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

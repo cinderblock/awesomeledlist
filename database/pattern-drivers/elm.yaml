@@ -1,11 +1,11 @@
 id: elm
 name: ELM
 developer: ENTTEC
-price: $94
+price: 94
 platforms:
   - Windows
 live: true
-designer: Yes
+designer: true
 visualizer: 3D
 protocols:
   artnet: Both

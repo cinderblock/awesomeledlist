@@ -7,7 +7,7 @@ max_outputs: 4
 interfaces:
   - WiFi
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 5V

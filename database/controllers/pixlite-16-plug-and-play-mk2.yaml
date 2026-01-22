@@ -2,11 +2,11 @@ id: pixlite-16-plug-and-play-mk2
 name: PixLite 16 Plug and Play Mk2
 manufacturer: Advatek
 max_pixels: 5440
-price: $500
+price: 500
 max_outputs: 32
 interfaces:
   - USB
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 12V

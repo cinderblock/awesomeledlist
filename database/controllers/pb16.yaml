@@ -2,7 +2,7 @@ id: pb16
 name: PB16
 manufacturer: null
 max_pixels: 22400
-price: $130
+price: 130
 max_outputs: 32
 interfaces:
   - Ethernet

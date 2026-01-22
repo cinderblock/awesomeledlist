@@ -2,13 +2,13 @@ id: pixout-server
 name: PixOut Server
 manufacturer: PixOut
 max_pixels: 8192
-price: $300
+price: 300
 max_outputs: 8
 interfaces:
   - FPP
   - Ethernet
   - Wifi
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: 24V

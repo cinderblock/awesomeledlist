@@ -2,11 +2,11 @@ id: e682
 name: E682
 manufacturer: SanDevices
 max_pixels: 6120
-price: $180
+price: 180
 max_outputs: 16
 interfaces:
   - Ethernet & DMX
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

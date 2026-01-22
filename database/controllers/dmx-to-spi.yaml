@@ -2,11 +2,11 @@ id: dmx-to-spi
 name: DMX to SPI
 manufacturer: Electron Design
 max_pixels: 170
-price: $18
+price: 18
 max_outputs: 1
 interfaces:
   - Bluetooth
-storage: no
+storage: null
 standalone: false
 pixel_types: async
 max_voltage: 24V

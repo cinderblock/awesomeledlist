@@ -16,10 +16,10 @@ gpio_max: 5V
 max_current: 350mA
 quiescent_current: null
 package_size: SOP16/SSOP16/QFN16
-pin_count: "16"
+pin_count: 16
 data_type: MY9231
 backup_data_line: false
-max_pixels_per_string: "2010"
+max_pixels_per_string: 2010
 release_year: 2010
 notes: null
 third_party_testing: null

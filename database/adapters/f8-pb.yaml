@@ -6,7 +6,7 @@ pixel_types: Single
 max_voltage: 12V
 max_current: null
 parent: BeagleBone
-price: $81
+price: 81
 output_connectors: Phoenix Screw
 outputs: Single
 diy_or_ots: null

@@ -2,11 +2,11 @@ id: netpixel-one
 name: NetPixel-One
 manufacturer: SmartShow
 max_pixels: 5440
-price: $269
+price: 269
 max_outputs: 8
 interfaces:
   - FPP
-storage: No
+storage: null
 standalone: false
 max_voltage: 24V
 max_current: null

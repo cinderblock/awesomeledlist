@@ -2,7 +2,7 @@ id: sp105e
 name: SP105E
 manufacturer: Sperll
 max_pixels: 2048
-price: $18
+price: 18
 max_outputs: 1
 interfaces:
   - Bluetooth
@@ -15,7 +15,7 @@ buffered: null
 output_connectors: Screw
 outputs: Single and Clock
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: null
 warranty: null

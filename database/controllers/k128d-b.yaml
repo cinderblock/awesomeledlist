@@ -2,11 +2,11 @@ id: k128d-b
 name: K128D-B
 manufacturer: KulpLights, LLC
 max_pixels: 80000
-price: $270
+price: 270
 max_outputs: 128
 interfaces:
   - FPP
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 5V

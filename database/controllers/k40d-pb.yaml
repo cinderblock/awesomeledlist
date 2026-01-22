@@ -2,11 +2,11 @@ id: k40d-pb
 name: K40D-PB
 manufacturer: KulpLights, LLC
 max_pixels: 64000
-price: $108
+price: 108
 max_outputs: 40
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 5V

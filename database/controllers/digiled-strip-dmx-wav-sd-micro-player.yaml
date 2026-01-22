@@ -2,7 +2,7 @@ id: digiled-strip-dmx-wav-sd-micro-player
 name: Digiled Strip/DMX/WAV SD Micro Player
 manufacturer: Electroconcept
 max_pixels: 850
-price: $30
+price: 30
 max_outputs: 1
 interfaces:
   - Ethernet
@@ -17,8 +17,7 @@ outputs: SPI/ DMX/WAV
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: 6 switch input trigger SPI, DMX or Wav sound scenesProgrammed using Artrender
-  https://www.boutique-electroconcept.com/information/downloads.html
+notes: 6 switch input trigger SPI, DMX or Wav sound scenesProgrammed using Artrender https://www.boutique-electroconcept.com/information/downloads.html
 warranty: null
 release_year: null
 status: active

@@ -2,11 +2,11 @@ id: led-player-m
 name: LED Player M
 manufacturer: Diamex
 max_pixels: 512
-price: $40
+price: 40
 max_outputs: 1
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: true
 pixel_types: both
 max_voltage: 5V

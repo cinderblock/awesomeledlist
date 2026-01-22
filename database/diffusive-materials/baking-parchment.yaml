@@ -1,8 +1,8 @@
 id: baking-parchment
 name: Baking Parchment
 url: https://www.metsatissue.com/en/brands-products/baking-cooking-papers/paper-differencies/Pages/default.aspx
-color_rendition: "3"
-light_transmission: "2"
+color_rendition: 3
+light_transmission: 2
 flexible: F
 purpose_made: false
 properties: Backlight

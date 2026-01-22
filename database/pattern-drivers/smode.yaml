@@ -5,7 +5,7 @@ price: Expensive
 platforms:
   - Windows
 live: true
-designer: Yes
+designer: true
 visualizer: null
 protocols:
   artnet: Both

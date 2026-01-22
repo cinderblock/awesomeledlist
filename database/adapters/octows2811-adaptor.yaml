@@ -6,7 +6,7 @@ pixel_types: Single
 max_voltage: 5V
 max_current: null
 parent: Teensy 3.2
-price: $10
+price: 10
 output_connectors: RJ-45
 outputs: Single
 diy_or_ots: OTS

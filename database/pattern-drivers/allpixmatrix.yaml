@@ -5,7 +5,7 @@ price: Free
 platforms:
   - Windows
 live: false
-designer: Yes
+designer: true
 visualizer: null
 protocols:
   artnet: Input

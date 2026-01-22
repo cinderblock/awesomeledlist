@@ -2,7 +2,7 @@ id: a1-slwf-03
 name: A1-SLWF-03
 manufacturer: SMARTLIGHT.ME
 max_pixels: 2000
-price: $16
+price: 16
 max_outputs: 1
 interfaces:
   - Bluetooth

@@ -2,12 +2,12 @@ id: k64d-b
 name: K64D-B
 manufacturer: KulpLights, LLC
 max_pixels: 80000
-price: $230
+price: 230
 max_outputs: 64
 interfaces:
   - Ethernet
   - WiFi
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 5V

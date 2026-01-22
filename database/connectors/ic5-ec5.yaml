@@ -5,11 +5,11 @@ url: https://blog.ampow.com/ic5-vs-ec5-connector/
 outline: Rectangular
 max_current: 60 A
 max_voltage: 24 V
-ip_rating: No
+ip_rating: null
 locking: Friction
 panel_mount: false
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 20 AWG
 largest_gauge: 10 AWG
 pitch: 12.0 mm
@@ -22,7 +22,7 @@ board_fingers: false
 gendered: true
 min_pins: 2
 max_pins: 3
-rows: "1"
+rows: 1
 year_introduced: 2018
 pinout: null
 convention: null

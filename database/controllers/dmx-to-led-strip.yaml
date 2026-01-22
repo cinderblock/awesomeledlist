@@ -2,12 +2,12 @@ id: dmx-to-led-strip
 name: DMX to LED Strip
 manufacturer: Electroconcept
 max_pixels: 850
-price: $20
+price: 20
 max_outputs: 1
 interfaces:
   - Bluetooth
   - Audio
-storage: No
+storage: null
 standalone: false
 pixel_types: async
 max_voltage: 24V

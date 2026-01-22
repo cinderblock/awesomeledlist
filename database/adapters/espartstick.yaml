@@ -6,7 +6,7 @@ pixel_types: Single
 max_voltage: 5V
 max_current: null
 parent: Wemos Dx Mini (ESP32/ESP8266)
-price: $25
+price: 25
 output_connectors: null
 outputs: null
 diy_or_ots: null

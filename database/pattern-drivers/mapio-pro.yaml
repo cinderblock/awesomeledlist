@@ -1,18 +1,18 @@
 id: mapio-pro
 name: Mapio Pro
 developer: Vistitution
-price: $234
+price: 234
 platforms:
   - Windows
   - macOS
 live: true
-designer: Yes
+designer: true
 visualizer: null
 protocols:
   artnet: Output
-  sacn: No
-  dmx: No
-  kinet: No
+  sacn: null
+  dmx: null
+  kinet: null
   ddp: null
 gpio: null
 serial: Output

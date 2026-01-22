@@ -1,8 +1,8 @@
 id: light-shaping-diffusers
 name: Light Shaping Diffusers
 url: https://www.luminitco.com/
-color_rendition: "5"
-light_transmission: "5"
+color_rendition: 5
+light_transmission: 5
 flexible: F
 purpose_made: true
 properties: Transmissive

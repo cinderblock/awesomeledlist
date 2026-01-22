@@ -8,7 +8,7 @@ platforms:
   - macOS
   - Linux
 live: true
-designer: No
+designer: false
 visualizer: null
 protocols:
   artnet: Both

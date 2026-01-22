@@ -6,7 +6,7 @@ pixel_types: Single and Clocked
 max_voltage: 12V
 max_current: null
 parent: WeMos Mini
-price: $9.00
+price: 9
 output_connectors: Screw Terminals
 outputs: Both
 diy_or_ots: OTS

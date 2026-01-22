@@ -3,7 +3,7 @@ name: WS2811 MosFET Driver
 manufacturer: NLed
 max_channels: 3
 pixel_types: WS2811 to High current Mosfet
-price: $18.00
+price: 18
 output_connectors: null
 outputs: null
 diy_or_ots: null

@@ -9,7 +9,7 @@ ip_rating: IP68
 locking: Screw Lock
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 24 AWG
 largest_gauge: 20 AWG
 pitch: null
@@ -29,6 +29,4 @@ convention: null
 colors: Black Blue collar
 digikey_url: null
 mouser_url: null
-notes:
-  Glass filled nylon shell with gold plated brass solder  contacts.Weipu originator of format, cheaper clones
-  around. SP 12/13/16/17/20/21/28 shelll sizes LD16/20/28 Screw Terminal clone
+notes: Glass filled nylon shell with gold plated brass solder  contacts.Weipu originator of format, cheaper clones around. SP 12/13/16/17/20/21/28 shelll sizes LD16/20/28 Screw Terminal clone

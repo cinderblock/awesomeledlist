@@ -2,12 +2,12 @@ id: deskontrol-lite-16
 name: Deskontrol Lite 16
 manufacturer: Deskontrol
 max_pixels: 2720
-price: $363
+price: 363
 max_outputs: 16
 interfaces:
   - sACN
   - DDP
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: null

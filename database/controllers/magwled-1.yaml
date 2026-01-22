@@ -2,11 +2,11 @@ id: magwled-1
 name: MagWLED-1
 manufacturer: magwled
 max_pixels: null
-price: $30
+price: 30
 max_outputs: 1
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: true
 pixel_types: async
 max_voltage: 12V

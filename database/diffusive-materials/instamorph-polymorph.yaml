@@ -1,7 +1,7 @@
 id: instamorph-polymorph
 name: Instamorph/ Polymorph
 url: https://www.instamorph.com/
-color_rendition: "3"
+color_rendition: 3
 light_transmission: null
 flexible: R
 purpose_made: false
@@ -9,7 +9,7 @@ properties: Diffusive
 fire_retardant: false
 tinted: T
 sample_thickness: null
-diffusivity: "4"
+diffusivity: 4
 sizes_available: null
 material_type: PCL Poly Capro Lactone
 price_range: $$

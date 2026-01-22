@@ -5,7 +5,7 @@ url: http://www.jst-mfg.com/product/detail_e.php?series=199
 outline: Rectangular
 max_current: 2 A
 max_voltage: 100 V
-ip_rating: No
+ip_rating: null
 locking: Detent
 panel_mount: false
 wire_to_wire: false
@@ -22,13 +22,11 @@ board_fingers: false
 gendered: true
 min_pins: 2
 max_pins: null
-rows: "1"
+rows: 1
 year_introduced: null
 pinout: G D V
 convention: null
 colors: White
 digikey_url: null
 mouser_url: null
-notes:
-  R.C, Lipo Balance connector , Internal connector in some controllers 2.5mm noot 2.54 (1/10") pitch runs off on
-  boards drilled for 2.54
+notes: R.C, Lipo Balance connector , Internal connector in some controllers 2.5mm noot 2.54 (1/10") pitch runs off on boards drilled for 2.54

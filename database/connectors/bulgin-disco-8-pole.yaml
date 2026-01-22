@@ -5,7 +5,7 @@ url: https://uk.farnell.com/bulgin/px0551/plug-8way-6a-free/dp/151740
 outline: Circular
 max_current: 6 A
 max_voltage: 250 V
-ip_rating: No
+ip_rating: null
 locking: Friction
 panel_mount: true
 wire_to_wire: true
@@ -29,6 +29,4 @@ convention: null
 colors: Black
 digikey_url: null
 mouser_url: https://www.mouser.co.uk/datasheet/2/57/bulgs00368_1-2263014.pdf
-notes:
-  Bulgin, long established UK connector maker, 8 pole onnector popular with mobile discos. Used to be panel mount
-  Sockets and male to male leads, now follow outlets on Sockets only.
+notes: Bulgin, long established UK connector maker, 8 pole onnector popular with mobile discos. Used to be panel mount Sockets and male to male leads, now follow outlets on Sockets only.

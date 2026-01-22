@@ -1,12 +1,12 @@
 id: madmapper
 name: MadMapper
 developer: Smode Tech
-price: $420
+price: 420
 platforms:
   - Windows
   - macOS
 live: null
-designer: Yes
+designer: true
 visualizer: null
 protocols:
   artnet: Both

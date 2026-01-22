@@ -2,11 +2,11 @@ id: k2-pi0
 name: K2-Pi0
 manufacturer: KulpLights, LLC
 max_pixels: 1200
-price: $29
+price: 29
 max_outputs: 2
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 max_voltage: 12V
 max_current: 6A

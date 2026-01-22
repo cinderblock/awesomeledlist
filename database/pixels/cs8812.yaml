@@ -5,7 +5,7 @@ led_voltage: 12V
 clocked: false
 vcc_voltage: 12V
 pwm_frequency: 8.0kHz
-brightness_bits: "8"
+brightness_bits: 8
 data_bitrate: 800kHz
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s

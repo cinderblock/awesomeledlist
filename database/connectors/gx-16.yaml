@@ -9,7 +9,7 @@ ip_rating: IP30
 locking: Screw Lock
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 24 AWG
 largest_gauge: 20 AWG
 pitch: null
@@ -29,6 +29,4 @@ convention: null
 colors: Silver Metal Black Plastic
 digikey_url: null
 mouser_url: null
-notes:
-  AKA Aviation Connector, CB Mic Connector, most common in 4 pin variant,Chrome metal Shell and IP65 Version in
-  Black Plastic *Legacy Connector NOT For New Designs*
+notes: AKA Aviation Connector, CB Mic Connector, most common in 4 pin variant,Chrome metal Shell and IP65 Version in Black Plastic *Legacy Connector NOT For New Designs*

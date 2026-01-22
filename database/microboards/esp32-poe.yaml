@@ -20,8 +20,8 @@ ethernet: 100BASE-TX
 bluetooth: "4.2"
 storage: null
 bms: 1S
-imu: No
-price: $25
+imu: false
+price: 25
 release_year: 2020
 url: https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware
 notes: null

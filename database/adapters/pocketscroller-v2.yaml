@@ -6,7 +6,7 @@ pixel_types: Panel
 max_voltage: 5V
 max_current: null
 parent: PocketBeagle
-price: $51
+price: 51
 output_connectors: HUB75
 outputs: null
 diy_or_ots: DIY

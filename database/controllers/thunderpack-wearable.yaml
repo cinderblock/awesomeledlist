@@ -2,11 +2,11 @@ id: thunderpack-wearable
 name: ThunderPack Wearable
 manufacturer: Jeremy Gillici Labs
 max_pixels: null
-price: $40
+price: 40
 max_outputs: 17
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: null

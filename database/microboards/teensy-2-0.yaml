@@ -13,14 +13,14 @@ min_input_voltage: null
 max_input_voltage: 5V
 gpio_voltage: 5.0V
 usb: OTG
-ttl_serial: Yes
+ttl_serial: true
 wifi: null
 poe: null
 ethernet: null
 bluetooth: null
 storage: Shield
-bms: No
-imu: No
+bms: false
+imu: false
 price: null
 release_year: null
 url: https://www.pjrc.com/store/teensypp.html

@@ -2,7 +2,7 @@ id: ledmx4-pro
 name: LeDMX4 Pro
 manufacturer: DMXKing
 max_pixels: 2720
-price: $134
+price: 134
 max_outputs: 4
 interfaces:
   - Ethernet

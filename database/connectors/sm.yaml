@@ -5,11 +5,11 @@ url: http://www.jst-mfg.com/product/detail_e.php?series=238
 outline: Rectangular
 max_current: 3 A
 max_voltage: 250 V
-ip_rating: No
+ip_rating: null
 locking: Latching
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: null
 largest_gauge: null
 pitch: 2.54 mm
@@ -22,7 +22,7 @@ board_fingers: false
 gendered: true
 min_pins: 2
 max_pins: null
-rows: "1"
+rows: 1
 year_introduced: null
 pinout: G D [C] V
 convention: Female source (shrouded male on LEDs)

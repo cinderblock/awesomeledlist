@@ -2,13 +2,13 @@ id: uls-stripe
 name: ULS Stripe
 manufacturer: ULS Manufacturing
 max_pixels: 1000
-price: $330
+price: 330
 max_outputs: 4
 interfaces:
   - FPP
   - USB Ethernet
   - Wifi
-storage: No
+storage: null
 standalone: null
 pixel_types: async
 max_voltage: 12V
@@ -17,7 +17,7 @@ buffered: true
 output_connectors: 5 Pin GX-16
 outputs: null
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: 7 DMX Modes fom Individual to grouped
 warranty: null

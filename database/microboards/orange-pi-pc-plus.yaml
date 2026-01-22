@@ -19,9 +19,9 @@ poe: null
 ethernet: 100BASE-TX
 bluetooth: null
 storage: microSD
-bms: No
-imu: No
-price: $24
+bms: false
+imu: false
+price: 24
 release_year: null
 url: http://www.orangepi.org/
 notes: null

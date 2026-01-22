@@ -2,11 +2,11 @@ id: electromage-8x-driver
 name: ElectroMage 8x Driver
 manufacturer: ElectroMage
 max_pixels: 6400
-price: $15
+price: 15
 max_outputs: 8
 interfaces:
   - ArtNet Ethernet internal switch
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 12V
@@ -15,7 +15,7 @@ buffered: true
 output_connectors: Solder/3 pin servo
 outputs: Configurable
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: Stacks up to 8 on a bus
 warranty: null

@@ -2,11 +2,11 @@ id: m4-port-pixel
 name: M4 Port Pixel
 manufacturer: Microcyb
 max_pixels: 6400
-price: $35
+price: 35
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: 12V

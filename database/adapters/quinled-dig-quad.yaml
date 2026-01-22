@@ -6,7 +6,7 @@ pixel_types: Single or Clocked
 max_voltage: 24V
 max_current: 30A
 parent: ESP8266 or ESP32
-price: $38
+price: 38
 output_connectors: Screw Terminals
 outputs: Both
 diy_or_ots: Both

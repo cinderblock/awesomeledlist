@@ -2,7 +2,7 @@ id: falcon-f4v3
 name: Falcon F4V3
 manufacturer: PixelController, LLC
 max_pixels: 16320
-price: $200
+price: 200
 max_outputs: 48
 interfaces:
   - Ethernet

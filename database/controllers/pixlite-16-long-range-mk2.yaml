@@ -2,11 +2,11 @@ id: pixlite-16-long-range-mk2
 name: PixLite 16 Long Range Mk2
 manufacturer: Advatek
 max_pixels: 16320
-price: $450
+price: 450
 max_outputs: 32
 interfaces:
   - USB
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

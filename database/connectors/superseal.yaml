@@ -9,7 +9,7 @@ ip_rating: IP68
 locking: Latching
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 22 AWG
 largest_gauge: 14 AWG
 pitch: 6.0 mm
@@ -22,7 +22,7 @@ board_fingers: false
 gendered: true
 min_pins: 1
 max_pins: 8
-rows: "2"
+rows: 2
 year_introduced: null
 pinout: null
 convention: null

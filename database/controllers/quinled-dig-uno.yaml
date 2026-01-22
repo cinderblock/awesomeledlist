@@ -2,11 +2,11 @@ id: quinled-dig-uno
 name: QuinLED-Dig-Uno
 manufacturer: Quindor / Intermittent Technology
 max_pixels: 2048
-price: $25
+price: 25
 max_outputs: 2
 interfaces:
   - DMX
-storage: No
+storage: null
 standalone: true
 pixel_types: both
 max_voltage: 24V

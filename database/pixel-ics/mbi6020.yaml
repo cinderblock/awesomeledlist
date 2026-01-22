@@ -3,7 +3,7 @@ name: MBI6020
 manufacturer: Macroblock
 pwm_frequency: 9.8kHz
 channels: 3
-channel_bits: "10"
+channel_bits: 10
 aggregate_bits: null
 clocked: true
 data_bitrate: null

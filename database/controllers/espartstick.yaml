@@ -2,12 +2,12 @@ id: espartstick
 name: EspArtStick
 manufacturer: Microcyb
 max_pixels: 1024
-price: $28
+price: 28
 max_outputs: 2
 interfaces:
   - DMX
   - WirelessDMX
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: 12V

@@ -2,11 +2,11 @@ id: m8-port-pixel
 name: M8 Port Pixel
 manufacturer: Microcyb
 max_pixels: 12800
-price: $45
+price: 45
 max_outputs: 8
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: 12V

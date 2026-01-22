@@ -6,7 +6,7 @@ pixel_types: Single
 max_voltage: 5V
 max_current: null
 parent: ESP8266
-price: $30
+price: 30
 output_connectors: null
 outputs: null
 diy_or_ots: null

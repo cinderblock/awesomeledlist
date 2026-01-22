@@ -2,14 +2,14 @@ id: madrix-nebula
 name: Madrix Nebula
 manufacturer: Madrix
 max_pixels: 2048
-price: $350
+price: 350
 max_outputs: 2
 interfaces:
   - RFRemote
   - Bluettooth
   - audio
   - switch
-storage: No
+storage: null
 standalone: false
 max_voltage: 24V
 max_current: null

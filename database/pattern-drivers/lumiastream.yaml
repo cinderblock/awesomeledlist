@@ -5,7 +5,7 @@ price: Free- $30/month
 platforms:
   - Windows macOS
 live: false
-designer: No
+designer: false
 visualizer: null
 protocols:
   artnet: Output

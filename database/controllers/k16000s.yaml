@@ -2,7 +2,7 @@ id: k16000s
 name: K16000S
 manufacturer: KulpLights, LLC
 max_pixels: 16384
-price: $229
+price: 229
 max_outputs: 16
 interfaces:
   - Ethernet
@@ -16,7 +16,7 @@ buffered: null
 output_connectors: Screw Terminal
 outputs: Data, Ground
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: null
 warranty: null

@@ -2,7 +2,7 @@ id: lightboard-mini
 name: LightBoard Mini
 manufacturer: RocketLife
 max_pixels: 1000
-price: $40
+price: 40
 max_outputs: 1
 interfaces:
   - Ethernet

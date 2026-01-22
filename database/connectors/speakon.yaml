@@ -9,7 +9,7 @@ ip_rating: IP30
 locking: Latching
 panel_mount: true
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 18 AWG
 largest_gauge: 10 AWG
 pitch: null
@@ -29,6 +29,4 @@ convention: null
 colors: Multi
 digikey_url: null
 mouser_url: null
-notes:
-  World Standard professional amplifier to speaker connector, compatibles offer low cost high current connector ,
-  if avoid mix up with audio....
+notes: World Standard professional amplifier to speaker connector, compatibles offer low cost high current connector , if avoid mix up with audio....

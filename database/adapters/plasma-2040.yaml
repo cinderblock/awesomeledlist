@@ -6,7 +6,7 @@ pixel_types: Single and Clocked
 max_voltage: null
 max_current: null
 parent: Rpi 2040
-price: "16"
+price: 16
 output_connectors: screw Terminals
 outputs: null
 diy_or_ots: OTS

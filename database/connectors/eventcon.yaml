@@ -9,7 +9,7 @@ ip_rating: IP67
 locking: Latching
 panel_mount: false
 wire_to_wire: true
-pcb_mount: No
+pcb_mount: false
 smallest_gauge: 20 AWG
 largest_gauge: 12 AWG
 pitch: null

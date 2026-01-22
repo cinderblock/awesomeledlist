@@ -3,7 +3,7 @@ name: SK6812(5050)
 manufacturer: Opsco Optoelectronics
 pwm_frequency: 1.2kHz
 channels: 3
-channel_bits: "8"
+channel_bits: 8
 aggregate_bits: null
 clocked: false
 data_bitrate: 800kHz

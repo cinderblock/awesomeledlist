@@ -6,7 +6,7 @@ pixel_types: single +clocked
 max_voltage: 5V
 max_current: null
 parent: Orange Pi
-price: $12
+price: 12
 output_connectors: null
 outputs: null
 diy_or_ots: DIY

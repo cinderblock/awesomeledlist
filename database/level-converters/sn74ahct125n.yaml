@@ -4,7 +4,7 @@ manufacturer: Texas Instruments
 channels: 4
 interface: Through-Hole DIP
 notes: null
-price: $0.75
+price: 0.75
 max_voltage: null
 max_current: null
 buffered: null

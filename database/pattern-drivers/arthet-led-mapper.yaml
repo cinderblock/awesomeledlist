@@ -7,7 +7,7 @@ platforms:
   - windows
   - mac and arm64
 live: false
-designer: yes
+designer: true
 visualizer: null
 protocols:
   artnet: Output

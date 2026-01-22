@@ -2,11 +2,11 @@ id: protopixel-1-channel-ethernet
 name: ProtoPixel 1 channel Ethernet
 manufacturer: ProtoPixel
 max_pixels: 600
-price: $191
+price: 191
 max_outputs: 1
 interfaces:
   - Ethernet ArtNet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 12V

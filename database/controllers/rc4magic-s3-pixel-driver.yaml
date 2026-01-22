@@ -2,11 +2,11 @@ id: rc4magic-s3-pixel-driver
 name: RC4Magic S3 Pixel Driver
 manufacturer: Theatre Wireless
 max_pixels: 1000
-price: $399
+price: 399
 max_outputs: 2
 interfaces:
   - TTL Serial
-storage: Yes
+storage: true
 standalone: true
 pixel_types: both
 max_voltage: 35V

@@ -2,11 +2,11 @@ id: k32a-b
 name: K32A-B
 manufacturer: KulpLights, LLC
 max_pixels: 72000
-price: $195
+price: 195
 max_outputs: 48
 interfaces:
   - Ethernet PoE++
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 12V

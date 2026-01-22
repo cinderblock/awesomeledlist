@@ -2,11 +2,11 @@ id: netpixel-mini
 name: NetPixel Mini
 manufacturer: SmartShow
 max_pixels: 680
-price: $100
+price: 100
 max_outputs: null
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: async
 max_voltage: 24V

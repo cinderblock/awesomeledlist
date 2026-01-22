@@ -1,15 +1,15 @@
 id: resolume
 name: Resolume
 developer: Resolume
-price: "299-799"
+price: 299-799
 price_tiers:
   - tier: Avenue
-    price: "299"
-    features: "VJ and media server software"
-    limitations: "No advanced output options"
+    price: 299
+    features: VJ and media server software
+    limitations: No advanced output options
   - tier: Arena
-    price: "799"
-    features: "Full version with advanced output mapping and LED control"
+    price: 799
+    features: Full version with advanced output mapping and LED control
     limitations: null
 license_type: perpetual
 platforms:
@@ -17,7 +17,7 @@ platforms:
   - macOS
 live: true
 designer: true
-visualizer: "2D"
+visualizer: 2D
 protocols:
   artnet: true
   sacn: true
@@ -35,10 +35,10 @@ other_outputs: MIDI
 integrations: null
 notes: Heavily integrated with VJ features
 technical_notes:
-  - "Primary use is VJ software with LED control as additional feature"
-  - "Arena version includes advanced mapping for LED installations"
-  - "Prices in EUR (299 for Avenue, 799 for Arena)"
+  - Primary use is VJ software with LED control as additional feature
+  - Arena version includes advanced mapping for LED installations
+  - Prices in EUR (299 for Avenue, 799 for Arena)
 demo_available: true
-demo_limitations: "Watermark on output"
+demo_limitations: Watermark on output
 status: active
 url: https://resolume.com/software

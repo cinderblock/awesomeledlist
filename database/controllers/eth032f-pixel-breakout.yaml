@@ -2,7 +2,7 @@ id: eth032f-pixel-breakout
 name: ETH032F Pixel Breakout
 manufacturer: GO 3D France
 max_pixels: 2040
-price: $55
+price: 55
 max_outputs: 4
 interfaces:
   - Ethernet

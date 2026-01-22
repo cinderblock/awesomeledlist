@@ -6,7 +6,7 @@ platforms:
   - iOS
   - Android
 live: true
-designer: No
+designer: false
 visualizer: null
 protocols:
   artnet: null

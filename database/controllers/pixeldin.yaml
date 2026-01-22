@@ -2,7 +2,7 @@ id: pixeldin
 name: PixelDIN
 manufacturer: YariloPro
 max_pixels: 5440
-price: $142
+price: 142
 max_outputs: 4
 interfaces:
   - Ethernet

@@ -2,7 +2,7 @@ id: digidot-c4-extended-8
 name: DiGidot C4 Extended 8
 manufacturer: DiGidot
 max_pixels: 4096
-price: $385
+price: 385
 max_outputs: 4
 interfaces:
   - SD Card

@@ -6,7 +6,7 @@ pixel_types: single
 max_voltage: 12V
 max_current: null
 parent: Pixel Data
-price: $15
+price: 15
 output_connectors: Phoenix Screw
 outputs: null
 diy_or_ots: OTS

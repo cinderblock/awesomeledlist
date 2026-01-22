@@ -2,7 +2,7 @@ id: t1000s
 name: T1000S
 manufacturer: null
 max_pixels: 2048
-price: $28
+price: 28
 max_outputs: 1
 interfaces:
   - DMX
@@ -16,7 +16,7 @@ buffered: null
 output_connectors: Phoenix Screw
 outputs: Single and Clock
 waterproof: null
-auxiliary_outputs: No
+auxiliary_outputs: null
 wled_compatible: null
 notes: null
 warranty: null

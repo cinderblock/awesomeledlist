@@ -6,7 +6,7 @@ pixel_types: Single
 max_voltage: 5V
 max_current: null
 parent: Teensy 3.2
-price: $34
+price: 34
 output_connectors: Phoenix Screw
 outputs: Single
 diy_or_ots: OTS

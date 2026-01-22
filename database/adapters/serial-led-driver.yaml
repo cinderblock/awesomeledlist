@@ -6,7 +6,7 @@ pixel_types: Single or Clocked
 max_voltage: 5V
 max_current: 3A
 parent: Any UART / Serial
-price: $15
+price: 15
 output_connectors: Solder
 outputs: Both
 diy_or_ots: OTS

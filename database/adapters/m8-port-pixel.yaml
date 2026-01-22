@@ -6,7 +6,7 @@ pixel_types: Single
 max_voltage: 12V
 max_current: 30A
 parent: Raspberry Pi 3B+ or above
-price: $45
+price: 45
 output_connectors: Phoenix Screw
 outputs: null
 diy_or_ots: DIY

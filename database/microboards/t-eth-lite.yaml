@@ -21,7 +21,7 @@ bluetooth: "4.1"
 storage: null
 bms: null
 imu: null
-price: $15
+price: 15
 release_year: 2024
 url: https://www.lilygo.cc/products/t-eth-lite
 notes: https://github.com/Xinyuan-LilyGO/LilyGO-T-ETH-Series

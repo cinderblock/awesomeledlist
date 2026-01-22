@@ -2,7 +2,7 @@ id: sp801e
 name: SP801e
 manufacturer: Sperll
 max_pixels: 4800
-price: $30
+price: 30
 max_outputs: 8
 interfaces:
   - Ethernet

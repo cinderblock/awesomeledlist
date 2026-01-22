@@ -2,11 +2,11 @@ id: k16a-b
 name: K16A-B
 manufacturer: KulpLights, LLC
 max_pixels: 72000
-price: $160
+price: 160
 max_outputs: 48
 interfaces:
   - Ethernet
-storage: Yes
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 12V

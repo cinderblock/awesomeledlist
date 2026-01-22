@@ -2,11 +2,11 @@ id: pixlite-4-mk2-eco
 name: PixLite 4 Mk2 ECO
 manufacturer: Advatek
 max_pixels: 2720
-price: $115
+price: 115
 max_outputs: 8
 interfaces:
   - Ethernet
-storage: No
+storage: null
 standalone: false
 pixel_types: both
 max_voltage: 24V

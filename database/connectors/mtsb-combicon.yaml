@@ -5,7 +5,7 @@ url: https://in.rsdelivers.com/product/phoenix-contact/1757035/phoenix-contact-c
 outline: Rectangular
 max_current: 10 A
 max_voltage: 300 V
-ip_rating: No
+ip_rating: null
 locking: Friction
 panel_mount: false
 wire_to_wire: false
@@ -22,7 +22,7 @@ board_fingers: true
 gendered: true
 min_pins: 2
 max_pins: 12
-rows: "1"
+rows: 1
 year_introduced: null
 pinout: null
 convention: null

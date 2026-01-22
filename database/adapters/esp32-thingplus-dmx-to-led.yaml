@@ -6,7 +6,7 @@ pixel_types: Single+Clocked
 max_voltage: 12V
 max_current: null
 parent: ESP32
-price: $20
+price: 20
 output_connectors: Poke Home
 outputs: Both
 diy_or_ots: OTS

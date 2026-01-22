@@ -2,17 +2,17 @@ id: spi-led-controller
 name: SPI LED Controller
 manufacturer: LED Strip Studio
 max_pixels: 1024
-price: $150
+price: 150
 price_tiers:
   - pixels: 1024
-    price: $299
-    notes: "1 year software license included"
+    price: 299
+    notes: 1 year software license included
   - pixels: 2048
-    price: $449
-    notes: "1 year software license included"
+    price: 449
+    notes: 1 year software license included
   - pixels: 4096
-    price: $599
-    notes: "1 year software license included"
+    price: 599
+    notes: 1 year software license included
 max_outputs: 1
 interfaces:
   - Ethernet
@@ -30,9 +30,9 @@ auxiliary_outputs: DMX
 wled_compatible: null
 notes: See tech specs PDF for full details
 technical_notes:
-  - "Price varies by pixel count license"
-  - "10A per output channel"
-  - "Includes LED Strip Studio software license"
+  - Price varies by pixel count license
+  - 10A per output channel
+  - Includes LED Strip Studio software license
 datasheet_url: https://www.ledstripstudio.com/download/tech-specs/SPI_LED_Controller_tech_specs.pdf
 warranty: null
 release_year: null

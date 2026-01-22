@@ -3,7 +3,7 @@ name: UCS8903
 manufacturer: Normand Electronics
 pwm_frequency: 1.0kHz
 channels: 3
-channel_bits: "16"
+channel_bits: 16
 aggregate_bits: null
 clocked: false
 data_bitrate: 800kHz
@@ -16,7 +16,7 @@ gpio_max: 5V
 max_current: 17mA
 quiescent_current: 1.0mA
 package_size: SOP8
-pin_count: "8"
+pin_count: 8
 data_type: UCS8903
 backup_data_line: false
 max_pixels_per_string: null

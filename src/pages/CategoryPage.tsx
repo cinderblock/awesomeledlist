@@ -1,6 +1,7 @@
 import { useParams, Link, useSearchParams } from "react-router-dom";
 import { CATEGORIES } from "@/lib/types";
 import { getCategoryData } from "@/lib/data";
+import { getCategoryDescription } from "@/lib/markdown";
 import { getColumnsForCategory, getSearchKeysForCategory } from "@/lib/columns";
 import { getTileFieldsForCategory } from "@/lib/tile-fields";
 import { DataTable, TileView } from "@/components/data";
@@ -34,6 +35,7 @@ export function CategoryPage() {
   const columns = getColumnsForCategory(category.id);
   const tileFields = getTileFieldsForCategory(category.id);
   const searchKeys = getSearchKeysForCategory(category.id);
+  const descriptionHtml = getCategoryDescription(category.id);
 
   const supportsViews = category.viewType === "both";
   const currentView = urlView || storedView;
@@ -65,12 +67,19 @@ export function CategoryPage() {
           <span className="text-sm">{category.name}</span>
         </div>
         <div className="flex items-start justify-between gap-4">
-          <div>
+          <div className="flex-1">
             <h1 className="mb-2 text-3xl font-bold">{category.name}</h1>
-            <p className="text-muted-foreground">{category.description}</p>
+            {descriptionHtml ? (
+              <div
+                className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground"
+                dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+              />
+            ) : (
+              <p className="text-muted-foreground">{category.description}</p>
+            )}
           </div>
           {supportsViews && (
-            <div className="flex gap-1 rounded-md border p-1">
+            <div className="flex gap-1 rounded-md border p-1 shrink-0">
               <Button
                 variant={currentView === "table" ? "secondary" : "ghost"}
                 size="sm"

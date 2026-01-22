@@ -2,7 +2,7 @@ id: m4-pi
 name: M4- Pi
 manufacturer: Microcyb
 max_pixels: 6400
-price: $35
+price: 35
 max_outputs: 4
 interfaces:
   - Ethernet

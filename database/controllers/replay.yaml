@@ -2,7 +2,7 @@ id: replay
 name: Replay
 manufacturer: Smartshow
 max_pixels: 2720
-price: $80
+price: 80
 max_outputs: 4
 interfaces:
   - Ethernet

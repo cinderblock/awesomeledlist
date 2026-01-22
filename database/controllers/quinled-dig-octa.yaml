@@ -2,7 +2,7 @@ id: quinled-dig-octa
 name: QuinLED-Dig-Octa
 manufacturer: Quindor / Intermittent Technology
 max_pixels: 4096
-price: $65
+price: 65
 max_outputs: 8
 interfaces:
   - Ethernet

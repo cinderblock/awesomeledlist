@@ -4,12 +4,12 @@ manufacturer: ENTTEC
 max_pixels: 340
 max_pixels_rgbw: 256
 max_pixels_16bit: 170
-price: $100
+price: 100
 max_outputs: 2
 interfaces:
   - Ethernet
   - Art-Net
-storage: "Yes"
+storage: true
 standalone: true
 pixel_types: async
 max_voltage: 48V
@@ -18,7 +18,7 @@ buffered: true
 output_connectors: Phoenix Screw
 outputs: Single
 waterproof: null
-auxiliary_outputs: "No"
+auxiliary_outputs: null
 wled_compatible: null
 notes: Back powered from pixel strip - connect thru USB to record a show onto the device using live Art-net
 technical_notes:
@@ -26,9 +26,9 @@ technical_notes:
   - "RGBW (8-bit): 256 pixels max"
   - "RGB (16-bit): 170 pixels max"
   - "RGBW (16-bit): 128 pixels max"
-  - "Storage is not removable"
-  - "Can be powered from pixel strip (back-powered)"
-  - "Record shows via USB using live Art-Net"
+  - Storage is not removable
+  - Can be powered from pixel strip (back-powered)
+  - Record shows via USB using live Art-Net
 warranty: null
 release_year: null
 status: active

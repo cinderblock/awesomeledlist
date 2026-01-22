@@ -5,7 +5,7 @@ price: Free
 platforms:
   - Windows (TouchDesigner)
 live: true
-designer: Yes
+designer: true
 visualizer: 3D
 protocols:
   artnet: null

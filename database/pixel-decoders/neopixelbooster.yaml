@@ -3,7 +3,7 @@ name: NeopixelBooster
 manufacturer: Jan "yaqwsx" Mrázek
 max_channels: null
 pixel_types: Inline 5V buck convertor
-price: $3.50
+price: 3.5
 output_connectors: solder
 outputs: null
 diy_or_ots: null
