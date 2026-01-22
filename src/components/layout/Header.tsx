@@ -12,7 +12,7 @@ export function Header() {
             About
           </Link>
           <a
-            href="https://github.com/yourusername/awesomeledlist"
+            href="https://github.com/cinderblock/awesomeledlist"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground text-sm"

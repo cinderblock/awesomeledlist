@@ -8,7 +8,7 @@ export function Footer() {
         </p>
         <p className="text-muted-foreground mt-2 text-sm">
           <a
-            href="https://github.com/yourusername/awesomeledlist"
+            href="https://github.com/cinderblock/awesomeledlist"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground underline"
