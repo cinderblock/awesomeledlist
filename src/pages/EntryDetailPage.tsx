@@ -3,10 +3,14 @@ import { CATEGORIES } from "@/lib/types";
 import { getEntryById } from "@/lib/data";
 import { getFieldsForCategory } from "@/lib/fields";
 import { DetailPage } from "@/components/data";
+import { usePageTitle } from "@/hooks";
 
 export function EntryDetailPage() {
   const { categoryId, entryId } = useParams<{ categoryId: string; entryId: string }>();
   const category = CATEGORIES.find((c) => c.path === `/${categoryId}`);
+  const entry = entryId && category ? getEntryById(category.id, entryId) : undefined;
+
+  usePageTitle(entry?.name);
 
   if (!category) {
     return (
@@ -18,8 +22,6 @@ export function EntryDetailPage() {
       </div>
     );
   }
-
-  const entry = entryId ? getEntryById(category.id, entryId) : undefined;
 
   if (!entry) {
     return (

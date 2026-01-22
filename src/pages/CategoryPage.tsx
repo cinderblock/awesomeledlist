@@ -6,7 +6,7 @@ import { getTileFieldsForCategory } from "@/lib/tile-fields";
 import { DataTable, TileView } from "@/components/data";
 import { Button } from "@/components/ui/button";
 import { LayoutGrid, List } from "lucide-react";
-import { useViewPreference } from "@/hooks";
+import { useViewPreference, usePageTitle } from "@/hooks";
 
 export function CategoryPage() {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -16,6 +16,8 @@ export function CategoryPage() {
   // Get stored preference, but URL param takes precedence
   const urlView = searchParams.get("view");
   const [storedView, setStoredView] = useViewPreference(categoryId || "", urlView);
+
+  usePageTitle(category?.name);
 
   if (!category) {
     return (

@@ -3,8 +3,11 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CATEGORIES } from "@/lib/types";
 import { getCategoryCount } from "@/lib/data";
+import { usePageTitle } from "@/hooks";
 
 export function Home() {
+  usePageTitle(); // Use default title
+
   const totalEntries = CATEGORIES.reduce((sum, cat) => sum + getCategoryCount(cat.id), 0);
 
   return (
