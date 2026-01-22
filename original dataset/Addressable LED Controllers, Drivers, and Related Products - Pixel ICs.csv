@@ -1,0 +1,42 @@
+,PWM Frequency,Channels,Channel Bits,Aggregate Bits,Clocked,Data BitRate,Pixel Data Size,Pixel Rate Max,Output Voltage,Supply Voltage,GPIO Min,GPIO Max,Max Current,Quiescent Current,Package Size,Pin Count,Data Type,Backup Data Line,Max pixel per string,Release Year,NOTES,3rd Party Testing,Datasheet URL,Other Links
+DMX512,3.0kHz,3,8,,No,650kHz,24 Bits/Pixel,27.1 k Pixel / s,24V,5V,,,,,SOP8,8,DMX512P,No,,,,,,DMX512 Pixel Protocol Overview | Advatek Lighting
+GS8202,8.0kHz,3,8,12,No,,,,,,,,,,,,,,,,,,,GS8202 Pixel Protocol Overview | Advatek Lighting
+GS8206,8.0kHz,3,8,12,No,,,,,,,,,,,,,,,,,,,GS8206 Pixel Protocol Overview | Advatek Lighting
+GS8208,8.0kHz,3,8,12,No,,,,,,,,,,,,,,,,,GS8208 Pixel Protocol Overview | Advatek Lighting,,
+LPD6803,1.0kHz,3,5,5,Yes,15MHz,16 Bits/Pixel,0.94 M Pixel / s,12V,5V,,5V,45mA,,SOP16/QFN16,16,LPD6803,No,,,obsolete; superseded by LPD8806,,https://cdn-shop.adafruit.com/datasheets/LPD6803.pdf,LPD6803 Pixel Protocol Overview | Advatek Lighting
+LPD8806,9.4kHz,3,8,7,Yes,20MHz,32 Bits/Pixel,625.0 k Pixel / s,12V,5V,,5V,20mA,,SOP16/QFN16,16,LPD8806,No,2000,2011,"Fast refresh, fast PWM, 2 RGB pixels per IC, refresh any time",https://web.archive.org/web/20180725021448/https://www.texonix.com/LPD8806.html,https://cdn-shop.adafruit.com/datasheets/lpd8806+english.pdf,LPD8806 Pixel Protocol Overview | Advatek Lighting
+MBI6020,9.8kHz,3,10,,Yes,,,,12V,,,,,,,,,,,,,,,MBI6020 Pixel Protocol Overview | Advatek Lighting
+MY9221,1.0kHz,3,16,,Yes,,,,24V,,,,,,,,,,,,,,,MY9221 Pixel Protocol Overview | Advatek Lighting
+MY9231,2.0kHz,3,8/12/14/16,,Yes,20MHz,,,17V,5V,,5V,350mA,,SOP16/SSOP16/QFN16,16,MY9231,No,2010,2010,,,http://www.my-semi.com/file/MY9231_BF_0.91.pdf,MY9231 Pixel Protocol Overview | Advatek Lighting
+MY9291,2.0kHz,4,16,,Yes,,,,,,,,,,,,,,,,,,,MY9291 Pixel Protocol Overview | Advatek Lighting
+P9813,4.7kHz,3,8,8,Yes,20MHz,32 Bits/Pixel,625.0 k Pixel / s,12V,5V,3.5V,5V,45mA,,SOP14/DIP14,14,P9813,No,1024,2010,"old but fast, still used in strings such as TCL",,,P9813 Pixel Protocol Overview | Advatek Lighting
+QED3001,1.0kHz,3,12,,No,,,,,,,,,,SOP8/10/14,8/10/14,,,,,,,,QED3001 Pixel Protocol Overview | Advatek Lighting
+SK6812(5050),1.2kHz,3,8,,No,800kHz,24 Bits/Pixel,33.3 k Pixel / s,,5V,,,,1.0mA,,,,,,,,,https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf,SK6812 Pixel Protocol Overview | Advatek Lighting
+SK6818,1.2kHz,4,8,,No,,,,,,,,,,,,,,,,,,,SK6818 Pixel Protocol Overview | Advatek Lighting
+SM16511,3.3kHz,4,8,,No,,,,,,,,,,SOP10/SOP16,10/16,,,,,,,,SM16511 Pixel Protocol Overview | Advatek Lighting
+SM16703,1.2kHz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,SM16703 Pixel Protocol Overview | Advatek Lighting
+SM16712,1.2kHz,3,8,,No,,,,,,,,,,SOP16,16,,,,,,,,SM16712 Pixel Protocol Overview | Advatek Lighting
+SM16716,2.5kHz,3,8,,Yes,,,,,,,,,,SOP16,16,,,,,,,,SM16716 Pixel Protocol Overview | Advatek Lighting
+TC2811,,3,,,,,,,,,,,,,,,,,,,WS2811 Clone,,,
+TLS3001,1.0kHz,3,12,,No,,,,,,,,,,SOP8/10/14,8/10/14,,,,,,,,TLS3001 Pixel Protocol Overview | Advatek Lighting
+TM1803,400Hz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,TM1803 Pixel Protocol Overview | Advatek Lighting
+TM1804,286Hz,3,8,,No,800kHz,24 Bits/Pixel,33.3 k Pixel / s,24V,5V,3.8V,5V,60mA,3.0mA,SOP8,8,WS2811/12,No,,,,,http://www.ledlightmake.com/ledlightmake_serv/TM1804%20Datasheet.pdf,TM1804 Pixel Protocol Overview | Advatek Lighting
+TM1809,400Hz,3,8,,No,,,,,,,,,,SOP14,14,,,,,,,,TM1809 Pixel Protocol Overview | Advatek Lighting
+TM1814,1.0kHz,4,8,,No,,,,,,,,,,SOP8,8,,,,,,,,TM1814 Pixel Protocol Overview | Advatek Lighting
+TM1829,7.0kHz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,TM1829 Pixel Protocol Overview | Advatek Lighting
+TM1914,666Hz,3,8,,No,,,,,,,,,,SOP10,10,,,,,,,,TM1914 Pixel Protocol Overview | Advatek Lighting
+UCS1903,400Hz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,UCS1903 Pixel Protocol Overview | Advatek Lighting
+UCS1904,1.5kHz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,UCS1904 Pixel Protocol Overview | Advatek Lighting
+UCS2903,1.6kHz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,UCS2903 Pixel Protocol Overview | Advatek Lighting
+UCS2904,1.8kHz,4,8,,No,,,,,,,,,,SOP8,8,,,,,,,,UCS2904 Pixel Protocol Overview | Advatek Lighting
+UCS2904,1.2kHz,4,8,,No,800kHz,,,30V,5V,,,17mA,,SOP8,8,,No,,,,,,SM16704 Pixel Protocol Overview | Advatek Lighting
+UCS512B,3.0kHz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,UCS512B Pixel Protocol Overview | Advatek Lighting
+UCS8903,1.0kHz,3,16,,No,800kHz,48 Bits/Pixel,16.7 k Pixel / s,26V,5V,3.0V,5V,17mA,1.0mA,SOP8,8,UCS8903,No,,2013,Early 16bit/color version of UCS1903 (WS2811 equiv),,https://www.dhgate.com/product/ucs8903-ic-3-channel-led-constant-current/421634760.html,UCS8903 Pixel Protocol Overview | Advatek Lighting
+UCS8904,1.0kHz,4,16,,No,800kHz,64 Bits/Pixel,12.5 k Pixel / s,24V,,,,,,SOP8,8,,,,,,,,UCS8904 Pixel Protocol Overview | Advatek Lighting
+UCS9812,1.0kHz,3,16,,No,,,,,,,,,,SOP16,16,,,,,,,,UCS9812 Pixel Protocol Overview | Advatek Lighting
+WS2801,2.5kHz,3,8,,Yes,25MHz,24 Bits/Pixel,1.04 M Pixel / s,7V,5V,4.0V,5V,50mA,1.5mA,SO14/DIP14,14,WS2801,No,1024,2010,Early Addressable LED controller still common on 4 wire pixel and puck strings,,https://www.futurlec.com/Others/WS2801.shtml,WS2801 Pixel Protocol Overview | Advatek Lighting
+WS2805,,5,8,,No,,,,,,,,,,,,,,,,RGB+CCT with data backup line,,,
+WS2811,2.0kHz,3,8,,No,800kHz,24 Bits/Pixel,33.3 k Pixel / s,12V,5V,3.0V,5V,19mA,0.7mA,SOIC8/DIP8,8,WS2811/12,No,,2011,"Addressable in groups (usually of 3 LEDs), common on 3 wire pixels, pucks, floods",,https://cdn-shop.adafruit.com/datasheets/WS2811.pdf,WS2811 Pixel Protocol Overview | Advatek Lighting
+WS2811 V1.4,2.0kHz,3,8,,No,,,,,,,,,,SOP8,8,,,,,,,,WS2811 V1.4 Pixel Protocol Overview | Advatek Lighting
+WS2814,2.0kHz,4,8,,No,,,,,,,,,,SOP12,12,,,,,,,,WS2814 Pixel Protocol Overview | Advatek Lighting
+WS2818B,2.0kHz,3,8,,No,800kHz,24 Bits/Pixel,33.3 k Pixel / s,12V,5V,3.0V,5V,16mA,2.1mA,"SOP8,CPC8",8,WS2811/12,Yes,,2018,12V WS2813 as separate IC,,http://www.world-semi.com/technology/details-104-4.html,WS2818 Pixel Protocol Overview | Advatek Lighting

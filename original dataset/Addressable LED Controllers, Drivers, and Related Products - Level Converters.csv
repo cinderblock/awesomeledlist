@@ -1,0 +1,11 @@
+206,Manufacturer,Channels,Interface,Notes,Price,Max Voltage,Max Current,Buffered,Product URL
+Standard Differential Receiver,Microcyb,4,Differential Pairs,,$22,12V,,Yes,https://microcyb.com
+,,,,,,,,,
+SN74AHCT125N,Texas Instruments,4,Through-Hole DIP,,$0.75,,,,https://www.ti.com/product/SN74AHCT125
+TC4427,Microchip,2,,https://electricfiredesign.com/2021/03/12/logic-level-shifters-for-driving-led-strips/,,,1.5A,,https://www.microchip.com/en-us/product/TC4427
+SN74LVC2T45,Texas Instruments,2,,,,,,,https://www.ti.com/product/SN74LVC2T455
+TXS0108e,Texas Instruments,8,,,,,,,
+SN74LV1T34DBVRG4,Texas Instruments,1,SOT 23,,,7V,,,https://www.ti.com/product/SN74LV1T34/part-details/SN74LV1T34DBVRG4
+74HCT244,Texas Instruments,8,PDIP largest,,,5.5V,,Yes,https://www.ti.com/product/SN74HCT244
+TXU0104,Texas Instruments,4,,,,,,,
+74HC245,Texas Instruments,8,,,,6,8mA,,https://www.ti.com/product/SN74HC245

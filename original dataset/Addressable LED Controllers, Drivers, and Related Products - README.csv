@@ -1,0 +1,53 @@
+Hello,
+"We hope you find these lists useful. If there is something that should be added, please do so!",
+,
+There are many empty cells. Some are empty because they don't make sense. The rest are empty because the data has not been filled in. Please fill in missing data!,
+Cells highlighted like this need to be verified. Please help do so.,
+Cells highlighted like this are likely missing data that should be easy to fill in. Please help do so.,
+,
+"We realize that not everything perfectly fits into the categories we're definining. If it makes sense to add a new category, it will be added. However we should discuss this first.",
+,
+Current URLs,
+http://awesomeledlist.com,
+https://docs.google.com/spreadsheets/d/10pHG7_VIVltyqJK1Y0T5g3Iq6YJV2MnhMp3UcAVB-GA,
+,
+Editing,
+"This document is editable. Please help improve it. Unfortunately, we've had an incident where it looks like someone accidentally deleted a column. No big deal. Please watch out!",
+"If we have more bad edits in the future, we can always undo. Unfortunately might lose changes from after the bad edit too...",
+"Per-cell formatting should be very rare, if ever used. Never change the text color to look like adjacent cells. Add a URL or leave it.",
+,
+"If you find you cannot edit the sheet, I probably messed up. It's apparently relatively easy to accidentally lock this whole document. I think it has to do with the iOS sheets app and copyig the link from there. Please shoot me an email if I accidentally lock it down.",
+,
+Tabs,We've created a bunch of tabs to organize the various lists. Don't forget to scroll and check other lists!
+Pattern Drivers,"High level software that sends data to ""controllers""."
+Controllers,Things that can generate the specific timings & packet formats needed to drive many addressible LEDs. Controllers usually can hold and repeat at least one frame.
+Pixels,Addressible LEDs. The innovation that enabled this world of wonder.
+Pixel ICs,The main chip usually embeded into Pixels as a standalone component. Should not include LEDs.
+Pixel Decoders,Devices that are not meant for driving pixels directly but are capable of sharing the same standard communication standards that addressable pixels use.
+Level Converters,Dumb memory-less devices that translate to pixel data from another format
+Adapters,"Someting that aids the hardware compatibility between some (usually commodity) ""controller"" hardware and the light strings/panels. Likely cannot hold a frame on its own."
+DIY MicroBoards,"Useful microprocessors boards that can (usually) be used directly with certain pixel types. Pairing with an ""adapter"" is common."
+Connectors,Connectors that are commonly used in LED products
+Drive Libraries,"Software to turn off the shelf or commodity hardware into ""controllers""."
+Diffusive Materials,Materials that the community has tested as a light diffuser.
+Commercial Pixel Systems,"Complete systems that are usually mostly only compatible with a closed ecosystem. Often, but not only, based on the same common technologies but ""cleaned up"", ""easy to use"", or provided as a service."
+,
+Many Thanks to Mr Cameron Tacklind for starting this doc :-),
+,
+Tidiness,
+Please endeavor to keep consistent formatting throughout this document. Please fix any inconsistencies you find.,
+Commas are list separators. Periods are decimal separators. Use the Oxford comma.,
+"Numerically comparable columns should only contain numbers in the cells. We use a ""custom number format"" to append the appropriate units for display purposes.",
+Remove all formatting when adding information.,
+,
+Filters,
+"Most pages are setup with filters on columns. If you use them, please reset selection to ""all"" once you're done. Alternatively, make a copy of the whole document for yourself.",
+,
+Notes,
+"Please use ""Notes"", the Google Sheets feature (not the column), for ""extra"" information about specific cells.",
+,
+Discussion,
+"If there are possibly contentious changes or you're unsure about any changes you've made or would like to make, please use a ""Comment"".",
+,
+Legal,
+"I am not a lawyer but consider any information you find here to be presented ""as-is"" and has no guarantee of being correct. If you post any information here, consider it released to the public and not under your control.",

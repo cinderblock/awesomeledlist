@@ -1,0 +1,19 @@
+System,Manufacturer,Pixels Per Run ,Dimming Resolution,Dedicated PSU/control,RGB/W,Online Pricing,Price Range,Core Tech,Since,Target Market,NOTES
+DFS3000,Glasson Electronics,170,13 Bit ,Y,RGB/RGBW/WW ,,$$$$$$,,2004,,"Glasson, developer World first adressable incandescent festoon, range of LED and festoon products, professional products, professional pricing"
+Astera Nyx,Astera,170,,Y,RGBW,,$$$$$$,CRMX DMX,,Entertainment,"Wireless DMX /Bluetooth controlled AC Line / Dc Battery Pack Powered, aimed at high end entertainment and film"
+Flex,Color Kinetics,,,Y,RGB W/WW,,$$$$$$,Proprietary,,,"Icolor Flex and relatives. Philips Color Kinetics closed eco system of RGB lighting, "
+Intelligent Marquee System,TMB,128,,Y,RGBW,,$$$$$$,Proprietary,,Festoon,"2 Wire addressable Festoon, Professional level pricing structure"
+Strip and Tiles,Schnick Schnack,3072,,Y,RGBW,,$$$$$$,,2001,,"Strip and Tiles with very high resolution dimming and video input compatible, very long established pioneers."
+VC-Dot 1,Martin,100,,Y,RGB,,$$$$$$,,,,"Martin, stage lighting part of Harmon Kardon group"
+Active RGB,Lumisphere,170,,Y,RGB,,$$$$$,,,,Time proven Clear bubble festoon lamp
+LB-100,SGM,56,,Y,RGB,7 Ball String  €125,$$$$$,,,,"SGM established Danish stage lighting manufacturer, 2W balls "
+Lightwalls,Lightwalls,,,Y,RGB/W,Learning kit £550+VAT,$$$$$,,,Architectural,"Strip and panels assosciated with Protopixel.io, subscription based control systems, ""dynamic lighting"""
+Vinci,https://www.lucenti.lighting/products,128,,Y,RGBW,RGB €120 per lamp,$$$$$,,,,RGB and flexi LED filament in one lamp
+Ledsnaps,Ledsnaps,1200,,,RGB,,$$$$$,,,Gym/Fitness,"LED strip Units aimed at gym studiomarket , closed architecture, presumed WS28XX"
+Triklit,Minelon - Rainmin,,8 Bit,Y,RGB,Wiedamark,$$$$,WS281x,,,WS2811/12 based commercial quality LED products
+SmartPXL,SmartPXL,1360,16bit or 8 bit,Y,RGB/RGBW/CTA,,$$$$,,,,High dimming resolution pixel dots made in Australia
+Festoon 2 RGB,Chauvet,60,,Y,RGB   W/WW,,$$$,,,,"Seperate controller, 20 globes per string max 3 strings per control IP 54"
+FestoonLight Q4,Showtec,120,,Y,RGB,,$$$,,,,"Seperate 20 globe strings, controller and booster components"
+Twinkly,Twinkly,600,,Y,RGB,250 string $105,$$,,,,"Consumer Level App Controlled , now with ""Pro"" range. artnet2twinkly 3rd party project linked on Drive Libraries page"
+RGB-Pixel-Panel,SmartShow,169,8 Bit,Y,RGB,£20,,WS2812b,2024,,"169 Pixel Interlockable panel, arranged as 13x13 snakelined pixels on 1.6mm PCB, 10mm pitch"
+RGBW-Pixel-Panel,SmartShow,169,8 Bit,Y,RGBW,£30,,SKC6812RGBW-NW,,,"169 Pixel Interlockable panel, arranged as 13x13 snakelined pixels on 1.6mm PCB, 10mm pitch"
