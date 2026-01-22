@@ -1,0 +1,27 @@
+id: ws2813
+name: WS2813
+color_order: RGB
+led_voltage: 5V
+clocked: false
+vcc_voltage: 5V
+pwm_frequency: 2.0kHz
+brightness_bits: "8"
+data_bitrate: 800kHz
+pixel_data_size: 24 Bits/Pixel
+pixel_rate_max: 33.3 k Pixel / s
+gpio_min: 3.0V
+gpio_max: 5V
+wattage: 90.mW
+channel_current: 18.0mA
+quiescent_current: 0.7mA
+package_size: "5050"
+pin_count: 6
+data_type: WS2811/12
+backup_data_line: true
+max_pixels_per_string: null
+release_year: 2016
+notes: WS2812b update with Back Up Data Line
+third_party_testing: null
+manufacturer: WorldSemi/Newstar
+datasheet_url: http://newstar-ledstrip.com/product/20171208112004735.pdf
+other_links: WS2813 Pixel Protocol Overview | Advatek Lighting

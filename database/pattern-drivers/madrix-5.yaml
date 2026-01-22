@@ -1,0 +1,28 @@
+id: madrix-5
+name: MADRIX 5
+developer: Inoage
+price: 330+
+platforms:
+  - Windows
+live: true
+designer: Yes
+visualizer: null
+protocols:
+  artnet: Both
+  sacn: Both
+  dmx: Both
+  kinet: Output
+  ddp: null
+gpio: null
+serial: null
+video_input: Both
+audio_input: Both
+programmatic: null
+language: null
+other_inputs: MIDI, HTTP, MA-net, CITP, SMPTE, Spout, GamePort
+other_outputs: DVI, Robe, Insta, Hue
+integrations: null
+notes: GPIO available with Madrix Orion external box
+demo_available: Demo no data out
+status: alive
+url: https://www.madrix.com/products/software

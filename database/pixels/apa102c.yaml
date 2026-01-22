@@ -1,0 +1,27 @@
+id: apa102c
+name: APA102C
+color_order: BGR
+led_voltage: 5V
+clocked: true
+vcc_voltage: 5V
+pwm_frequency: 19.2kHz
+brightness_bits: 8+5
+data_bitrate: 30MHz
+pixel_data_size: 32 Bits/Pixel
+pixel_rate_max: 0.94 M Pixel / s
+gpio_min: 3.5V
+gpio_max: 5V
+wattage: 110.mW
+channel_current: 22.0mA
+quiescent_current: 1.0mA
+package_size: 5050 & 2020
+pin_count: 6
+data_type: APA102
+backup_data_line: false
+max_pixels_per_string: ~250 - CLK sensitive
+release_year: null
+notes: Very similar to its previous version, APA102, APA102C provides a larger metallic area for better heat dissipation.
+third_party_testing: null
+manufacturer: APA Electronics
+datasheet_url: https://cdn-shop.adafruit.com/datasheets/APA102.pdf
+other_links: APA102C Pixel Protocol Overview | Advatek Lighting

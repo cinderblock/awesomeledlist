@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://awesomeledlist.com/schema/controller.json",
+  "title": "LED Controller",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "URL-safe identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "manufacturer": {
+      "type": ["string", "null"]
+    },
+    "max_pixels": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "price": {
+      "type": ["string", "number", "null"]
+    },
+    "max_outputs": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "interfaces": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Supported interfaces (Ethernet, WiFi, USB, DMX, etc.)"
+    },
+    "storage": {
+      "type": ["string", "null"],
+      "description": "Onboard storage type (SD, Flash, etc.)"
+    },
+    "standalone": {
+      "type": ["boolean", "null"],
+      "description": "Can operate without external control"
+    },
+    "pixel_types": {
+      "type": ["string", "null"]
+    },
+    "max_voltage": {
+      "type": ["string", "number", "null"]
+    },
+    "max_current": {
+      "type": ["string", "number", "null"]
+    },
+    "buffered": {
+      "type": ["boolean", "null"]
+    },
+    "output_connectors": {
+      "type": ["string", "null"]
+    },
+    "outputs": {
+      "type": ["string", "null"],
+      "description": "Output type description"
+    },
+    "waterproof": {
+      "type": ["string", "null"],
+      "description": "IP rating if applicable"
+    },
+    "auxiliary_outputs": {
+      "type": ["string", "null"],
+      "description": "DMX, GPIO, etc."
+    },
+    "wled_compatible": {
+      "type": ["boolean", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "warranty": {
+      "type": ["string", "null"]
+    },
+    "release_year": {
+      "type": ["integer", "null"]
+    },
+    "status": {
+      "type": ["string", "null"]
+    },
+    "url": {
+      "type": ["string", "null"]
+    }
+  }
+}

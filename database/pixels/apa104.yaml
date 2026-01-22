@@ -1,0 +1,27 @@
+id: apa104
+name: APA104
+color_order: RGB
+led_voltage: 5V
+clocked: false
+vcc_voltage: 5V
+pwm_frequency: 1.2kHz
+brightness_bits: "8"
+data_bitrate: 800kHz
+pixel_data_size: 24 Bits/Pixel
+pixel_rate_max: 33.3 k Pixel / s
+gpio_min: 3.5V
+gpio_max: 5V
+wattage: 100.mW
+channel_current: 20.0mA
+quiescent_current: 1.0mA
+package_size: 5050, 3535, 1212
+pin_count: 4
+data_type: WS2811/12
+backup_data_line: false
+max_pixels_per_string: null
+release_year: 2013
+notes: WS2812b clone like SK6812
+third_party_testing: null
+manufacturer: APA Electronics
+datasheet_url: http://neon-world.com/en/product_detail.php?cid=60&id=171
+other_links: APA104 Pixel Protocol Overview | Advatek Lighting

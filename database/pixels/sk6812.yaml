@@ -1,0 +1,27 @@
+id: sk6812
+name: SK6812
+color_order: GRB & GRBW
+led_voltage: 5V
+clocked: false
+vcc_voltage: 5V
+pwm_frequency: 1.1kHz
+brightness_bits: "8"
+data_bitrate: 800kHz
+pixel_data_size: 24 Bits/Pixel
+pixel_rate_max: 33.3 k Pixel / s
+gpio_min: 3.4V
+gpio_max: 5V
+wattage: 104.mW
+channel_current: 20.0mA
+quiescent_current: 1.0mA
+package_size: 5050,3535,2040
+pin_count: 4
+data_type: WS2811/12
+backup_data_line: false
+max_pixels_per_string: null
+release_year: 2013
+notes: WS2812 copy also available in 4 channel RGBW variant
+third_party_testing: null
+manufacturer: Opsco/Newstar
+datasheet_url: https://www.pololu.com/file/0J1233/sk6812_datasheet.pdf
+other_links: SK6812 Pixel Protocol Overview | Advatek Lighting

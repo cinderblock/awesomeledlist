@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://awesomeledlist.com/schema/connector.json",
+  "title": "Connector",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": ["string", "null"]
+    },
+    "outline": {
+      "type": ["string", "null"],
+      "description": "Shape: Rectangular, Circular, Triangular"
+    },
+    "max_current": {
+      "type": ["string", "number", "null"]
+    },
+    "max_voltage": {
+      "type": ["string", "number", "null"]
+    },
+    "ip_rating": {
+      "type": ["string", "null"]
+    },
+    "locking": {
+      "type": ["string", "null"],
+      "description": "Friction, Latching, Screw Lock, etc."
+    },
+    "panel_mount": {
+      "type": ["boolean", "null"]
+    },
+    "wire_to_wire": {
+      "type": ["boolean", "null"]
+    },
+    "pcb_mount": {
+      "type": ["string", "boolean", "null"]
+    },
+    "smallest_gauge": {
+      "type": ["string", "null"]
+    },
+    "largest_gauge": {
+      "type": ["string", "null"]
+    },
+    "pitch": {
+      "type": ["string", "null"]
+    },
+    "contact_type": {
+      "type": ["string", "null"]
+    },
+    "solder": {
+      "type": ["boolean", "null"]
+    },
+    "screw_terminal": {
+      "type": ["boolean", "null"]
+    },
+    "crimp": {
+      "type": ["boolean", "null"]
+    },
+    "idc": {
+      "type": ["boolean", "null"]
+    },
+    "board_fingers": {
+      "type": ["boolean", "null"]
+    },
+    "gendered": {
+      "type": ["boolean", "null"]
+    },
+    "min_pins": {
+      "type": ["integer", "null"]
+    },
+    "max_pins": {
+      "type": ["integer", "null"]
+    },
+    "rows": {
+      "type": ["integer", "string", "null"]
+    },
+    "year_introduced": {
+      "type": ["integer", "null"]
+    },
+    "pinout": {
+      "type": ["string", "null"]
+    },
+    "convention": {
+      "type": ["string", "null"]
+    },
+    "colors": {
+      "type": ["string", "null"]
+    },
+    "digikey_url": {
+      "type": ["string", "null"]
+    },
+    "mouser_url": {
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "url": {
+      "type": ["string", "null"]
+    },
+    "image": {
+      "type": ["string", "null"]
+    }
+  }
+}

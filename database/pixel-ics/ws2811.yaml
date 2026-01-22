@@ -1,0 +1,26 @@
+id: ws2811
+name: WS2811
+pwm_frequency: 2.0kHz
+channels: 3
+channel_bits: "8"
+aggregate_bits: null
+clocked: false
+data_bitrate: 800kHz
+pixel_data_size: 24 Bits/Pixel
+pixel_rate_max: 33.3 k Pixel / s
+output_voltage: 12V
+supply_voltage: 5V
+gpio_min: 3.0V
+gpio_max: 5V
+max_current: 19mA
+quiescent_current: 0.7mA
+package_size: SOIC8/DIP8
+pin_count: "8"
+data_type: WS2811/12
+backup_data_line: false
+max_pixels_per_string: null
+release_year: 2011
+notes: Addressable in groups (usually of 3 LEDs), common on 3 wire pixels, pucks, floods
+third_party_testing: null
+datasheet_url: https://cdn-shop.adafruit.com/datasheets/WS2811.pdf
+other_links: WS2811 Pixel Protocol Overview | Advatek Lighting

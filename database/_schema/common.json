@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://awesomeledlist.com/schema/common.json",
+  "definitions": {
+    "status": {
+      "type": "string",
+      "enum": ["active", "discontinued", "end-of-life", "unknown"]
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "price": {
+      "oneOf": [
+        { "type": "number", "minimum": 0 },
+        { "type": "string", "pattern": "^\\$?[0-9,]+\\.?[0-9]*$" },
+        { "type": "string", "enum": ["free", "varies", "contact", "unknown"] }
+      ]
+    },
+    "voltage": {
+      "oneOf": [{ "type": "number" }, { "type": "string", "pattern": "^[0-9]+\\.?[0-9]*\\s*V?$" }]
+    },
+    "current": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "string", "pattern": "^[0-9]+\\.?[0-9]*\\s*(m?A)?$" }
+      ]
+    },
+    "year": {
+      "oneOf": [{ "type": "integer", "minimum": 1990, "maximum": 2030 }, { "type": "null" }]
+    }
+  }
+}

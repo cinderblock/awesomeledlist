@@ -1,0 +1,29 @@
+id: resolume
+name: Resolume
+developer: null
+price: $350
+platforms:
+  - Windows
+  - macOS
+live: true
+designer: Yes
+visualizer: null
+protocols:
+  artnet: Both
+  sacn: null
+  dmx: Both
+  kinet: null
+  ddp: null
+gpio: null
+serial: null
+video_input: Input
+audio_input: Input
+programmatic: null
+language: null
+other_inputs: MIDI,OSC,Spout,Syphon
+other_outputs: MIDI
+integrations: null
+notes: heavily integrated with VJ features
+demo_available: null
+status: active
+url: https://resolume.com/software

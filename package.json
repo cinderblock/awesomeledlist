@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "convert": "bun scripts/convert-csv.ts",
+    "validate": "bun scripts/validate.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -25,6 +27,8 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/vite": "^4.1.18",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
@@ -32,6 +36,7 @@
     "react-dom": "^19.2.3",
     "react-router-dom": "^7.12.0",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "yaml": "^2.8.2"
   }
 }

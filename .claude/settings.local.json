@@ -10,7 +10,12 @@
       "Bash(timeout 10 bun run dev:*)",
       "Bash(bun install)",
       "Bash(timeout 8 bun run dev:*)",
-      "Bash(bun run format:*)"
+      "Bash(bun run format:*)",
+      "Bash(bun run:*)",
+      "Bash(find:*)",
+      "Bash(for dir in */)",
+      "Bash(do [ -d \"$dir\" ])",
+      "Bash([ \"$dir\" != \"_schema/\" ])"
     ]
   }
 }

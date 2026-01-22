@@ -1,0 +1,27 @@
+id: apa102
+name: APA102
+color_order: BGR
+led_voltage: 5V
+clocked: true
+vcc_voltage: 5V
+pwm_frequency: 19.2kHz
+brightness_bits: 8+5
+data_bitrate: 30MHz
+pixel_data_size: 32 Bits/Pixel
+pixel_rate_max: 0.94 M Pixel / s
+gpio_min: 3.5V
+gpio_max: 5V
+wattage: 110.mW
+channel_current: 22.0mA
+quiescent_current: 1.0mA
+package_size: 5050 & 2020
+pin_count: 6
+data_type: APA102
+backup_data_line: false
+max_pixels_per_string: ~250 - CLK sensitive
+release_year: 2014
+notes: Fast refresh, fast PWM, except extra 5 bits PWM at 400Hz
+third_party_testing: http://neon-world.com/en/product_detail.php?cid=59&id=167
+manufacturer: APA Electronics
+datasheet_url: https://cdn-shop.adafruit.com/datasheets/APA102.pdf
+other_links: APA102 Pixel Protocol Overview | Advatek Lighting

@@ -1,0 +1,27 @@
+id: ws2816
+name: WS2816
+color_order: GRB
+led_voltage: 5V
+clocked: false
+vcc_voltage: 5V
+pwm_frequency: 10.0kHz
+brightness_bits: null
+data_bitrate: 800kHz
+pixel_data_size: 48 Bits/Pixel
+pixel_rate_max: 16.7 k Pixel / s
+gpio_min: null
+gpio_max: null
+wattage: 100.mW
+channel_current: 20.0mA
+quiescent_current: 6.0mA
+package_size: "7"
+pin_count: 6
+data_type: null
+backup_data_line: true
+max_pixels_per_string: null
+release_year: 2021
+notes: null
+third_party_testing: null
+manufacturer: null
+datasheet_url: null
+other_links: null

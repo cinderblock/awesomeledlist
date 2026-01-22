@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://awesomeledlist.com/schema/pixel.json",
+  "title": "LED Pixel",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "color_order": {
+      "type": ["string", "null"],
+      "description": "RGB, GRB, BGR, RGBW, etc."
+    },
+    "led_voltage": {
+      "type": ["string", "number", "null"]
+    },
+    "clocked": {
+      "type": ["boolean", "null"]
+    },
+    "vcc_voltage": {
+      "type": ["string", "number", "null"]
+    },
+    "pwm_frequency": {
+      "type": ["string", "number", "null"]
+    },
+    "brightness_bits": {
+      "type": ["integer", "string", "null"]
+    },
+    "data_bitrate": {
+      "type": ["string", "null"]
+    },
+    "pixel_data_size": {
+      "type": ["string", "null"]
+    },
+    "pixel_rate_max": {
+      "type": ["string", "null"]
+    },
+    "gpio_min": {
+      "type": ["string", "number", "null"]
+    },
+    "gpio_max": {
+      "type": ["string", "number", "null"]
+    },
+    "wattage": {
+      "type": ["string", "number", "null"]
+    },
+    "channel_current": {
+      "type": ["string", "number", "null"]
+    },
+    "quiescent_current": {
+      "type": ["string", "number", "null"]
+    },
+    "package_size": {
+      "type": ["string", "null"],
+      "description": "5050, 3535, 2020, etc."
+    },
+    "pin_count": {
+      "type": ["integer", "null"]
+    },
+    "data_type": {
+      "type": ["string", "null"],
+      "description": "Protocol family (WS2811/12, APA102, etc.)"
+    },
+    "backup_data_line": {
+      "type": ["boolean", "null"]
+    },
+    "max_pixels_per_string": {
+      "type": ["integer", "string", "null"]
+    },
+    "release_year": {
+      "type": ["integer", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "third_party_testing": {
+      "type": ["string", "null"]
+    },
+    "manufacturer": {
+      "type": ["string", "null"]
+    },
+    "datasheet_url": {
+      "type": ["string", "null"]
+    },
+    "other_links": {
+      "type": ["string", "null"]
+    }
+  }
+}

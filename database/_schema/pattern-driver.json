@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://awesomeledlist.com/schema/pattern-driver.json",
+  "title": "Pattern Driver Software",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "developer": {
+      "type": ["string", "null"]
+    },
+    "price": {
+      "type": ["string", "number", "null"]
+    },
+    "platforms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "live": {
+      "type": ["boolean", "null"],
+      "description": "Supports live output"
+    },
+    "designer": {
+      "type": ["boolean", "string", "null"],
+      "description": "Has pattern designer"
+    },
+    "visualizer": {
+      "type": ["string", "null"],
+      "description": "2D, 3D, or none"
+    },
+    "protocols": {
+      "type": "object",
+      "properties": {
+        "artnet": { "type": ["string", "boolean", "null"] },
+        "sacn": { "type": ["string", "boolean", "null"] },
+        "dmx": { "type": ["string", "boolean", "null"] },
+        "kinet": { "type": ["string", "boolean", "null"] },
+        "ddp": { "type": ["string", "boolean", "null"] }
+      }
+    },
+    "gpio": {
+      "type": ["string", "boolean", "null"]
+    },
+    "serial": {
+      "type": ["string", "boolean", "null"]
+    },
+    "video_input": {
+      "type": ["string", "boolean", "null"]
+    },
+    "audio_input": {
+      "type": ["string", "boolean", "null"]
+    },
+    "programmatic": {
+      "type": ["string", "boolean", "null"]
+    },
+    "language": {
+      "type": ["string", "null"]
+    },
+    "other_inputs": {
+      "type": ["string", "null"]
+    },
+    "other_outputs": {
+      "type": ["string", "null"]
+    },
+    "integrations": {
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "demo_available": {
+      "type": ["string", "boolean", "null"]
+    },
+    "status": {
+      "type": ["string", "null"]
+    },
+    "url": {
+      "type": ["string", "null"]
+    }
+  }
+}
