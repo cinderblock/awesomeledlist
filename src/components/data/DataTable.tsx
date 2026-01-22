@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { useMemo, useCallback } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   Table,
   TableBody,
@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
+import { ChevronUp, ChevronDown, ExternalLink, X } from "lucide-react";
 import type { BaseEntry } from "@/lib/data";
 
 export interface Column<T> {
@@ -29,7 +29,7 @@ interface DataTableProps<T extends BaseEntry> {
   searchKeys?: (keyof T)[];
 }
 
-type SortDirection = "asc" | "desc" | null;
+type SortDirection = "asc" | "desc";
 
 export function DataTable<T extends BaseEntry>({
   data,
@@ -37,9 +37,35 @@ export function DataTable<T extends BaseEntry>({
   categoryPath,
   searchKeys = ["name"] as (keyof T)[],
 }: DataTableProps<T>) {
-  const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState<string | null>(null);
-  const [sortDir, setSortDir] = useState<SortDirection>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get("q") || "";
+  const sortKey = searchParams.get("sort") || null;
+  const sortDir = (searchParams.get("dir") as SortDirection) || null;
+
+  const updateParams = useCallback(
+    (updates: Record<string, string | null>) => {
+      setSearchParams((prev) => {
+        const next = new URLSearchParams(prev);
+        for (const [key, value] of Object.entries(updates)) {
+          if (value === null || value === "") {
+            next.delete(key);
+          } else {
+            next.set(key, value);
+          }
+        }
+        return next;
+      });
+    },
+    [setSearchParams]
+  );
+
+  const setSearch = useCallback(
+    (value: string) => {
+      updateParams({ q: value || null });
+    },
+    [updateParams]
+  );
 
   const filteredData = useMemo(() => {
     if (!search.trim()) return data;
@@ -78,16 +104,21 @@ export function DataTable<T extends BaseEntry>({
 
   const handleSort = (key: string) => {
     if (sortKey === key) {
-      if (sortDir === "asc") setSortDir("desc");
-      else if (sortDir === "desc") {
-        setSortKey(null);
-        setSortDir(null);
+      if (sortDir === "asc") {
+        updateParams({ dir: "desc" });
+      } else {
+        updateParams({ sort: null, dir: null });
       }
     } else {
-      setSortKey(key);
-      setSortDir("asc");
+      updateParams({ sort: key, dir: "asc" });
     }
   };
+
+  const clearFilters = () => {
+    updateParams({ q: null, sort: null, dir: null });
+  };
+
+  const hasFilters = search || sortKey;
 
   const getValue = (item: T, key: string): unknown => {
     const parts = key.split(".");
@@ -111,9 +142,15 @@ export function DataTable<T extends BaseEntry>({
         <span className="text-muted-foreground text-sm">
           {sortedData.length} of {data.length} entries
         </span>
+        {hasFilters && (
+          <Button variant="ghost" size="sm" onClick={clearFilters} className="h-8 px-2">
+            <X className="mr-1 h-4 w-4" />
+            Clear
+          </Button>
+        )}
       </div>
 
-      <div className="rounded-md border">
+      <div className="overflow-x-auto rounded-md border">
         <Table>
           <TableHeader>
             <TableRow>
