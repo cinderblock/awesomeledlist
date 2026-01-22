@@ -9,6 +9,7 @@ Transform the Google Sheets-based awesomeledlist.com into a modern, fast static 
 ## Phase 1: Project Initialization
 
 ### 1.1 Setup Build Tooling
+
 - Initialize project with Bun (test Vite as fallback if Bun SSG support is insufficient)
 - Configure TypeScript with strict mode
 - Setup Tailwind CSS v4 (latest stable)
@@ -17,6 +18,7 @@ Transform the Google Sheets-based awesomeledlist.com into a modern, fast static 
 - Add format scripts to package.json
 
 ### 1.2 React & UI Setup
+
 - Install React 19 (latest stable)
 - Install React Router for client-side navigation
 - Initialize shadcn/ui with Tailwind
@@ -24,6 +26,7 @@ Transform the Google Sheets-based awesomeledlist.com into a modern, fast static 
 - Configure path aliases (@/components, @/lib, etc.)
 
 ### 1.3 Project Structure
+
 ```
 ui/
 ├── src/
@@ -51,6 +54,7 @@ ui/
 ```
 
 ### 1.4 Development Experience
+
 - Configure hot module replacement (HMR)
 - Setup dev server with instant reload
 - Add TypeScript path mapping
@@ -65,6 +69,7 @@ ui/
 Create JSON Schema files for validation in `database/_schema/`:
 
 **Common fields across categories:**
+
 - `id`: Unique identifier (kebab-case)
 - `name`: Display name
 - `manufacturer`: Company/creator
@@ -76,6 +81,7 @@ Create JSON Schema files for validation in `database/_schema/`:
 **Category-specific schemas:**
 
 #### Controllers
+
 ```yaml
 # Core specs
 max_pixels: number
@@ -98,6 +104,7 @@ introduction_year: number
 ```
 
 #### Pixels (LEDs with integrated ICs)
+
 ```yaml
 color_group: string # RGB, RGBW, etc.
 led_voltage: string
@@ -124,6 +131,7 @@ datasheet_url: string
 ```
 
 #### Pixel ICs (standalone driver chips)
+
 ```yaml
 pwm_frequency: string
 channels: number
@@ -147,6 +155,7 @@ datasheet_url: string
 ```
 
 #### Pattern Drivers (software)
+
 ```yaml
 developer: string
 price: string # Free, $X, subscription
@@ -176,6 +185,7 @@ demo_available: boolean
 ```
 
 #### Connectors
+
 ```yaml
 outline: string # Rectangular, Circular
 max_current: string
@@ -205,6 +215,7 @@ mouser_url: string
 ```
 
 #### DIY MicroBoards
+
 ```yaml
 soc: string
 cpu: string
@@ -233,6 +244,7 @@ release_year: number
 ### 2.2 CSV to YAML Migration Script
 
 Create `scripts/migrate-csv.ts`:
+
 - Read CSV files from `original dataset/`
 - Parse headers and rows
 - Convert to YAML with proper types
@@ -244,6 +256,7 @@ Create `scripts/migrate-csv.ts`:
 ### 2.3 Validation Script
 
 Create `scripts/validate-database.ts`:
+
 - Load all YAML files
 - Validate against JSON schemas
 - Check for duplicate IDs
@@ -258,17 +271,20 @@ Create `scripts/validate-database.ts`:
 ### 3.1 Layout Components
 
 **Header (`components/layout/Header.tsx`)**
+
 - Site logo/title
 - Main navigation (category tabs)
 - Search input (future: global search)
 - Theme toggle (light/dark)
 
 **Sidebar (`components/layout/Sidebar.tsx`)**
+
 - Category list with counts
 - Quick filters
 - Active filter summary
 
 **Footer (`components/layout/Footer.tsx`)**
+
 - About link
 - GitHub link
 - "Edit this page" link
@@ -277,6 +293,7 @@ Create `scripts/validate-database.ts`:
 ### 3.2 Data Display Components
 
 **DataTable (`components/data/DataTable.tsx`)**
+
 - Virtual scrolling for large lists
 - Sortable columns
 - Resizable columns (optional)
@@ -285,12 +302,14 @@ Create `scripts/validate-database.ts`:
 - Responsive: collapse columns on mobile
 
 **TileGrid (`components/data/TileGrid.tsx`)**
+
 - Responsive grid layout
 - Image-first display
 - Lazy loading images
 - Skeleton loading states
 
 **FilterBar (`components/data/FilterBar.tsx`)**
+
 - Dynamic filter controls per column
 - Multi-select dropdowns
 - Range sliders for numeric
@@ -299,6 +318,7 @@ Create `scripts/validate-database.ts`:
 - Active filter chips
 
 **ViewToggle (`components/data/ViewToggle.tsx`)**
+
 - Table/Tile switch
 - Compact/Expanded switch
 - Persist preference
@@ -306,6 +326,7 @@ Create `scripts/validate-database.ts`:
 ### 3.3 Entry Components
 
 **EntryCard (`components/entry/EntryCard.tsx`)**
+
 - Compact card for tile view
 - Image thumbnail
 - Key specs preview
@@ -313,6 +334,7 @@ Create `scripts/validate-database.ts`:
 - Hover preview (optional)
 
 **EntryDetail (`components/entry/EntryDetail.tsx`)**
+
 - Full spec display
 - Image gallery
 - External links
@@ -320,6 +342,7 @@ Create `scripts/validate-database.ts`:
 - "Back to list" navigation
 
 **EntryLink (`components/entry/EntryLink.tsx`)**
+
 - Internal link component
 - Prefetch on hover
 - Highlight on current
@@ -329,6 +352,7 @@ Create `scripts/validate-database.ts`:
 ## Phase 4: Page Implementation
 
 ### 4.1 Home Page
+
 - Hero section with site description
 - Category cards with entry counts
 - Recently updated entries (if tracking)
@@ -337,6 +361,7 @@ Create `scripts/validate-database.ts`:
 ### 4.2 Category Pages
 
 Each category page:
+
 - Breadcrumb navigation
 - Category title and description
 - FilterBar
@@ -345,6 +370,7 @@ Each category page:
 - Pagination or infinite scroll
 
 Category-specific customizations:
+
 - **Controllers**: Default table view, voltage/interface filters prominent
 - **Pixels**: Default tile view with images, color filters
 - **Pattern Drivers**: Table with protocol matrix checkmarks
@@ -355,6 +381,7 @@ Category-specific customizations:
 URL structure: `/{category}/{entry-id}/`
 
 Content:
+
 - Full entry details
 - All fields from YAML
 - Image gallery (if images exist)
@@ -363,6 +390,7 @@ Content:
 - "View all in category" link
 
 ### 4.4 Static README/About Page
+
 - Site purpose
 - How to contribute
 - Data sources
@@ -375,10 +403,12 @@ Content:
 ### 5.1 Routing
 
 Use React Router with:
+
 - `BrowserRouter` for development
 - Static pre-rendering for production
 
 Routes:
+
 ```
 /                           → Home
 /controllers/               → Controllers list
@@ -392,12 +422,14 @@ Routes:
 ### 5.2 Filter State
 
 **URL Sync:**
+
 - Encode active filters in query params
 - `?voltage=12V&interface=Ethernet`
 - Parse on page load
 - Update URL on filter change (replace, not push)
 
 **localStorage Sync:**
+
 - Save filter preferences per category
 - Restore on return visit
 - Clear option in UI
@@ -405,6 +437,7 @@ Routes:
 ### 5.3 View Preferences
 
 Store in localStorage:
+
 - View mode per category (table/tile)
 - Density preference (compact/expanded)
 - Column visibility preferences
@@ -413,11 +446,13 @@ Store in localStorage:
 ### 5.4 Prefetching
 
 **Link Hover Prefetch:**
+
 - On hover over entry link, prefetch that entry's data
 - Use `<link rel="prefetch">` for static assets
 - Cache prefetched data in memory
 
 **Image Prefetch:**
+
 - On category page, prefetch visible entry images
 - On hover, prefetch that entry's full images
 
@@ -515,6 +550,7 @@ jobs:
 ## Phase 7: Polish & Optimization
 
 ### 7.1 Performance
+
 - Lazy load images with blur placeholder
 - Code split by route
 - Preload critical CSS
@@ -522,6 +558,7 @@ jobs:
 - Optimize images (WebP with fallback)
 
 ### 7.2 Accessibility
+
 - Semantic HTML
 - ARIA labels on interactive elements
 - Keyboard navigation
@@ -530,6 +567,7 @@ jobs:
 - Screen reader testing
 
 ### 7.3 SEO
+
 - Unique `<title>` per page
 - Meta descriptions
 - Open Graph tags for sharing
@@ -538,6 +576,7 @@ jobs:
 - robots.txt
 
 ### 7.4 Error Handling
+
 - 404 page with search/navigation
 - Graceful degradation if JS fails
 - Error boundaries in React
@@ -548,16 +587,17 @@ jobs:
 
 Potential cross-references to model:
 
-| From | To | Relationship |
-|------|-----|--------------|
-| Controller | Pixel IC | Supports protocol |
-| Controller | Connector | Uses connector type |
-| Pixel | Pixel IC | Contains IC |
-| Pixel | Connector | Common connector |
-| MicroBoard | Drive Library | Compatible with |
-| Pattern Driver | Controller | Outputs to |
+| From           | To            | Relationship        |
+| -------------- | ------------- | ------------------- |
+| Controller     | Pixel IC      | Supports protocol   |
+| Controller     | Connector     | Uses connector type |
+| Pixel          | Pixel IC      | Contains IC         |
+| Pixel          | Connector     | Common connector    |
+| MicroBoard     | Drive Library | Compatible with     |
+| Pattern Driver | Controller    | Outputs to          |
 
 These can be modeled as:
+
 - ID references in YAML
 - Or derived from matching field values (e.g., protocol compatibility)
 

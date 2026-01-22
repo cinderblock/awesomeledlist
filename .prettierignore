@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+.next
+.nuxt
+coverage
+bun.lockb
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+original dataset
