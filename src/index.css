@@ -166,3 +166,369 @@
     transform: translateY(0);
   }
 }
+
+/* Expanding card animation - card grows slightly and fades out (like macOS folder open) */
+.expanding-card {
+  background-color: oklch(0.97 0.015 var(--card-hue));
+  border: 1px solid oklch(0.88 0.04 var(--card-hue));
+  color: oklch(0.45 0.15 var(--card-hue));
+  box-shadow: 0 4px 12px oklch(0.5 0.1 var(--card-hue) / 0.15);
+  animation: expandAndFade 0.25s cubic-bezier(0.2, 0, 0.4, 1) forwards;
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+@keyframes expandAndFade {
+  0% {
+    left: var(--start-x);
+    top: var(--start-y);
+    width: var(--start-width);
+    height: var(--start-height);
+    opacity: 1;
+    transform: scale(1);
+    border-radius: 0.625rem;
+  }
+  100% {
+    left: calc(var(--start-x) - var(--start-width) * 0.1);
+    top: calc(var(--start-y) - var(--start-height) * 0.1);
+    width: calc(var(--start-width) * 1.2);
+    height: calc(var(--start-height) * 1.2);
+    opacity: 0;
+    transform: scale(1);
+    border-radius: 0.625rem;
+  }
+}
+
+/* Dark mode expanding card */
+.dark .expanding-card {
+  background-color: oklch(0.22 0.015 var(--card-hue));
+  border-color: oklch(0.35 0.04 var(--card-hue));
+  color: oklch(0.75 0.14 var(--card-hue));
+  box-shadow: 0 4px 12px oklch(0.3 0.08 var(--card-hue) / 0.3);
+}
+
+/* Category theme colors - set via CSS custom properties */
+:root {
+  --category-hue: 0;
+  --category-chroma: 0.18;
+}
+
+/* Light mode category colors */
+.category-theme {
+  --category-bg: oklch(0.97 0.02 var(--category-hue));
+  --category-bg-subtle: oklch(0.985 0.01 var(--category-hue));
+  --category-border: oklch(0.88 0.04 var(--category-hue));
+  --category-primary: oklch(0.55 var(--category-chroma) var(--category-hue));
+  --category-primary-hover: oklch(0.48 var(--category-chroma) var(--category-hue));
+  --category-primary-foreground: oklch(0.98 0.01 var(--category-hue));
+  --category-muted: oklch(0.65 0.08 var(--category-hue));
+  --category-accent: oklch(0.92 0.04 var(--category-hue));
+  --category-accent-foreground: oklch(0.35 0.1 var(--category-hue));
+}
+
+/* Dark mode category colors */
+.dark .category-theme {
+  --category-bg: oklch(0.22 0.02 var(--category-hue));
+  --category-bg-subtle: oklch(0.18 0.015 var(--category-hue));
+  --category-border: oklch(0.35 0.04 var(--category-hue));
+  --category-primary: oklch(0.7 var(--category-chroma) var(--category-hue));
+  --category-primary-hover: oklch(0.78 var(--category-chroma) var(--category-hue));
+  --category-primary-foreground: oklch(0.15 0.02 var(--category-hue));
+  --category-muted: oklch(0.6 0.1 var(--category-hue));
+  --category-accent: oklch(0.28 0.04 var(--category-hue));
+  --category-accent-foreground: oklch(0.85 0.08 var(--category-hue));
+}
+
+/* Category tab styling */
+.category-tab-colored {
+  background-color: oklch(0.95 0.02 var(--tab-hue));
+  color: oklch(0.4 0.12 var(--tab-hue));
+  border-bottom: 2px solid transparent;
+}
+
+.category-tab-colored:hover {
+  background-color: oklch(0.92 0.04 var(--tab-hue));
+  color: oklch(0.35 0.15 var(--tab-hue));
+}
+
+.category-tab-colored.active {
+  background-color: oklch(0.55 0.18 var(--tab-hue));
+  color: oklch(0.98 0.01 var(--tab-hue));
+  border-bottom-color: oklch(0.45 0.2 var(--tab-hue));
+}
+
+.dark .category-tab-colored {
+  background-color: oklch(0.25 0.02 var(--tab-hue));
+  color: oklch(0.7 0.1 var(--tab-hue));
+}
+
+.dark .category-tab-colored:hover {
+  background-color: oklch(0.3 0.04 var(--tab-hue));
+  color: oklch(0.8 0.12 var(--tab-hue));
+}
+
+.dark .category-tab-colored.active {
+  background-color: oklch(0.55 0.16 var(--tab-hue));
+  color: oklch(0.98 0.01 var(--tab-hue));
+  border-bottom-color: oklch(0.65 0.18 var(--tab-hue));
+}
+
+/* Category-themed table rows */
+.category-theme table tbody tr:nth-child(odd) {
+  background-color: var(--category-bg);
+}
+
+.category-theme table tbody tr:nth-child(even) {
+  background-color: var(--category-bg-subtle);
+}
+
+.category-theme table tbody tr:hover {
+  background-color: var(--category-accent) !important;
+}
+
+/* Fix rounded border corners overlapping with cell backgrounds */
+.category-theme table thead tr th:first-child {
+  border-top-left-radius: calc(var(--radius) - 3px);
+}
+
+.category-theme table thead tr th:last-child {
+  border-top-right-radius: calc(var(--radius) - 3px);
+}
+
+.category-theme table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: calc(var(--radius) - 3px);
+}
+
+.category-theme table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: calc(var(--radius) - 3px);
+}
+
+/* Category-themed cards and panels */
+.category-theme .rounded-md.border {
+  border-color: var(--category-border);
+}
+
+/* Category-themed search input */
+.category-theme input:focus {
+  border-color: var(--category-primary);
+  --tw-ring-color: var(--category-primary);
+}
+
+/* Category-themed tile cards */
+.category-theme .grid a > div {
+  border-color: var(--category-border);
+}
+
+.category-theme .grid a > div:hover {
+  background-color: var(--category-accent);
+  border-color: var(--category-primary);
+}
+
+/* Category-themed buttons */
+.category-theme button[data-state="active"],
+.category-theme button.active {
+  background-color: var(--category-primary);
+  color: var(--category-primary-foreground);
+}
+
+/* Category-themed badges */
+.category-theme .badge-category {
+  background-color: var(--category-accent);
+  color: var(--category-accent-foreground);
+  border-color: var(--category-border);
+}
+
+/* Home page category cards with rainbow colors */
+.category-card {
+  background-color: oklch(0.97 0.015 var(--card-hue));
+  border-color: oklch(0.88 0.04 var(--card-hue));
+  transition: all 0.2s ease;
+}
+
+.category-card:hover {
+  background-color: oklch(0.94 0.03 var(--card-hue));
+  border-color: oklch(0.7 0.12 var(--card-hue));
+  box-shadow: 0 4px 12px oklch(0.5 0.1 var(--card-hue) / 0.15);
+}
+
+.category-card .card-title {
+  color: oklch(0.45 0.15 var(--card-hue));
+}
+
+.category-card .card-badge {
+  background-color: oklch(0.92 0.04 var(--card-hue));
+  color: oklch(0.4 0.12 var(--card-hue));
+  border-color: oklch(0.85 0.06 var(--card-hue));
+}
+
+.category-card .card-link {
+  color: oklch(0.5 0.18 var(--card-hue));
+}
+
+.category-card .card-link:hover {
+  color: oklch(0.4 0.2 var(--card-hue));
+}
+
+/* Dark mode home page cards */
+.dark .category-card {
+  background-color: oklch(0.22 0.015 var(--card-hue));
+  border-color: oklch(0.35 0.04 var(--card-hue));
+}
+
+.dark .category-card:hover {
+  background-color: oklch(0.28 0.03 var(--card-hue));
+  border-color: oklch(0.5 0.1 var(--card-hue));
+  box-shadow: 0 4px 12px oklch(0.3 0.08 var(--card-hue) / 0.3);
+}
+
+.dark .category-card .card-title {
+  color: oklch(0.75 0.14 var(--card-hue));
+}
+
+.dark .category-card .card-badge {
+  background-color: oklch(0.3 0.04 var(--card-hue));
+  color: oklch(0.75 0.1 var(--card-hue));
+  border-color: oklch(0.4 0.06 var(--card-hue));
+}
+
+.dark .category-card .card-link {
+  color: oklch(0.7 0.16 var(--card-hue));
+}
+
+.dark .category-card .card-link:hover {
+  color: oklch(0.8 0.18 var(--card-hue));
+}
+
+/* Rainbow animated title - controlled by JS via --rainbow-hue custom property */
+:root {
+  --rainbow-hue: 0;
+}
+
+/* Legacy single-color rainbow (if not using RainbowText component) */
+.rainbow-title {
+  color: oklch(0.65 0.25 var(--rainbow-hue));
+}
+
+.dark .rainbow-title {
+  color: oklch(0.75 0.25 var(--rainbow-hue));
+}
+
+/* Per-letter rainbow coloring */
+.rainbow-letter {
+  color: oklch(0.65 0.25 var(--letter-hue, 0));
+}
+
+.dark .rainbow-letter {
+  color: oklch(0.75 0.25 var(--letter-hue, 0));
+}
+
+/* Print styles */
+@media print {
+  /* Page setup */
+  @page {
+    size: landscape;
+    margin: 0.5in;
+  }
+
+  /* Remove all background colors */
+  *,
+  *::before,
+  *::after {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure text is black for better printing (except rainbow title) */
+  body,
+  body *:not(.rainbow-title):not(.rainbow-letter) {
+    color: black !important;
+  }
+
+  /* Hide unnecessary UI elements: About, GitHub, Theme toggle, and category tabbar */
+  header nav,
+  .category-nav-visible,
+  .category-nav-hidden {
+    display: none !important;
+  }
+
+  /* Hide search, filter controls, and download buttons */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show print summary */
+  .print-summary {
+    display: block !important;
+  }
+
+  /* Remove sticky positioning */
+  header,
+  thead {
+    position: static !important;
+  }
+
+  /* Fit content to page width */
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Scale tables to fit page */
+  table {
+    width: 100% !important;
+    table-layout: auto !important;
+    font-size: 9pt !important;
+  }
+
+  /* Allow table cells to wrap and shrink */
+  th,
+  td {
+    padding: 4px 6px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Shrink badges for print */
+  .badge,
+  [class*="badge"] {
+    font-size: 7pt !important;
+    padding: 1px 4px !important;
+  }
+
+  /* Keep borders visible but lighter */
+  * {
+    border-color: #ccc !important;
+  }
+
+  /* Rainbow title keeps its color when printing */
+  .rainbow-title,
+  .rainbow-letter {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .rainbow-title {
+    color: oklch(0.65 0.25 var(--rainbow-hue)) !important;
+  }
+
+  .rainbow-letter {
+    color: oklch(0.65 0.25 var(--letter-hue, 0)) !important;
+  }
+
+  /* Tile view: show as compact list for print */
+  .grid {
+    display: block !important;
+  }
+
+  .grid > * {
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+}

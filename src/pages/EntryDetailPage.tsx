@@ -43,6 +43,7 @@ export function EntryDetailPage() {
       categoryName={category.name}
       categoryPath={category.path}
       categoryId={category.id}
+      categoryHue={category.color.hue}
     />
   );
 }

@@ -41,6 +41,7 @@ interface DetailPageProps<T extends BaseEntry> {
   categoryName: string;
   categoryPath: string;
   categoryId: string;
+  categoryHue?: number;
 }
 
 export function DetailPage<T extends BaseEntry>({
@@ -49,6 +50,7 @@ export function DetailPage<T extends BaseEntry>({
   categoryName,
   categoryPath,
   categoryId,
+  categoryHue,
 }: DetailPageProps<T>) {
   const getValue = (key: string): unknown => {
     const parts = key.split(".");
@@ -128,34 +130,59 @@ export function DetailPage<T extends BaseEntry>({
 
   const hasRelatedItems = relatedItems.length > 0 || referencingItems.length > 0;
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-6">
-        <div className="mb-4 flex items-center gap-2">
-          <Link to="/" className="text-muted-foreground hover:text-foreground text-sm">
-            Home
-          </Link>
-          <span className="text-muted-foreground">/</span>
-          <Link to={categoryPath} className="text-muted-foreground hover:text-foreground text-sm">
-            {categoryName}
-          </Link>
-          <span className="text-muted-foreground">/</span>
-          <span className="text-sm">{item.name}</span>
-        </div>
+  const wrapperStyle = categoryHue !== undefined
+    ? {
+        "--category-hue": categoryHue,
+        backgroundColor: "var(--category-bg-subtle)",
+      } as React.CSSProperties
+    : undefined;
 
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-3xl font-bold">{item.name}</h1>
-            {manufacturer && <p className="text-muted-foreground mt-1">by {manufacturer}</p>}
-          </div>
-          <Button variant="outline" size="sm" asChild>
-            <Link to={categoryPath}>
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to list
+  return (
+    <div
+      className={categoryHue !== undefined ? "category-theme min-h-[calc(100vh-7rem)]" : ""}
+      style={wrapperStyle}
+    >
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-6">
+          <div className="mb-4 flex items-center gap-2">
+            <Link to="/" className="text-muted-foreground hover:text-foreground text-sm">
+              Home
             </Link>
-          </Button>
+            <span className="text-muted-foreground">/</span>
+            <Link
+              to={categoryPath}
+              className="hover:text-foreground text-sm"
+              style={categoryHue !== undefined ? { color: "var(--category-primary)" } : { color: "var(--muted-foreground)" }}
+            >
+              {categoryName}
+            </Link>
+            <span className="text-muted-foreground">/</span>
+            <span className="text-sm">{item.name}</span>
+          </div>
+
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1
+                className="text-3xl font-bold"
+                style={categoryHue !== undefined ? { color: "var(--category-primary)" } : undefined}
+              >
+                {item.name}
+              </h1>
+              {manufacturer && <p className="text-muted-foreground mt-1">by {manufacturer}</p>}
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              style={categoryHue !== undefined ? { borderColor: "var(--category-border)" } : undefined}
+            >
+              <Link to={categoryPath}>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to list
+              </Link>
+            </Button>
+          </div>
         </div>
-      </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {images.length > 0 && (
@@ -355,6 +382,7 @@ export function DetailPage<T extends BaseEntry>({
             </CardContent>
           </Card>
         )}
+      </div>
       </div>
     </div>
   );

@@ -139,10 +139,69 @@ function renderBool(v: unknown) {
   return null;
 }
 
-// Helper for formatting numbers
-function formatNumber(v: unknown) {
-  if (v == null) return "-";
-  return Number(v).toLocaleString();
+// Helper for formatting price (right-aligned dollar amount)
+function formatPrice(v: unknown) {
+  if (v == null) return <span className="text-muted-foreground">-</span>;
+  const num = typeof v === "number" ? v : parseFloat(String(v).replace(/[^0-9.]/g, ""));
+  if (isNaN(num)) return <span className="text-muted-foreground">-</span>;
+  return (
+    <span className="tabular-nums text-right inline-block w-full">${num.toLocaleString()}</span>
+  );
+}
+
+// Helper for formatting numeric values with units (number right-aligned, unit left-aligned)
+// Pass unitWidth to set a fixed width for the unit column (e.g., "3ch" for 3 characters)
+function formatNumericWithUnit(v: unknown, unitWidth?: string) {
+  if (v == null) return <span className="text-muted-foreground">-</span>;
+
+  const str = String(v);
+
+  // Parse number and unit from string like "30 A", "5V", "800kHz", "2.0kHz"
+  const match = str.match(/^([\d.,]+)\s*(.*)$/);
+  if (!match) {
+    // No number found, return as-is
+    return <span>{str}</span>;
+  }
+
+  const [, numStr, unit] = match;
+  const num = parseFloat(numStr.replace(/,/g, ""));
+
+  if (isNaN(num)) {
+    return <span>{str}</span>;
+  }
+
+  return (
+    <span className="inline-flex w-full items-baseline justify-end">
+      <span className="tabular-nums">{num.toLocaleString()}</span>
+      {unit && (
+        <span
+          className="text-muted-foreground ml-1 inline-block text-left"
+          style={unitWidth ? { width: unitWidth } : undefined}
+        >
+          {unit}
+        </span>
+      )}
+    </span>
+  );
+}
+
+// Factory to create a formatter with a specific unit width
+function createUnitFormatter(unitWidth: string) {
+  return (v: unknown) => formatNumericWithUnit(v, unitWidth);
+}
+
+// Pre-built formatters for common unit types
+const formatVoltage = createUnitFormatter("1ch"); // V
+const formatCurrent = createUnitFormatter("2ch"); // A, mA
+const formatFrequency = createUnitFormatter("3ch"); // kHz, MHz, GHz
+const formatMemory = createUnitFormatter("5ch"); // kB, MB, GB, Mbit, eMMC
+
+// Helper for formatting plain numeric values (right-aligned, no unit)
+function formatNumericValue(v: unknown) {
+  if (v == null) return <span className="text-muted-foreground">-</span>;
+  const num = typeof v === "number" ? v : parseFloat(String(v).replace(/,/g, ""));
+  if (isNaN(num)) return <span className="text-muted-foreground">-</span>;
+  return <span className="tabular-nums text-right inline-block w-full">{num.toLocaleString()}</span>;
 }
 
 export const controllerColumns: Column<Controller>[] = [
@@ -154,10 +213,10 @@ export const controllerColumns: Column<Controller>[] = [
   },
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
-  { key: "max_pixels", label: "Max Pixels", render: formatNumber },
-  { key: "max_outputs", label: "Outputs" },
+  { key: "max_pixels", label: "Max Pixels", render: formatNumericValue, className: "text-right" },
+  { key: "max_outputs", label: "Outputs", render: formatNumericValue, className: "text-right" },
   { key: "interfaces", label: "Interfaces", render: renderBadgeArray },
-  { key: "price", label: "Price" },
+  { key: "price", label: "Price", render: formatPrice, className: "text-right" },
   { key: "wled_compatible", label: "WLED", render: renderBool },
   { key: "status", label: "Status", render: renderStatus },
 ];
@@ -172,10 +231,10 @@ export const pixelColumns: Column<Pixel>[] = [
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
   { key: "color_order", label: "Color Order" },
-  { key: "led_voltage", label: "LED Voltage" },
-  { key: "vcc_voltage", label: "VCC" },
+  { key: "led_voltage", label: "LED Voltage", render: formatVoltage, className: "text-right" },
+  { key: "vcc_voltage", label: "VCC", render: formatVoltage, className: "text-right" },
   { key: "clocked", label: "Clocked", render: renderBool },
-  { key: "data_bitrate", label: "Data Rate" },
+  { key: "data_bitrate", label: "Data Rate", render: formatFrequency, className: "text-right" },
   { key: "package_size", label: "Package" },
 ];
 
@@ -187,10 +246,10 @@ export const pixelICColumns: Column<PixelIC>[] = [
     render: (_, item) => renderLinks(item as BaseEntry, datasheetLinks),
   },
   { key: "name", label: "Name" },
-  { key: "channels", label: "Channels" },
+  { key: "channels", label: "Channels", render: formatNumericValue, className: "text-right" },
   { key: "clocked", label: "Clocked", render: renderBool },
-  { key: "pwm_frequency", label: "PWM Freq" },
-  { key: "data_bitrate", label: "Data Rate" },
+  { key: "pwm_frequency", label: "PWM Freq", render: formatFrequency, className: "text-right" },
+  { key: "data_bitrate", label: "Data Rate", render: formatFrequency, className: "text-right" },
   { key: "package_size", label: "Package" },
 ];
 
@@ -203,7 +262,7 @@ export const patternDriverColumns: Column<PatternDriver>[] = [
   },
   { key: "name", label: "Name" },
   { key: "developer", label: "Developer" },
-  { key: "price", label: "Price" },
+  { key: "price", label: "Price", render: formatPrice, className: "text-right" },
   { key: "platforms", label: "Platforms", render: renderBadgeArray },
   { key: "live", label: "Live", render: renderBool },
   { key: "designer", label: "Designer", render: renderBool },
@@ -221,8 +280,8 @@ export const connectorColumns: Column<Connector>[] = [
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
   { key: "outline", label: "Outline" },
-  { key: "max_current", label: "Max Current" },
-  { key: "max_voltage", label: "Max Voltage" },
+  { key: "max_current", label: "Max Current", render: formatCurrent, className: "text-right" },
+  { key: "max_voltage", label: "Max Voltage", render: formatVoltage, className: "text-right" },
   { key: "ip_rating", label: "IP Rating" },
   { key: "locking", label: "Locking" },
 ];
@@ -238,12 +297,12 @@ export const microboardColumns: Column<Microboard>[] = [
   { key: "manufacturer", label: "Manufacturer" },
   { key: "soc", label: "SoC" },
   { key: "cpu", label: "CPU" },
-  { key: "clock_speed", label: "Clock" },
-  { key: "flash", label: "Flash" },
-  { key: "ram", label: "RAM" },
+  { key: "clock_speed", label: "Clock", render: formatFrequency, className: "text-right" },
+  { key: "flash", label: "Flash", render: formatMemory, className: "text-right" },
+  { key: "ram", label: "RAM", render: formatMemory, className: "text-right" },
   { key: "wifi", label: "WiFi" },
   { key: "ethernet", label: "Ethernet" },
-  { key: "price", label: "Price" },
+  { key: "price", label: "Price", render: formatPrice, className: "text-right" },
 ];
 
 export const adapterColumns: Column<Adapter>[] = [
@@ -255,9 +314,9 @@ export const adapterColumns: Column<Adapter>[] = [
   },
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
-  { key: "max_channels", label: "Channels" },
+  { key: "max_channels", label: "Channels", render: formatNumericValue, className: "text-right" },
   { key: "pixel_types", label: "Pixel Types" },
-  { key: "price", label: "Price" },
+  { key: "price", label: "Price", render: formatPrice, className: "text-right" },
 ];
 
 export const driveLibraryColumns: Column<DriveLibrary>[] = [
@@ -297,7 +356,7 @@ export const commercialSystemColumns: Column<CommercialSystem>[] = [
   },
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
-  { key: "pixels_per_run", label: "Pixels/Run", render: formatNumber },
+  { key: "pixels_per_run", label: "Pixels/Run", render: formatNumericValue, className: "text-right" },
   { key: "color_type", label: "Color Type" },
   { key: "price_range", label: "Price Range" },
 ];
@@ -312,8 +371,8 @@ export const levelConverterColumns: Column<BaseEntry>[] = [
   },
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
-  { key: "max_channels", label: "Channels" },
-  { key: "price", label: "Price" },
+  { key: "max_channels", label: "Channels", render: formatNumericValue, className: "text-right" },
+  { key: "price", label: "Price", render: formatPrice, className: "text-right" },
 ];
 
 export const pixelDecoderColumns: Column<BaseEntry>[] = [
@@ -325,10 +384,10 @@ export const pixelDecoderColumns: Column<BaseEntry>[] = [
   },
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
-  { key: "max_channels", label: "Channels" },
+  { key: "max_channels", label: "Channels", render: formatNumericValue, className: "text-right" },
   { key: "pixel_types", label: "Pixel Types" },
-  { key: "outputs", label: "Outputs" },
-  { key: "price", label: "Price" },
+  { key: "outputs", label: "Outputs", render: formatNumericValue, className: "text-right" },
+  { key: "price", label: "Price", render: formatPrice, className: "text-right" },
 ];
 
 // Map category IDs to their column configurations

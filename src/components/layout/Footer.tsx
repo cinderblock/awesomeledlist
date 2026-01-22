@@ -1,9 +1,11 @@
+import { RainbowText } from "@/components/RainbowText";
+
 export function Footer() {
   return (
-    <footer className="border-border bg-muted/50 border-t py-6">
+    <footer className="border-border bg-muted/50 border-t py-6 select-none">
       <div className="container mx-auto px-4 text-center">
         <p className="text-muted-foreground text-sm">
-          Awesome LED List is a community resource. Data is provided as-is with no guarantee of
+          <RainbowText>Awesome LED List</RainbowText> is a community resource. Data is provided as-is with no guarantee of
           accuracy.
         </p>
         <p className="text-muted-foreground mt-2 text-sm">

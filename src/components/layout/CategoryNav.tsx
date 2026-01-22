@@ -13,6 +13,7 @@ export function CategoryNav({ className }: CategoryNavProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
+
   const isHome = location.pathname === "/" || location.pathname === "";
 
   // Get current category from path
@@ -57,7 +58,7 @@ export function CategoryNav({ className }: CategoryNavProps) {
   return (
     <nav
       className={cn(
-        "relative flex items-center border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+        "relative flex items-center border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 select-none",
         isHome ? "category-nav-hidden" : "category-nav-visible",
         className
       )}
@@ -89,14 +90,12 @@ export function CategoryNav({ className }: CategoryNavProps) {
                 to={category.path}
                 data-category={category.id}
                 className={cn(
-                  "category-tab whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all",
-                  "hover:bg-muted hover:text-foreground",
-                  isActive
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground"
+                  "category-tab category-tab-colored whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all",
+                  isActive && "active shadow-sm"
                 )}
                 style={{
                   "--tab-index": index,
+                  "--tab-hue": category.color.hue,
                 } as React.CSSProperties}
               >
                 {category.name}

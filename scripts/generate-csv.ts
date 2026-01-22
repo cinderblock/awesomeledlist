@@ -1,17 +1,19 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import tailwindcss from "@tailwindcss/vite";
-import { resolve } from "path";
-import { copyFileSync, existsSync, readdirSync, mkdirSync, statSync, writeFileSync, readFileSync } from "fs";
+/**
+ * Generate static CSV files for each category
+ * These are pre-built CSVs with all data, accessible at /{category}.csv
+ */
+
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync } from "fs";
+import { resolve, join } from "path";
 import { parse } from "yaml";
 
-// CSV generation utilities
 interface BaseEntry {
   id: string;
   name: string;
   [key: string]: unknown;
 }
 
+// Column configurations for each category (matching src/lib/columns.tsx)
 const categoryColumns: Record<string, { key: string; label: string }[]> = {
   controllers: [
     { key: "name", label: "Name" },
@@ -132,13 +134,24 @@ const categoryColumns: Record<string, { key: string; label: string }[]> = {
 };
 
 function escapeCSVValue(value: unknown): string {
-  if (value == null) return "";
-  if (Array.isArray(value)) value = value.join(", ");
-  if (typeof value === "boolean") return value ? "Yes" : "No";
+  if (value == null) {
+    return "";
+  }
+
+  if (Array.isArray(value)) {
+    value = value.join(", ");
+  }
+
+  if (typeof value === "boolean") {
+    return value ? "Yes" : "No";
+  }
+
   const str = String(value);
+
   if (str.includes(",") || str.includes("\n") || str.includes('"') || str.includes("\r")) {
     return `"${str.replace(/"/g, '""')}"`;
   }
+
   return str;
 }
 
@@ -153,121 +166,90 @@ function getValue(item: BaseEntry, key: string): unknown {
 }
 
 function dataToCSV(data: BaseEntry[], columns: { key: string; label: string }[]): string {
+  // BOM for Excel compatibility
   const bom = "\uFEFF";
+
   const headers = columns.map((col) => escapeCSVValue(col.label));
   const headerRow = headers.join(",");
+
   const dataRows = data.map((item) => {
-    const values = columns.map((col) => escapeCSVValue(getValue(item, col.key)));
+    const values = columns.map((col) => {
+      const value = getValue(item, col.key);
+      return escapeCSVValue(value);
+    });
     return values.join(",");
   });
+
   return bom + [headerRow, ...dataRows].join("\n");
 }
 
 function loadCategoryData(databaseDir: string, categoryId: string): BaseEntry[] {
-  const categoryDir = resolve(databaseDir, categoryId);
-  if (!existsSync(categoryDir)) return [];
+  const categoryDir = join(databaseDir, categoryId);
+  if (!existsSync(categoryDir)) {
+    return [];
+  }
 
   const entries: BaseEntry[] = [];
   const files = readdirSync(categoryDir).filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"));
 
   for (const file of files) {
-    const filePath = resolve(categoryDir, file);
+    const filePath = join(categoryDir, file);
     try {
       const content = readFileSync(filePath, "utf-8");
       const parsed = parse(content) as BaseEntry;
-      if (parsed && parsed.id) entries.push(parsed);
+      if (parsed && parsed.id) {
+        entries.push(parsed);
+      }
     } catch (e) {
       console.warn(`Failed to parse ${filePath}:`, e);
     }
   }
 
+  // Sort by name
   entries.sort((a, b) => a.name.localeCompare(b.name));
   return entries;
 }
 
-function generateCategoryCSVs(databaseDir: string, distDir: string) {
+function main() {
+  const projectRoot = resolve(__dirname, "..");
+  const databaseDir = join(projectRoot, "database");
+  const outputDir = join(projectRoot, "dist");
+
+  // Ensure output directory exists
+  if (!existsSync(outputDir)) {
+    mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Get all category directories
   const categories = readdirSync(databaseDir).filter((d) => {
     if (d.startsWith("_")) return false;
-    return statSync(resolve(databaseDir, d)).isDirectory();
+    const stat = statSync(join(databaseDir, d));
+    return stat.isDirectory();
   });
 
-  console.log("Generating CSV files...");
+  console.log("Generating CSV files for categories...");
+
   for (const categoryId of categories) {
     const columns = categoryColumns[categoryId];
-    if (!columns) continue;
+    if (!columns) {
+      console.warn(`No column config for ${categoryId}, skipping...`);
+      continue;
+    }
 
     const data = loadCategoryData(databaseDir, categoryId);
-    if (data.length === 0) continue;
+    if (data.length === 0) {
+      console.warn(`No data for ${categoryId}, skipping...`);
+      continue;
+    }
 
     const csv = dataToCSV(data, columns);
-    writeFileSync(resolve(distDir, `${categoryId}.csv`), csv, "utf-8");
+    const outputPath = join(outputDir, `${categoryId}.csv`);
+    writeFileSync(outputPath, csv, "utf-8");
+
     console.log(`  ✓ ${categoryId}.csv (${data.length} entries)`);
   }
+
+  console.log("Done!");
 }
 
-// Recursively copy directory
-function copyDirSync(src: string, dest: string) {
-  if (!existsSync(src)) return;
-  if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
-
-  const entries = readdirSync(src);
-  for (const entry of entries) {
-    const srcPath = resolve(src, entry);
-    const destPath = resolve(dest, entry);
-    const stat = statSync(srcPath);
-
-    if (stat.isDirectory()) {
-      copyDirSync(srcPath, destPath);
-    } else {
-      copyFileSync(srcPath, destPath);
-    }
-  }
-}
-
-export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    // Copy index.html to 404.html for GitHub Pages SPA routing
-    // and copy database images to dist
-    {
-      name: "post-build-copy",
-      closeBundle() {
-        const distDir = resolve(__dirname, "dist");
-        const indexPath = resolve(distDir, "index.html");
-        const notFoundPath = resolve(distDir, "404.html");
-
-        // Copy 404.html
-        if (existsSync(indexPath)) {
-          copyFileSync(indexPath, notFoundPath);
-        }
-
-        // Copy database images to dist/images
-        const databaseDir = resolve(__dirname, "database");
-
-        // Generate static CSV files for each category
-        generateCategoryCSVs(databaseDir, distDir);
-        const categories = readdirSync(databaseDir).filter(
-          (d) => !d.startsWith("_") && statSync(resolve(databaseDir, d)).isDirectory()
-        );
-
-        for (const category of categories) {
-          const imagesDir = resolve(databaseDir, category, "images");
-          if (existsSync(imagesDir)) {
-            const destDir = resolve(distDir, "images", category);
-            copyDirSync(imagesDir, destDir);
-          }
-        }
-      },
-    },
-  ],
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-  },
-});
+main();

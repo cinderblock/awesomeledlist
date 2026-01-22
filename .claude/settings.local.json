@@ -29,7 +29,17 @@
       "Bash(do grep -l \"^manufacturer:\" \"$file\")",
       "Bash(done)",
       "Bash(timeout:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(xargs cat:*)",
+      "Bash(git stash:*)",
+      "Bash(npx tsc:*)",
+      "Bash(bun dev:*)",
+      "Bash(TEST_URL=http://localhost:5174 bun test:*)",
+      "Bash(bun test:*)",
+      "Bash(set HEADLESS=false)",
+      "Bash($env:HEADLESS=\"false\")",
+      "Bash(gh auth status:*)",
+      "Bash(gh repo create:*)"
     ]
   }
 }

@@ -3,8 +3,9 @@
  * Automatically detects filter type and unique values from data
  */
 
-import { useMemo } from "react";
+import { useMemo, useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -12,14 +13,24 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Filter } from "lucide-react";
 import type { BaseEntry } from "@/lib/data";
 
-export type ColumnFilterType = "boolean" | "select" | "multiselect";
+export type ColumnFilterType = "boolean" | "select" | "multiselect" | "range";
 
 export interface ColumnFilterValue {
   type: ColumnFilterType;
   values: string[];
+}
+
+export interface RangeFilterValue {
+  min: number | null;
+  max: number | null;
 }
 
 interface ColumnFilterProps {
@@ -27,6 +38,9 @@ interface ColumnFilterProps {
   data: BaseEntry[];
   currentFilter: string[] | null;
   onFilterChange: (key: string, values: string[] | null) => void;
+  // For range filters
+  currentRangeFilter?: RangeFilterValue | null;
+  onRangeFilterChange?: (key: string, range: RangeFilterValue | null) => void;
 }
 
 // Parse a value with units into a numeric value for sorting
@@ -144,11 +158,55 @@ function normalizeAndSplitValue(value: string): string[] {
   return expanded;
 }
 
+export interface ColumnAnalysis {
+  type: ColumnFilterType;
+  values: string[];
+  // For range filters
+  min?: number;
+  max?: number;
+}
+
+// Check if a column is primarily numeric (for range filter detection)
+function isNumericColumn<T extends BaseEntry>(data: T[], key: string): { isNumeric: boolean; min: number; max: number } {
+  let numericCount = 0;
+  let nonNullCount = 0;
+  let min = Infinity;
+  let max = -Infinity;
+
+  for (const item of data) {
+    const value = item[key];
+    if (value == null) continue;
+    nonNullCount++;
+
+    if (typeof value === "number") {
+      numericCount++;
+      if (value < min) min = value;
+      if (value > max) max = value;
+    } else if (typeof value === "string") {
+      const num = parseFloat(value);
+      if (!isNaN(num) && /^-?\d+(\.\d+)?$/.test(value.trim())) {
+        numericCount++;
+        if (num < min) min = num;
+        if (num > max) max = num;
+      }
+    }
+  }
+
+  // Consider it numeric if at least 80% of non-null values are numbers
+  // and there are more than 5 unique values (otherwise multiselect is better)
+  const isNumeric = nonNullCount > 0 && numericCount / nonNullCount >= 0.8;
+  return {
+    isNumeric,
+    min: min === Infinity ? 0 : min,
+    max: max === -Infinity ? 0 : max
+  };
+}
+
 // Extract unique values and determine filter type for a column
 export function analyzeColumn<T extends BaseEntry>(
   data: T[],
   key: string
-): { type: ColumnFilterType; values: string[] } | null {
+): ColumnAnalysis | null {
   const values = new Map<string, number>();
   let hasBoolean = false;
   let hasTrueValue = false;
@@ -199,10 +257,128 @@ export function analyzeColumn<T extends BaseEntry>(
     return { type: "boolean", values: ["Yes", "No"] };
   }
 
+  // Check if this should be a range filter (numeric column with many unique values)
+  const numericCheck = isNumericColumn(data, key);
+  if (numericCheck.isNumeric && values.size > 10) {
+    return {
+      type: "range",
+      values: [],
+      min: numericCheck.min,
+      max: numericCheck.max
+    };
+  }
+
   // Sort values using smart comparison (handles units)
   const sortedValues = Array.from(values.keys()).sort(compareValues);
 
   return { type: "multiselect", values: sortedValues };
+}
+
+// NumericRangeFilter component for min/max filtering
+interface NumericRangeFilterProps {
+  columnKey: string;
+  min: number;
+  max: number;
+  currentRange: RangeFilterValue | null;
+  onRangeChange: (key: string, range: RangeFilterValue | null) => void;
+}
+
+function NumericRangeFilter({
+  columnKey,
+  min: dataMin,
+  max: dataMax,
+  currentRange,
+  onRangeChange,
+}: NumericRangeFilterProps) {
+  const [localMin, setLocalMin] = useState<string>(
+    currentRange?.min != null ? String(currentRange.min) : ""
+  );
+  const [localMax, setLocalMax] = useState<string>(
+    currentRange?.max != null ? String(currentRange.max) : ""
+  );
+
+  const hasActiveFilter = currentRange?.min != null || currentRange?.max != null;
+
+  const handleApply = useCallback(() => {
+    const minVal = localMin.trim() !== "" ? parseFloat(localMin) : null;
+    const maxVal = localMax.trim() !== "" ? parseFloat(localMax) : null;
+
+    if (minVal === null && maxVal === null) {
+      onRangeChange(columnKey, null);
+    } else {
+      onRangeChange(columnKey, { min: minVal, max: maxVal });
+    }
+  }, [columnKey, localMin, localMax, onRangeChange]);
+
+  const handleClear = useCallback(() => {
+    setLocalMin("");
+    setLocalMax("");
+    onRangeChange(columnKey, null);
+  }, [columnKey, onRangeChange]);
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        handleApply();
+      }
+    },
+    [handleApply]
+  );
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          className={`h-6 w-6 p-0 ${hasActiveFilter ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
+        >
+          <Filter className={`h-3 w-3 ${hasActiveFilter ? "fill-current" : ""}`} />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent align="start" className="w-56 p-3">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-muted-foreground text-xs font-medium">
+              Range: {dataMin.toLocaleString()} - {dataMax.toLocaleString()}
+            </span>
+            {hasActiveFilter && (
+              <Button variant="ghost" size="sm" className="h-6 px-2 text-xs" onClick={handleClear}>
+                Clear
+              </Button>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="flex-1">
+              <label className="text-muted-foreground mb-1 block text-xs">Min</label>
+              <Input
+                type="number"
+                placeholder={String(dataMin)}
+                value={localMin}
+                onChange={(e) => setLocalMin(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="h-8"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="text-muted-foreground mb-1 block text-xs">Max</label>
+              <Input
+                type="number"
+                placeholder={String(dataMax)}
+                value={localMax}
+                onChange={(e) => setLocalMax(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="h-8"
+              />
+            </div>
+          </div>
+          <Button size="sm" className="w-full" onClick={handleApply}>
+            Apply
+          </Button>
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
 }
 
 export function ColumnFilter({
@@ -210,12 +386,27 @@ export function ColumnFilter({
   data,
   currentFilter,
   onFilterChange,
+  currentRangeFilter,
+  onRangeFilterChange,
 }: ColumnFilterProps) {
   const analysis = useMemo(() => analyzeColumn(data, columnKey), [data, columnKey]);
 
   // Don't render if no filter needed
   if (!analysis) {
     return null;
+  }
+
+  // Use NumericRangeFilter for range type columns
+  if (analysis.type === "range" && onRangeFilterChange) {
+    return (
+      <NumericRangeFilter
+        columnKey={columnKey}
+        min={analysis.min ?? 0}
+        max={analysis.max ?? 0}
+        currentRange={currentRangeFilter ?? null}
+        onRangeChange={onRangeFilterChange}
+      />
+    );
   }
 
   const { values } = analysis;
@@ -282,12 +473,30 @@ export function ColumnFilter({
 }
 
 // Apply column filters to data
-// Now handles normalized/split values when matching
+// Now handles normalized/split values when matching and range filters
 export function applyColumnFilters<T extends BaseEntry>(
   data: T[],
-  filters: Record<string, string[] | null>
+  filters: Record<string, string[] | null>,
+  rangeFilters?: Record<string, RangeFilterValue | null>
 ): T[] {
   return data.filter((item) => {
+    // First apply range filters
+    if (rangeFilters) {
+      for (const [key, range] of Object.entries(rangeFilters)) {
+        if (!range || (range.min === null && range.max === null)) continue;
+
+        const itemValue = item[key];
+        if (itemValue == null) return false;
+
+        const numValue = typeof itemValue === "number" ? itemValue : parseFloat(String(itemValue));
+        if (isNaN(numValue)) return false;
+
+        if (range.min !== null && numValue < range.min) return false;
+        if (range.max !== null && numValue > range.max) return false;
+      }
+    }
+
+    // Then apply regular filters
     for (const [key, filterValues] of Object.entries(filters)) {
       if (!filterValues || filterValues.length === 0) continue;
 
@@ -367,6 +576,53 @@ export function serializeColumnFiltersToURL(
     const paramKey = `f_${key}`;
     if (values && values.length > 0) {
       params[paramKey] = values.join(",");
+    } else {
+      params[paramKey] = null;
+    }
+  }
+
+  return params;
+}
+
+// Parse range filters from URL
+// Format: r_<columnKey>=min,max (e.g., r_max_pixels=1000,5000)
+export function parseRangeFiltersFromURL(
+  searchParams: URLSearchParams,
+  columnKeys: string[]
+): Record<string, RangeFilterValue | null> {
+  const filters: Record<string, RangeFilterValue | null> = {};
+
+  for (const key of columnKeys) {
+    const value = searchParams.get(`r_${key}`);
+    if (value) {
+      const parts = value.split(",");
+      const min = parts[0] && parts[0] !== "" ? parseFloat(parts[0]) : null;
+      const max = parts[1] && parts[1] !== "" ? parseFloat(parts[1]) : null;
+
+      if (min !== null || max !== null) {
+        filters[key] = {
+          min: min !== null && !isNaN(min) ? min : null,
+          max: max !== null && !isNaN(max) ? max : null,
+        };
+      }
+    }
+  }
+
+  return filters;
+}
+
+// Serialize range filters to URL params
+export function serializeRangeFiltersToURL(
+  filters: Record<string, RangeFilterValue | null>
+): Record<string, string | null> {
+  const params: Record<string, string | null> = {};
+
+  for (const [key, range] of Object.entries(filters)) {
+    const paramKey = `r_${key}`;
+    if (range && (range.min !== null || range.max !== null)) {
+      const minStr = range.min !== null ? String(range.min) : "";
+      const maxStr = range.max !== null ? String(range.max) : "";
+      params[paramKey] = `${minStr},${maxStr}`;
     } else {
       params[paramKey] = null;
     }

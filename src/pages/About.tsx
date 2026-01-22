@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { RainbowText } from "@/components/RainbowText";
 
 export function About() {
   return (
@@ -11,11 +12,11 @@ export function About() {
         <span className="text-sm">About</span>
       </div>
 
-      <h1 className="mb-6 text-3xl font-bold">About Awesome LED List</h1>
+      <h1 className="mb-6 text-3xl font-bold">About <RainbowText>Awesome LED List</RainbowText></h1>
 
       <div className="prose prose-neutral dark:prose-invert max-w-none">
         <p className="text-lg">
-          Awesome LED List is a community-maintained reference for the addressable LED ecosystem.
+          <RainbowText>Awesome LED List</RainbowText> is a community-maintained reference for the addressable LED ecosystem.
           Our goal is to help makers, installers, and enthusiasts find the right products for their
           projects.
         </p>
