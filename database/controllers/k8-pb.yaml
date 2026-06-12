@@ -2,14 +2,19 @@ id: k8-pb
 name: K8-PB
 manufacturer: KulpLights, LLC
 max_pixels: 57600
-price: 98
+price: 90
 max_outputs: 36
 interfaces:
   - Ethernet
-storage: Yes
+  - WiFi
+  - USB
+protocols:
+  - FPP
+storage: microSD
 standalone: true
+requires_host: PocketBeagle 2
 pixel_types: async
-max_voltage: 12
+max_voltage: 18
 max_current: 30
 buffered: true
 output_connectors: Phoenix Screw/RJ45
@@ -18,7 +23,12 @@ waterproof: null
 auxiliary_outputs: DMX
 wled_compatible: null
 differential_outputs: 12
-notes: 12 channels require differential receivers. eFuses, Current Sensing, Pixel Counting
+notes:
+  PocketBeagle 2 cape running FPP (network via USB Ethernet/WiFi adapter on
+  the host; not compatible with PocketBeagle 1). 8 local fused ports, 3 RJ45
+  differential ports adding 12 strings, and a 16-string expansion header.
+  Accepts 5-18V input automatically (vendor page; previously listed as 12V).
+  eFuses with current monitoring, pixel counting, RTC, OLED.
 power_features:
   - eFuse protection
   - Current sensing
@@ -35,3 +45,5 @@ status: active
 url: https://kulplights.com/product/k8-pb/
 related_connectors:
   - rj45
+related_microboards:
+  - pocketbeagle
