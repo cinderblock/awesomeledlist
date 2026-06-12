@@ -213,11 +213,8 @@ function createUnitFormatter(unitWidth: string, schemaUnit?: string) {
   return (v: unknown) => formatNumericWithUnit(v, unitWidth, schemaUnit);
 }
 
-// Pre-built formatters for common unit types
-const formatVoltage = createUnitFormatter("1ch"); // V
-const formatCurrent = createUnitFormatter("2ch"); // A, mA
-const formatFrequency = createUnitFormatter("3ch"); // kHz, MHz, GHz
-const formatMemory = createUnitFormatter("5ch"); // kB, MB, GB, Mbit, eMMC
+// Pre-built formatter for string values with embedded units (kB, MB, GB, Mbit, eMMC)
+const formatMemory = createUnitFormatter("5ch");
 
 // Helper for formatting plain numeric values (right-aligned, no unit)
 function formatNumericValue(v: unknown) {
