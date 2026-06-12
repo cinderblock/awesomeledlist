@@ -4,11 +4,12 @@ manufacturer: Microcyb
 max_pixels: 6400
 price: 22
 max_outputs: 4
-interfaces: []
+interfaces:
+  - Serial
 protocols:
   - DMX
 storage: null
-standalone: true
+standalone: false
 pixel_types: both
 max_voltage: 12
 max_current: null
@@ -18,8 +19,10 @@ outputs: Multiple
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: null
+notes: "Not a standalone controller: receives differential pixel data over an RJ45 cable (150+ ft) from a host pixel controller (Kulp/Falcon K16, K32, W16, etc.). 4 ports, up to 1600 pixels per port at 20 FPS (800 at 40 FPS), 5/12V selectable."
 warranty: null
 release_year: null
 status: unknown
 url: https://microcyb.com
+related_connectors:
+  - rj45
