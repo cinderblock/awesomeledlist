@@ -1,0 +1,36 @@
+id: hinkspix-pro-v3
+name: HinksPix Pro V3
+manufacturer: HolidayCoro
+max_pixels: 81920
+price: 449.95
+max_outputs: 80
+interfaces:
+  - Ethernet
+protocols:
+  - ArtNet
+  - sACN
+  - DDP
+storage: microSD
+standalone: true
+pixel_types: null
+max_voltage: null
+max_current: null
+buffered: null
+output_connectors: RJ45
+outputs: 20 long-range jacks, 4 ports per jack via SMART receivers (80 ports)
+waterproof: null
+auxiliary_outputs: RS-485 output ports (DMX)
+wled_compatible: null
+notes:
+  Long-range-only architecture - all pixels connect through differential
+  SMART receivers over CAT5, no local pixel ports. 1024 pixels per port at
+  20 FPS. Full SD playback using xLights; works with Light-O-Rama S5/S6,
+  Resolume, Madrix, or anything speaking ArtNet/sACN/E1.31/DDP. Ready2Run
+  price includes 350W 12V PSU, HC-2500 enclosure, 32GB microSD, and 5 Flex
+  expansion boards. Operating range -20C to +70C.
+warranty: 30 days (1yr/3yr optional)
+release_year: null
+status: active
+url: https://www.holidaycoro.com/HinksPix-Pro-V3-CPU-20-Long-Range-Jacks-80-Ports-p/952-6.htm
+related_connectors:
+  - rj45
