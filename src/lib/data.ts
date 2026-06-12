@@ -157,6 +157,8 @@ export interface Pixel extends BaseEntry {
   manufacturer: string | null;
   notes: string | null;
   datasheet_url: string | null;
+  /** IDs of pixel-ics entries this pixel is built on or protocol-compatible with */
+  related_pixel_ics?: string[] | null;
 }
 
 export interface PixelIC extends BaseEntry {
@@ -276,6 +278,9 @@ export function getRelatedItemConfigs(categoryId: string): RelatedItemConfig[] {
     ],
     "pixel-decoders": [
       { field: "related_connectors", targetCategory: "connectors", label: "Connectors" },
+    ],
+    pixels: [
+      { field: "related_pixel_ics", targetCategory: "pixel-ics", label: "Pixel IC / Protocol" },
     ],
     microboards: [
       { field: "related_adapters", targetCategory: "adapters", label: "Compatible Adapters" },

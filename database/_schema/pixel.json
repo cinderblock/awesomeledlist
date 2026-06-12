@@ -187,6 +187,11 @@
     "datasheet_mirror": {
       "$ref": "common.json#/definitions/datasheet_mirror"
     },
+    "related_pixel_ics": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "IDs of pixel-ics entries this pixel is built on or protocol-compatible with"
+    },
     "other_links": {
       "type": ["array", "null"],
       "items": { "type": "string" },
