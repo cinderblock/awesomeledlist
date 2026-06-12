@@ -2,7 +2,7 @@ id: espartstick
 name: ESPArtstick
 manufacturer: null
 max_channels: 6
-pixel_types: Single
+pixel_types: async
 max_voltage: 5
 max_current: null
 parent: Wemos Dx Mini (ESP32/ESP8266)

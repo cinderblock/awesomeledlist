@@ -2,7 +2,7 @@ id: 4-channel-differntial-transmitter
 name: 4 Channel Differntial Transmitter
 manufacturer: Wizard of Wire
 max_channels: 4
-pixel_types: single
+pixel_types: async
 max_voltage: 12
 max_current: null
 parent: Pixel Data

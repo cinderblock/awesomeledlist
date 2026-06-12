@@ -2,7 +2,7 @@ id: spixels-board
 name: SPIxels Board
 manufacturer: null
 max_channels: 16
-pixel_types: Clocked
+pixel_types: clocked
 max_voltage: 5
 max_current: null
 parent: Raspberry Pi

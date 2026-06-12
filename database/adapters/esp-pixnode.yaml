@@ -2,7 +2,7 @@ id: esp-pixnode
 name: ESP Pixnode
 manufacturer: null
 max_channels: 6
-pixel_types: Single
+pixel_types: async
 max_voltage: 5
 max_current: null
 parent: NodeMCU (ESP8266)

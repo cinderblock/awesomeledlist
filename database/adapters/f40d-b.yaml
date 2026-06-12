@@ -2,7 +2,7 @@ id: f40d-b
 name: F40D-B
 manufacturer: Kulp Lights
 max_channels: 40
-pixel_types: Single
+pixel_types: async
 max_voltage: 5
 max_current: null
 parent: BeagleBone

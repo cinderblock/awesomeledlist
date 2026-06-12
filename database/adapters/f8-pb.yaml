@@ -2,7 +2,7 @@ id: f8-pb
 name: F8-PB
 manufacturer: Kulp Lights
 max_channels: 8
-pixel_types: Single
+pixel_types: async
 max_voltage: 12
 max_current: null
 parent: BeagleBone

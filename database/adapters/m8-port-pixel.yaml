@@ -2,7 +2,7 @@ id: m8-port-pixel
 name: M8 Port Pixel
 manufacturer: Microcyb
 max_channels: 75
-pixel_types: Single
+pixel_types: async
 max_voltage: 12
 max_current: 30
 parent: Raspberry Pi 3B+ or above

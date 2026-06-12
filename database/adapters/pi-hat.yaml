@@ -2,7 +2,7 @@ id: pi-hat
 name: Pi Hat
 manufacturer: Microcyb
 max_channels: 3200
-pixel_types: "2"
+pixel_types: null
 max_voltage: null
 max_current: null
 parent: Yes

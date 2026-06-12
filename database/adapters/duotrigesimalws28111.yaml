@@ -2,7 +2,7 @@ id: duotrigesimalws28111
 name: DuotrigesimalWS28111
 manufacturer: Brian Amos
 max_channels: 32
-pixel_types: Single
+pixel_types: async
 max_voltage: null
 max_current: null
 parent: Teensy 4.1

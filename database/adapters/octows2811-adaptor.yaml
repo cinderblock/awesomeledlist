@@ -2,7 +2,7 @@ id: octows2811-adaptor
 name: OctoWS2811 Adaptor
 manufacturer: PJRC
 max_channels: 8
-pixel_types: Single
+pixel_types: async
 max_voltage: 5
 max_current: null
 parent: Teensy 3.2

@@ -2,7 +2,7 @@ id: 8x-led-shield
 name: 8x LED Shield
 manufacturer: Evil Genius Labs
 max_channels: 8
-pixel_types: Single or Clocked
+pixel_types: both
 max_voltage: 5
 max_current: null
 parent: Adafruit Feather

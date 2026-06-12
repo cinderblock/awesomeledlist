@@ -2,7 +2,7 @@ id: 6x-smd-led-shield
 name: 6x SMD LED Shield
 manufacturer: Evil Genius Labs
 max_channels: 6
-pixel_types: Single or Clocked
+pixel_types: both
 max_voltage: 5
 max_current: null
 parent: Wemos Dx Mini (ESP32/ESP8266)

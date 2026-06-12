@@ -2,7 +2,7 @@ id: esp-level-shifter
 name: ESP Level Shifter
 manufacturer: null
 max_channels: 1
-pixel_types: Single
+pixel_types: async
 max_voltage: 5
 max_current: null
 parent: ESP-01 (ESP8266)

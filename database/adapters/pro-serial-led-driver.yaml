@@ -2,7 +2,7 @@ id: pro-serial-led-driver
 name: Pro Serial LED Driver
 manufacturer: ElectroMage
 max_channels: 8
-pixel_types: Single (8) or Clocked (6)
+pixel_types: both
 max_voltage: 12
 max_current: 15
 parent: Any UART / Serial
@@ -10,5 +10,5 @@ price: 49
 output_connectors: Phoenix Screw
 outputs: Both
 diy_or_ots: OTS
-notes: null
+notes: 8 outputs for async pixels or 6 when driving clocked pixels
 url: https://www.tindie.com/products/electromage/electromage-pro-5-12v-8x-ws2812apa102-led-driver/

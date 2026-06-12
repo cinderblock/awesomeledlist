@@ -2,7 +2,7 @@ id: m4-port-pixel
 name: M4 Port Pixel
 manufacturer: Microcyb
 max_channels: 37
-pixel_types: Single
+pixel_types: async
 max_voltage: 12
 max_current: 30
 parent: Raspberry Pi 3B+ or above

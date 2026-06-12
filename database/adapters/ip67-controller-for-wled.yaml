@@ -2,7 +2,7 @@ id: ip67-controller-for-wled
 name: IP67 Controller for WLED
 manufacturer: SerKo
 max_channels: 2
-pixel_types: Single+Clocked
+pixel_types: both
 max_voltage: 12
 max_current: 10
 parent: ESP-07S module

@@ -2,7 +2,7 @@ id: sp901e-pixel-data-distributor
 name: SP901E Pixel Data Distributor
 manufacturer: Generic
 max_channels: 8
-pixel_types: single +clocked
+pixel_types: both
 max_voltage: 24
 max_current: null
 parent: 8 Ch Pixel data distribution

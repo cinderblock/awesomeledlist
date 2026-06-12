@@ -2,7 +2,7 @@ id: 16x-led-shield
 name: 16x LED Shield
 manufacturer: Evil Genius Labs
 max_channels: 16
-pixel_types: Single or Clocked
+pixel_types: both
 max_voltage: 5
 max_current: null
 parent: NodeMCU ESP32

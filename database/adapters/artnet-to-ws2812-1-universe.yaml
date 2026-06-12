@@ -2,7 +2,7 @@ id: artnet-to-ws2812-1-universe
 name: Artnet to WS2812 1 Universe
 manufacturer: Krzysztof Korzeniowski
 max_channels: 1
-pixel_types: single
+pixel_types: async
 max_voltage: 12
 max_current: null
 parent: Arduino Uno

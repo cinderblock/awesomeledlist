@@ -2,7 +2,7 @@ id: artgateone
 name: ArtgateOne
 manufacturer: Krzysztof Korzeniowski
 max_channels: null
-pixel_types: 1 Universe Artnet to DMX Node
+pixel_types: null
 max_voltage: 12
 max_current: null
 parent: Arduino Uno

@@ -2,7 +2,7 @@ id: f32-b
 name: F32-B
 manufacturer: Kulp Lights
 max_channels: 32
-pixel_types: Single
+pixel_types: async
 max_voltage: 12
 max_current: null
 parent: BeagleBone

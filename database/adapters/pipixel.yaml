@@ -2,7 +2,7 @@ id: pipixel
 name: PiPixel
 manufacturer: Tindie
 max_channels: 1
-pixel_types: Single or Clocked
+pixel_types: both
 max_voltage: 24
 max_current: 5
 parent: Raspberry Pi
