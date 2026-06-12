@@ -12,6 +12,9 @@ export function Header() {
             <RainbowText className="text-xl">Awesome LED List</RainbowText>
           </Link>
           <nav className="ml-auto flex items-center gap-4">
+            <Link to="/wizard" className="text-muted-foreground hover:text-foreground text-sm">
+              Wizard
+            </Link>
             <Link to="/about" className="text-muted-foreground hover:text-foreground text-sm">
               About
             </Link>
