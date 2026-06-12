@@ -24,4 +24,5 @@ release_year: 2013
 notes: Early 16bit/color version of UCS1903 (WS2811 equiv)
 third_party_testing: null
 datasheet_url: https://www.dhgate.com/product/ucs8903-ic-3-channel-led-constant-current/421634760.html
-other_links: UCS8903 Pixel Protocol Overview | Advatek Lighting
+other_links:
+  - UCS8903 Pixel Protocol Overview | Advatek Lighting

@@ -24,4 +24,5 @@ notes: null
 third_party_testing: null
 manufacturer: null
 datasheet_url: https://asset.conrad.com/media10/add/160267/c1/-/en/001575814DS01/datasheet-1575814-thomsen-strip-5m-300-rgbw-ip68-led-pasik-entrieda-a-a-e-zastrcky-zasuvka-5-v-5-m-rgbw.pdf
-other_links: SK6818 Pixel Protocol Overview | Advatek Lighting
+other_links:
+  - SK6818 Pixel Protocol Overview | Advatek Lighting

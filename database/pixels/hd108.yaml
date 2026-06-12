@@ -24,4 +24,5 @@ notes: HD107s with 64bit color
 third_party_testing: null
 manufacturer: null
 datasheet_url: https://www.rose-lighting.com/wp-content/uploads/sites/53/2021/03/HD108-5050-LED-Specificaion-V1.1.0-Rose-Lighting.pdf
-other_links: View technical specs and advantages of the pixel protocol HD108. - Advatek
+other_links:
+  - View technical specs and advantages of the pixel protocol HD108. - Advatek

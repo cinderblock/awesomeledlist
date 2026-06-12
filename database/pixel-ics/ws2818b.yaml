@@ -24,4 +24,5 @@ release_year: 2018
 notes: 12V WS2813 as separate IC
 third_party_testing: null
 datasheet_url: http://www.world-semi.com/technology/details-104-4.html
-other_links: WS2818 Pixel Protocol Overview | Advatek Lighting
+other_links:
+  - WS2818 Pixel Protocol Overview | Advatek Lighting
