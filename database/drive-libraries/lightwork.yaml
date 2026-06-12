@@ -2,6 +2,19 @@ id: lightwork
 name: Lightwork
 developer: PWRFLcreative
 hardware: null
+platforms:
+  - macOS
+  - Windows
+language: Processing
+license: GPL-3.0
+status: beta
+supported_ics:
+  - Art-Net
+  - sACN
+  - PixelPusher
+  - Fadecandy
+related_pixel_ics:
+  - dmx512
 features: Webcam LED mapping
 url: https://github.com/PWRFLcreative/Lightwork
 youtube_url: null
