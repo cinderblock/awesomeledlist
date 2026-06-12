@@ -13,6 +13,7 @@ import {
   getReferencingEntries,
 } from "@/lib/data";
 import { CATEGORIES } from "@/lib/types";
+import { getUnit } from "@/lib/units";
 
 // Link types that can appear on detail pages
 interface ExternalLinkInfo {
@@ -210,7 +211,11 @@ export function DetailPage<T extends BaseEntry>({
                   <div key={field.key} className="grid grid-cols-3 gap-2">
                     <dt className="text-muted-foreground font-medium">{field.label}</dt>
                     <dd className="col-span-2">
-                      {field.render ? field.render(value) : <FieldValue value={value} />}
+                      {field.render ? (
+                        field.render(value)
+                      ) : (
+                        <FieldValue value={value} unit={getUnit(categoryId, field.key)} />
+                      )}
                     </dd>
                   </div>
                 );
@@ -388,9 +393,19 @@ export function DetailPage<T extends BaseEntry>({
   );
 }
 
-function FieldValue({ value }: { value: unknown }) {
+function FieldValue({ value, unit }: { value: unknown; unit?: string }) {
   if (typeof value === "boolean") {
     return value ? <Badge>Yes</Badge> : <Badge variant="secondary">No</Badge>;
+  }
+
+  // Bare numbers carry their canonical unit in the JSON Schema ("unit" keyword)
+  if (typeof value === "number" && unit) {
+    return (
+      <span>
+        <span className="tabular-nums">{value.toLocaleString()}</span>
+        <span className="text-muted-foreground ml-1">{unit}</span>
+      </span>
+    );
   }
 
   if (Array.isArray(value)) {

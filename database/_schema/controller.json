@@ -79,16 +79,19 @@
       "description": "Additional details about pixel type support (e.g., clock output limitations)"
     },
     "max_voltage": {
-      "type": ["string", "number", "null"],
-      "description": "Maximum voltage if string shares power with controller"
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Maximum voltage in volts if string shares power with controller"
     },
     "max_current": {
-      "type": ["string", "number", "null"],
-      "description": "Maximum allowable continuous current through all outputs"
+      "type": ["number", "null"],
+      "unit": "A",
+      "description": "Maximum allowable continuous current in amps through all outputs"
     },
     "max_current_per_output": {
-      "type": ["string", "number", "null"],
-      "description": "Maximum current per individual output channel"
+      "type": ["number", "null"],
+      "unit": "A",
+      "description": "Maximum current in amps per individual output channel"
     },
     "buffered": {
       "type": ["boolean", "null"],

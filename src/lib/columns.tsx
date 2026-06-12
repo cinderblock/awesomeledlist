@@ -150,8 +150,9 @@ function formatPrice(v: unknown) {
 }
 
 // Helper for formatting numeric values with units (number right-aligned, unit left-aligned)
-// Pass unitWidth to set a fixed width for the unit column (e.g., "3ch" for 3 characters)
-function formatNumericWithUnit(v: unknown, unitWidth?: string) {
+// Pass unitWidth to set a fixed width for the unit column (e.g., "3ch" for 3 characters).
+// schemaUnit supplies the unit for bare numbers (canonical unit lives in the JSON Schema).
+function formatNumericWithUnit(v: unknown, unitWidth?: string, schemaUnit?: string) {
   if (v == null) return <span className="text-muted-foreground">-</span>;
 
   const str = String(v);
@@ -163,7 +164,8 @@ function formatNumericWithUnit(v: unknown, unitWidth?: string) {
     return <span>{str}</span>;
   }
 
-  const [, numStr, unit] = match;
+  const numStr = match[1] ?? "";
+  const unit = match[2] || schemaUnit || "";
   const num = parseFloat(numStr.replace(/,/g, ""));
 
   if (isNaN(num)) {
@@ -185,9 +187,10 @@ function formatNumericWithUnit(v: unknown, unitWidth?: string) {
   );
 }
 
-// Factory to create a formatter with a specific unit width
-function createUnitFormatter(unitWidth: string) {
-  return (v: unknown) => formatNumericWithUnit(v, unitWidth);
+// Factory to create a formatter with a specific unit width.
+// Pass schemaUnit (usually via getUnit()) for fields whose data is bare numbers.
+function createUnitFormatter(unitWidth: string, schemaUnit?: string) {
+  return (v: unknown) => formatNumericWithUnit(v, unitWidth, schemaUnit);
 }
 
 // Pre-built formatters for common unit types

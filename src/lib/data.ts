@@ -114,8 +114,10 @@ export interface Controller extends BaseEntry {
   storage: string | null;
   standalone: boolean | null;
   pixel_types: string | null;
-  max_voltage: string | null;
-  max_current: string | null;
+  /** Volts — canonical unit lives in the JSON Schema ("unit" keyword) */
+  max_voltage: number | null;
+  /** Amps — canonical unit lives in the JSON Schema ("unit" keyword) */
+  max_current: number | null;
   buffered: boolean | null;
   output_connectors: string | null;
   outputs: string | null;
