@@ -1,0 +1,78 @@
+name: Mirror datasheets to R2
+
+# Contributors add `datasheet_url` to a YAML entry in a normal PR (no secrets
+# needed, fork-safe). After that merges, this workflow finds datasheets that
+# aren't mirrored yet, downloads them, uploads to R2, and opens a bot PR with
+# the `datasheet_mirror` references for the maintainer to approve.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "database/**.yaml"
+  workflow_dispatch:
+
+concurrency:
+  group: mirror-datasheets
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      - name: Mirror new datasheets
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_PUBLIC_BASE_URL: ${{ vars.R2_PUBLIC_BASE_URL }}
+          MIRROR_SUMMARY_FILE: ${{ runner.temp }}/mirror-summary.md
+        run: bun scripts/mirror-datasheets.ts
+
+      - name: Validate database after rewrite
+        run: bun scripts/validate.ts
+
+      - name: Read summary
+        id: summary
+        run: |
+          if [ -f "$RUNNER_TEMP/mirror-summary.md" ]; then
+            {
+              echo "body<<EOF"
+              cat "$RUNNER_TEMP/mirror-summary.md"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "body=No changes." >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR with mirror references
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: ci/mirror-datasheets
+          title: "data: mirror new datasheets to R2"
+          commit-message: |
+            data: mirror new datasheets to R2
+
+            Automated by .github/workflows/mirror-datasheets.yml
+          body: |
+            Mirrored the following datasheets to R2 and recorded
+            `datasheet_mirror` (url, sha256, retrieved, source) in the YAML:
+
+            ${{ steps.summary.outputs.body }}
+
+            Original `datasheet_url` values are untouched (attribution).
+          add-paths: database/**
+          delete-branch: true
