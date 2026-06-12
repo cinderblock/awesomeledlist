@@ -2,13 +2,15 @@ id: k64d-b
 name: K64D-B
 manufacturer: KulpLights, LLC
 max_pixels: 80000
-price: 230
+price: 130
 max_outputs: 64
 interfaces:
   - Ethernet
-  - WiFi
-storage: Yes
+protocols:
+  - FPP
+storage: microSD
 standalone: true
+requires_host: BeagleBone Black
 pixel_types: async
 max_voltage: 5
 max_current: null
@@ -18,10 +20,17 @@ outputs: Single
 waterproof: null
 auxiliary_outputs: DMX x2
 wled_compatible: null
-notes: Onboard sound, FM transmitter optional.
+notes:
+  BeagleBone Black cape running FPP (Ethernet/storage via the BBB; WiFi only
+  if paired with a BBB Wireless host). 16 RJ45 differential ports driving 64
+  strings via standard or v1/v2 Smart receivers. Two UART differential
+  outputs for DMX/Renard/LOR/PixelNet. Onboard sound, FM transmitter
+  optional. Price corrected to $130 board-only per kulplights.com.
 warranty: null
 release_year: null
 status: active
 url: https://kulplights.com/product/k64d-b/
 related_connectors:
   - rj45
+related_microboards:
+  - beaglebone-black
