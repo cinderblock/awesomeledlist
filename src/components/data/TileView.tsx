@@ -350,7 +350,7 @@ export function TileView<T extends BaseEntry>({
 
   // Check if we should use the static CSV or generate one
   const hasActiveSearchOrFilters = search || hasActiveFilters;
-  const staticCsvUrl = categoryId ? `/${categoryId}.csv` : null;
+  const staticCsvUrl = categoryId ? `${import.meta.env.BASE_URL}${categoryId}.csv` : null;
 
   const handleDownloadCSV = useCallback(() => {
     const filename = generateCSVFilename(categoryName, columnFilters, search);

@@ -226,6 +226,10 @@ function copyDirSync(src: string, dest: string) {
 }
 
 export default defineConfig({
+  // Serve from a subpath (e.g. /awesomeledlist/ on github.io) when BASE_PATH
+  // is set; defaults to root for custom-domain hosting. Router basename
+  // follows automatically via import.meta.env.BASE_URL.
+  base: process.env.BASE_PATH || "/",
   plugins: [
     react(),
     tailwindcss(),

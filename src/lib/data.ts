@@ -78,7 +78,7 @@ export function getCategoryCount(category: string): number {
 
 // Get image URL for an entry
 export function getImageUrl(category: string, imagePath: string): string {
-  return `/images/${category}/${imagePath}`;
+  return `${import.meta.env.BASE_URL}images/${category}/${imagePath}`;
 }
 
 // Get entries that have images

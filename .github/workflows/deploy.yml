@@ -40,6 +40,11 @@ jobs:
 
       - name: Build
         run: bun run build
+        env:
+          # github.io serves the site under /awesomeledlist/. Remove this once
+          # awesomeledlist.com DNS points at GitHub Pages and the custom
+          # domain is re-attached (then the base goes back to /).
+          BASE_PATH: /awesomeledlist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
