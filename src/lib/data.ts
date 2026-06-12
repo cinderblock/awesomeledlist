@@ -111,6 +111,8 @@ export interface Controller extends BaseEntry {
   price: string | null;
   max_outputs: number | null;
   interfaces: string[] | null;
+  /** Control protocols/ecosystems accepted (ArtNet, sACN, DDP, DMX, FPP, ...) */
+  protocols: string[] | null;
   storage: string | null;
   standalone: boolean | null;
   pixel_types: string | null;

@@ -56,7 +56,12 @@
     "interfaces": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "How this product receives patterns (Ethernet, WiFi, USB, DMX, etc.)"
+      "description": "Physical connectivity for receiving patterns (Ethernet, WiFi, USB, Bluetooth, SD Card, Wireless DMX, Serial, Audio, ...). Control protocols go in protocols."
+    },
+    "protocols": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "Control protocols/ecosystems the product accepts (ArtNet, sACN, DDP, DMX, FPP, ...)"
     },
     "storage": {
       "type": ["string", "null"],
