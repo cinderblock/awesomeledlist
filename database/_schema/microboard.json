@@ -25,7 +25,9 @@
       "type": ["string", "null"]
     },
     "clock_speed": {
-      "type": ["string", "null"]
+      "type": ["number", "null"],
+      "unit": "MHz",
+      "description": "CPU clock speed in MHz"
     },
     "flash": {
       "type": ["string", "null"]
@@ -40,13 +42,19 @@
       "type": ["integer", "null"]
     },
     "min_input_voltage": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Minimum supply voltage in volts"
     },
     "max_input_voltage": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Maximum supply voltage in volts"
     },
     "gpio_voltage": {
-      "type": ["string", "null"]
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "GPIO logic level in volts"
     },
     "usb": {
       "type": ["string", "null"]

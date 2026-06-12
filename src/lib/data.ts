@@ -194,7 +194,8 @@ export interface Connector extends BaseEntry {
   manufacturer: string | null;
   outline: string | null;
   max_current: string | null;
-  max_voltage: string | null;
+  /** Volts */
+  max_voltage: number | null;
   ip_rating: string | null;
   locking: string | null;
   notes: string | null;
@@ -205,7 +206,8 @@ export interface Microboard extends BaseEntry {
   manufacturer: string | null;
   soc: string | null;
   cpu: string | null;
-  clock_speed: string | null;
+  /** MHz */
+  clock_speed: number | null;
   flash: string | null;
   ram: string | null;
   wifi: string | null;

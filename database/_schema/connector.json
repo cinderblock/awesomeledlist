@@ -21,15 +21,18 @@
       "description": "Shape: Rectangular, Circular, Triangular"
     },
     "max_current": {
-      "type": ["string", "number", "null"],
-      "description": "Per-contact current rating"
+      "type": ["number", "null"],
+      "unit": "A",
+      "description": "Per-contact current rating in amps"
     },
     "max_current_notes": {
       "type": ["string", "null"],
       "description": "Additional current rating details"
     },
     "max_voltage": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Voltage rating in volts"
     },
     "ip_rating": {
       "type": ["string", "null"],
@@ -56,16 +59,19 @@
       "description": "Has versions designed for PCB mounting (through-hole or SMD)"
     },
     "smallest_gauge": {
-      "type": ["string", "null"],
-      "description": "Smallest supported wire gauge (AWG)"
+      "type": ["number", "null"],
+      "unit": "AWG",
+      "description": "Smallest supported wire gauge in AWG (larger number = thinner wire)"
     },
     "largest_gauge": {
-      "type": ["string", "null"],
-      "description": "Largest supported wire gauge (AWG)"
+      "type": ["number", "null"],
+      "unit": "AWG",
+      "description": "Largest supported wire gauge in AWG (smaller number = thicker wire)"
     },
     "pitch": {
-      "type": ["string", "null"],
-      "description": "Pin-to-pin spacing"
+      "type": ["number", "null"],
+      "unit": "mm",
+      "description": "Pin-to-pin spacing in millimeters"
     },
     "contact_type": {
       "type": ["string", "null"],
