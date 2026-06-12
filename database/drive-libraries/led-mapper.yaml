@@ -2,7 +2,12 @@ id: led-mapper
 name: LED Mapper
 developer: Jason Coon
 hardware: Arduino/ Esp 66/32
+platforms:
+  - Web
+language: JavaScript
+license: GPL-3.0
+status: active
 features: An online tool to generate and visualize maps for irregular and/or gapped LED layouts, for use with FastLED, Pixelblaze and other libraries.
-url: https://github.com/jasoncoon/led-mapperr
+url: https://github.com/jasoncoon/led-mapper
 youtube_url: null
 instructional_resources: []
