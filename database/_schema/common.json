@@ -44,6 +44,34 @@
     },
     "year": {
       "oneOf": [{ "type": "integer", "minimum": 1990, "maximum": 2030 }, { "type": "null" }]
+    },
+    "datasheet_mirror": {
+      "type": ["object", "null"],
+      "description": "Repo-managed copy of the datasheet, hosted on R2. Written by CI (scripts/mirror-datasheets.ts) - do not edit by hand. The original author/source stays in datasheet_url.",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Public URL of the mirrored PDF on R2"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "SHA-256 of the mirrored file"
+        },
+        "retrieved": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the file was fetched from the source"
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "Exact URL the mirror was fetched from (datasheet_url at fetch time; a changed datasheet_url triggers re-mirroring)"
+        }
+      },
+      "required": ["url", "sha256", "retrieved", "source"],
+      "additionalProperties": false
     }
   }
 }

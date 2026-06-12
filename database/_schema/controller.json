@@ -159,6 +159,13 @@
     "url": {
       "type": ["string", "null"]
     },
+    "datasheet_url": {
+      "type": ["string", "null"],
+      "description": "Original datasheet URL at the author/manufacturer (kept for attribution; CI mirrors it to R2)"
+    },
+    "datasheet_mirror": {
+      "$ref": "common.json#/definitions/datasheet_mirror"
+    },
     "image": {
       "$ref": "common.json#/definitions/image"
     },
