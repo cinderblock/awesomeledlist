@@ -8,7 +8,7 @@ purpose_made: true
 properties: Diffusive
 fire_retardant: true
 tinted: T
-sample_thickness: 0.08
+sample_thickness: 2.03
 diffusivity: 3-4
 sizes_available: null
 material_type: PC

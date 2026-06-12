@@ -8,7 +8,7 @@ purpose_made: true
 properties: Diffusive
 fire_retardant: true
 tinted: T
-sample_thickness: 2mm
+sample_thickness: 2
 diffusivity: 4
 sizes_available: null
 material_type: PMMA
