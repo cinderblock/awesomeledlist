@@ -151,8 +151,10 @@
       "description": "Date/year of first market availability"
     },
     "status": {
-      "type": ["string", "null"],
-      "enum": ["active", "discontinued", "end-of-life", "limited", null]
+      "anyOf": [
+        { "$ref": "common.json#/definitions/status" },
+        { "type": "null" }
+      ]
     },
     "url": {
       "type": ["string", "null"]

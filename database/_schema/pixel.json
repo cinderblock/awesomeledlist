@@ -177,8 +177,10 @@
       "description": "Additional reference links"
     },
     "status": {
-      "type": ["string", "null"],
-      "enum": ["active", "discontinued", "end-of-life", "limited", null]
+      "anyOf": [
+        { "$ref": "common.json#/definitions/status" },
+        { "type": "null" }
+      ]
     },
     "image": {
       "$ref": "common.json#/definitions/image"

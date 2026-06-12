@@ -27,7 +27,7 @@
           "tier": { "type": "string" },
           "price": { "type": ["string", "number"] },
           "features": { "type": "string" },
-          "limitations": { "type": "string" }
+          "limitations": { "type": ["string", "null"] }
         }
       },
       "description": "Detailed pricing tiers (free, educational, commercial, pro, etc.)"
@@ -126,8 +126,10 @@
       "description": "What limitations the demo version has"
     },
     "status": {
-      "type": ["string", "null"],
-      "enum": ["active", "discontinued", "end-of-life", "beta", "limited", null]
+      "anyOf": [
+        { "$ref": "common.json#/definitions/status" },
+        { "type": "null" }
+      ]
     },
     "url": {
       "type": ["string", "null"]

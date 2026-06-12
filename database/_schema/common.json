@@ -4,7 +4,14 @@
   "definitions": {
     "status": {
       "type": "string",
-      "enum": ["active", "discontinued", "end-of-life", "unknown"]
+      "enum": [
+        "active",
+        "discontinued",
+        "end-of-life",
+        "limited",
+        "beta",
+        "unknown"
+      ]
     },
     "url": {
       "type": "string",
