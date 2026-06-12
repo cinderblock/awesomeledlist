@@ -1,7 +1,7 @@
 id: resolume
 name: Resolume
 developer: Resolume
-price: 299-799
+price: $299 - $799
 price_tiers:
   - tier: Avenue
     price: 299

@@ -1,7 +1,7 @@
 id: led-strip-studio-software
 name: LED Strip Studio Software
 developer: LED Strip Studio
-price: LED Strip Studio Software
+price: null
 platforms:
   - Windows
 live: true

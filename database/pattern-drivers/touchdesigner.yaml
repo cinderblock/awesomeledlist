@@ -1,7 +1,7 @@
 id: touchdesigner
 name: TouchDesigner
 developer: Derivative
-price: Free-$2200
+price: Free - $2200
 price_tiers:
   - tier: Non-Commercial
     price: Free

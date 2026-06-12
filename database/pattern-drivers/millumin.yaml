@@ -1,7 +1,7 @@
 id: millumin
 name: Millumin
 developer: Anomes SARL
-price: 39/week +
+price: $39/week +
 platforms:
   - macOS
 live: true
