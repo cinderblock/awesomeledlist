@@ -3,11 +3,15 @@ name: Orange Pro Plus 32
 manufacturer: Winterlights India
 max_pixels: 48000
 price: 275
-max_outputs: 32
-interfaces: []
+max_outputs: 16
+interfaces:
+  - SD Card
 protocols:
+  - ArtNet
+  - sACN
+  - DDP
   - FPP
-storage: SD
+storage: microSD
 standalone: true
 pixel_types: async
 max_voltage: 24
@@ -18,8 +22,13 @@ outputs: Single and Clock
 waterproof: null
 auxiliary_outputs: 16 x long range data
 wled_compatible: null
-notes: null
+notes:
+  Vendor lists 16 direct pixel ports plus 16 long-range ports on 4 RJ45 jacks
+  (32 total in the name), so max_outputs counts direct ports only. Data-only
+  outputs with no V+ pass-through; plays FPP sequences from microSD.
 warranty: null
 release_year: null
 status: active
 url: https://www.winterlights.in/product-page/orange-pro-plus-32-48000-pixel-controller
+related_connectors:
+  - rj45
