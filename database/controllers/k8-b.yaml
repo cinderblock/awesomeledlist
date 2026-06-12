@@ -2,12 +2,15 @@ id: k8-b
 name: K8-B
 manufacturer: KulpLights, LLC
 max_pixels: 57600
-price: 123
+price: 80
 max_outputs: 36
 interfaces:
   - Ethernet
-storage: Yes
+protocols:
+  - FPP
+storage: microSD
 standalone: true
+requires_host: BeagleBone Black
 pixel_types: async
 max_voltage: 12
 max_current: 30
@@ -17,10 +20,17 @@ outputs: Single
 waterproof: null
 auxiliary_outputs: DMX x2
 wled_compatible: null
-notes: 12 channels require differential receivers.
+notes:
+  BeagleBone Black cape running FPP (Ethernet/storage via the BBB). 8 fused
+  local ports drive 800 pixels each at 40FPS (1500 at 20FPS); 3 RJ45 ports
+  add 12 strings via differential receivers, plus 16 more via
+  F16v3-compatible expansion boards. Two UARTs drive DMX/Renard/LOR. Price
+  is board-only (vendor lists $80-$165 depending on BeagleBone/SD options).
 warranty: null
 release_year: null
 status: active
 url: https://kulplights.com/product/k8-b/
 related_connectors:
   - rj45
+related_microboards:
+  - beaglebone-black
