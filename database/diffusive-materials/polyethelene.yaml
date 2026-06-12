@@ -8,7 +8,7 @@ purpose_made: false
 properties: Diffusive
 fire_retardant: true
 tinted: T
-sample_thickness: "0.040"
+sample_thickness: 0.04
 diffusivity: 2
 sizes_available: null
 material_type: HDPE

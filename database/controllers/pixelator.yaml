@@ -2,12 +2,12 @@ id: pixelator
 name: Pixelator
 manufacturer: ENTTEC
 max_pixels: 8192
-price: $1,891
+price: 1891
 max_outputs: null
 interfaces:
   - WiFi
   - Ethernet
-storage: true
+storage: Yes
 standalone: true
 pixel_types: async
 max_voltage: null

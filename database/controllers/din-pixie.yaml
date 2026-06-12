@@ -9,7 +9,7 @@ max_outputs: 2
 interfaces:
   - Ethernet
   - Art-Net
-storage: true
+storage: Yes
 standalone: true
 pixel_types: async
 max_voltage: 48V

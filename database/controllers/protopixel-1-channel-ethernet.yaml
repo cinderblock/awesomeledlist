@@ -6,7 +6,7 @@ price: 191
 max_outputs: 1
 interfaces:
   - Ethernet ArtNet
-storage: true
+storage: Yes
 standalone: true
 pixel_types: async
 max_voltage: 12V

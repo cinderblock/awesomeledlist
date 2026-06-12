@@ -6,7 +6,7 @@ price: 399
 max_outputs: 2
 interfaces:
   - TTL Serial
-storage: true
+storage: Yes
 standalone: true
 pixel_types: both
 max_voltage: 35V

@@ -8,7 +8,7 @@ purpose_made: false
 properties: Diffusive
 fire_retardant: null
 tinted: null
-sample_thickness: "3.200"
+sample_thickness: 3.2
 diffusivity: 4
 sizes_available: null
 material_type: Ethelyne Copolymer

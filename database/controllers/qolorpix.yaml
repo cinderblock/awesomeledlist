@@ -2,7 +2,7 @@ id: qolorpix
 name: Qolorpix
 manufacturer: City Theatrical
 max_pixels: 1920
-price: $1,500
+price: 1500
 max_outputs: 8
 interfaces:
   - WiFi

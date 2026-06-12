@@ -7,7 +7,7 @@ max_outputs: 64
 interfaces:
   - Ethernet
   - WiFi
-storage: true
+storage: Yes
 standalone: true
 pixel_types: async
 max_voltage: 5V

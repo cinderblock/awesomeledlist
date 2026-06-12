@@ -6,7 +6,7 @@ price: 45
 max_outputs: 8
 interfaces:
   - Ethernet
-storage: true
+storage: Yes
 standalone: true
 pixel_types: both
 max_voltage: 12V

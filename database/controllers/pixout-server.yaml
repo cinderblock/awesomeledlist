@@ -8,7 +8,7 @@ interfaces:
   - FPP
   - Ethernet
   - Wifi
-storage: true
+storage: Yes
 standalone: true
 pixel_types: both
 max_voltage: 24V

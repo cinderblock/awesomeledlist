@@ -2,7 +2,7 @@ id: pixlite-t8-s-mk3
 name: PixLite T8-S Mk3
 manufacturer: Advatek
 max_pixels: 16320
-price: $1,200
+price: 1200
 max_outputs: 32
 interfaces:
   - WiFi

@@ -2,7 +2,7 @@ id: deskontroller-lite-v3-192
 name: deskontroller LITE V3 192
 manufacturer: deskontrol electronics SL
 max_pixels: 32640
-price: $1,490
+price: 1490
 max_outputs: 32
 interfaces:
   - WiFi

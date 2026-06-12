@@ -8,7 +8,7 @@ purpose_made: true
 properties: Transparent
 fire_retardant: true
 tinted: C
-sample_thickness: "0.003"
+sample_thickness: 0.003
 diffusivity: 1
 sizes_available: null
 material_type: PC ?

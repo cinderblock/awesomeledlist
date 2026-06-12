@@ -6,7 +6,7 @@ price: 29
 max_outputs: 2
 interfaces:
   - Ethernet
-storage: true
+storage: Yes
 standalone: true
 max_voltage: 12V
 max_current: 6A

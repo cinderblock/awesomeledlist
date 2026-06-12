@@ -7,7 +7,7 @@ max_outputs: 2
 interfaces:
   - DMX
   - WirelessDMX
-storage: true
+storage: Yes
 standalone: true
 pixel_types: both
 max_voltage: 12V
