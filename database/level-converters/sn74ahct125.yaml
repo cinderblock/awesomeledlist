@@ -1,0 +1,14 @@
+id: sn74ahct125
+name: 74AHCT125
+manufacturer: Texas Instruments
+channels: 4
+interface: PDIP, SOIC, TSSOP and others
+notes:
+  The community-standard 3.3V-to-5V shifter for WS2812-style data (TTL VIH
+  accepts 3.3V logic at 5V supply); quad buffer with per-channel output
+  enables; tpd 5-10ns
+price: null
+max_voltage: 5.5
+max_current: 8
+buffered: true
+url: https://www.ti.com/product/SN74AHCT125
