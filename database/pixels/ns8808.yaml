@@ -17,6 +17,8 @@ quiescent_current: 2
 package_size: "5050"
 pin_count: 6
 data_type: UCS1903
+related_pixel_ics:
+  - ucs1903
 backup_data_line: true
 max_pixels_per_string: null
 release_year: 2018

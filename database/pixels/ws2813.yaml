@@ -22,6 +22,8 @@ package_sizes:
 package_size: "5050"
 pin_count: 6
 data_type: WS2811/12
+related_pixel_ics:
+  - ws2811
 backup_data_line: true
 max_pixels_per_string: null
 release_year: 2016

@@ -17,6 +17,8 @@ quiescent_current: null
 package_size: "5050"
 pin_count: 4
 data_type: null
+related_pixel_ics:
+  - sk6818
 backup_data_line: false
 max_pixels_per_string: null
 release_year: null
