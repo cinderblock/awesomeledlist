@@ -23,3 +23,5 @@ warranty: null
 release_year: 2022
 status: active
 url: https://experiencelights.com/long-range-genius-pixel-controller/
+related_connectors:
+  - rj45

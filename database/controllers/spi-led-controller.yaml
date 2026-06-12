@@ -38,3 +38,5 @@ warranty: null
 release_year: null
 status: active
 url: https://ledstripstudio.com/spi-led-controller/
+related_connectors:
+  - rj45

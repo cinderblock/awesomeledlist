@@ -22,3 +22,5 @@ warranty: null
 release_year: 2023
 status: active
 url: https://www.deskontrol.net/en/art-net-led-controllers/381-deskontroller-lite-v3-96-artnet-universes.html
+related_connectors:
+  - rj45

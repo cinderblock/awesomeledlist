@@ -25,3 +25,5 @@ warranty: null
 release_year: 2021
 status: discontinued
 url: https://glowbrightly.io/
+related_connectors:
+  - rj45

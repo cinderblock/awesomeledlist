@@ -23,3 +23,5 @@ warranty: null
 release_year: null
 status: unknown
 url: https://www.enttec.co.uk/product/controls-gb/addressable-led-pixel-control-gb/24-port-ethernet-pixel-controller/
+related_connectors:
+  - rj45
