@@ -1,4 +1,4 @@
-import { useMemo, useCallback, useState } from "react";
+import { useMemo, useCallback, useState, useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -173,7 +173,16 @@ export function TileView<T extends BaseEntry>({
   filterKeys,
 }: TileViewProps<T>) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const search = searchParams.get("q") || "";
+  const urlSearch = searchParams.get("q") || "";
+
+  // Local search state for immediate input response
+  const [search, setSearchLocal] = useState(urlSearch);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  // Sync local state when URL changes externally (e.g., browser back)
+  useEffect(() => {
+    setSearchLocal(urlSearch);
+  }, [urlSearch]);
 
   // Determine filter keys from fields if not provided
   const filterableKeys = useMemo(() => {
@@ -241,10 +250,28 @@ export function TileView<T extends BaseEntry>({
 
   const setSearch = useCallback(
     (value: string) => {
-      updateParams({ q: value || null });
+      // Update local state immediately for responsive input
+      setSearchLocal(value);
+
+      // Debounce URL update to prevent keystroke loss
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+      debounceRef.current = setTimeout(() => {
+        updateParams({ q: value || null });
+      }, 150);
     },
     [updateParams]
   );
+
+  // Cleanup debounce on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+    };
+  }, []);
 
   const handleFilterChange = useCallback(
     (key: string, values: string[] | null) => {

@@ -1,4 +1,4 @@
-import { useMemo, useCallback } from "react";
+import { useMemo, useCallback, useState, useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { TableBody, TableCell, TableHead, TableRow } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
@@ -48,9 +48,18 @@ export function DataTable<T extends BaseEntry>({
 }: DataTableProps<T>) {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const search = searchParams.get("q") || "";
+  const urlSearch = searchParams.get("q") || "";
   const sortKey = searchParams.get("sort") || null;
   const sortDir = (searchParams.get("dir") as SortDirection) || null;
+
+  // Local search state for immediate input response
+  const [search, setSearchLocal] = useState(urlSearch);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  // Sync local state when URL changes externally (e.g., browser back)
+  useEffect(() => {
+    setSearchLocal(urlSearch);
+  }, [urlSearch]);
 
   // Get filterable column keys (exclude links, name, and explicitly non-filterable columns)
   const filterableColumnKeys = useMemo(() => {
@@ -94,10 +103,28 @@ export function DataTable<T extends BaseEntry>({
 
   const setSearch = useCallback(
     (value: string) => {
-      updateParams({ q: value || null });
+      // Update local state immediately for responsive input
+      setSearchLocal(value);
+
+      // Debounce URL update to prevent keystroke loss
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+      debounceRef.current = setTimeout(() => {
+        updateParams({ q: value || null });
+      }, 150);
     },
     [updateParams]
   );
+
+  // Cleanup debounce on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+    };
+  }, []);
 
   const handleColumnFilterChange = useCallback(
     (key: string, values: string[] | null) => {
