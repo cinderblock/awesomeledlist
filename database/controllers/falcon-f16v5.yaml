@@ -1,0 +1,42 @@
+id: falcon-f16v5
+name: Falcon F16V5
+manufacturer: PixelController, LLC
+max_pixels: 32768
+price: 280
+max_outputs: 16
+interfaces:
+  - Ethernet
+  - WiFi
+protocols:
+  - sACN
+  - ArtNet
+  - DDP
+  - FPP
+storage: microSD
+standalone: true
+pixel_types: both
+max_voltage: 13
+max_current: null
+buffered: null
+output_connectors: null
+outputs: 16 local strings + 4 Smart Receiver ports (32 strings with SRx boards)
+waterproof: null
+auxiliary_outputs: 1x RS-485 (RJ-45) for DMX/Renard
+wled_compatible: null
+notes:
+  192 universes in; 1024 pixels per output; 2-port Ethernet switch for
+  daisy-chaining; OLED status display; resettable e-fuses on all outputs with
+  per-fuse status in web UI; SmartReceiver v5 ports report current/voltage/fuse
+  status; standalone playback via Falcon Player (FPP) remote mode from microSD
+warranty: null
+release_year: null
+status: active
+url: https://pixelcontroller.com/store/featured/88-f16v5.html
+related_pixel_ics:
+  - ws2811
+  - ws2801
+  - lpd6803
+  - tls3001
+  - tm1803
+  - tm1804
+  - tm1809
