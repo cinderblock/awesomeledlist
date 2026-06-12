@@ -3,7 +3,7 @@ name: LED Octopus
 manufacturer: Tindie
 max_channels: 8
 pixel_types: Single
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 parent: Teensy 3.2
 price: 34

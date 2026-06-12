@@ -3,7 +3,7 @@ name: Orange Pi DMX
 manufacturer: Arjan van Vught
 max_channels: 4
 pixel_types: single +clocked
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 parent: Orange Pi
 price: 12

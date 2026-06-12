@@ -6,6 +6,6 @@ interface: null
 notes: https://electricfiredesign.com/2021/03/12/logic-level-shifters-for-driving-led-strips/
 price: null
 max_voltage: null
-max_current: 1.5A
+max_current: 1500
 buffered: null
 url: https://www.microchip.com/en-us/product/TC4427

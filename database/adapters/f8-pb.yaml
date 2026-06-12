@@ -3,7 +3,7 @@ name: F8-PB
 manufacturer: Kulp Lights
 max_channels: 8
 pixel_types: Single
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 parent: BeagleBone
 price: 81

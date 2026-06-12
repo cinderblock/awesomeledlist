@@ -3,8 +3,8 @@ name: WLED wemos shield
 manufacturer: SerKo
 max_channels: 2
 pixel_types: Single+Clocked
-max_voltage: 12V
-max_current: 10A
+max_voltage: 12
+max_current: 10
 parent: Wemos D1 Mini (ESP32/ESP8266)
 price: null
 output_connectors: Screw Terminals

@@ -3,7 +3,7 @@ name: F32-B
 manufacturer: Kulp Lights
 max_channels: 32
 pixel_types: Single
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 parent: BeagleBone
 price: 95

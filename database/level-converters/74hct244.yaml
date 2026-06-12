@@ -5,7 +5,7 @@ channels: 8
 interface: PDIP largest
 notes: null
 price: null
-max_voltage: 5.5V
+max_voltage: 5.5
 max_current: null
 buffered: true
 url: https://www.ti.com/product/SN74HCT244

@@ -5,7 +5,7 @@ channels: 1
 interface: SOT 23
 notes: null
 price: null
-max_voltage: 7V
+max_voltage: 7
 max_current: null
 buffered: null
 url: https://www.ti.com/product/SN74LV1T34/part-details/SN74LV1T34DBVRG4

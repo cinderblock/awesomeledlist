@@ -3,8 +3,8 @@ name: PiPixel
 manufacturer: Tindie
 max_channels: 1
 pixel_types: Single or Clocked
-max_voltage: 24V
-max_current: 5A
+max_voltage: 24
+max_current: 5
 parent: Raspberry Pi
 price: 9
 output_connectors: Screw

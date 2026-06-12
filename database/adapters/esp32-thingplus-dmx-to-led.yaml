@@ -3,7 +3,7 @@ name: ESP32 ThingPlus DMX to LED
 manufacturer: Sparkfun
 max_channels: null
 pixel_types: Single+Clocked
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 parent: ESP32
 price: 20

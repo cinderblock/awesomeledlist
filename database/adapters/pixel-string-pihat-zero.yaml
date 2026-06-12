@@ -3,7 +3,7 @@ name: Pixel String Pihat Zero
 manufacturer: Jboards
 max_channels: 2
 pixel_types: null
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 parent: Raspberry Pi
 price: 12

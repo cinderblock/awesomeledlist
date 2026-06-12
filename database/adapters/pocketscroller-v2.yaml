@@ -3,7 +3,7 @@ name: PocketScroller V2
 manufacturer: Kulp Lights
 max_channels: 6
 pixel_types: Panel
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 parent: PocketBeagle
 price: 51

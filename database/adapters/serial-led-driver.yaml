@@ -3,8 +3,8 @@ name: Serial LED Driver
 manufacturer: ElectroMage
 max_channels: 8
 pixel_types: Single or Clocked
-max_voltage: 5V
-max_current: 3A
+max_voltage: 5
+max_current: 3
 parent: Any UART / Serial
 price: 15
 output_connectors: Solder

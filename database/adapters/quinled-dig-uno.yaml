@@ -3,7 +3,7 @@ name: QuinLED-Dig-Uno
 manufacturer: null
 max_channels: 6
 pixel_types: Single
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 parent: Wemos Dx Mini (ESP32/ESP8266)
 price: null

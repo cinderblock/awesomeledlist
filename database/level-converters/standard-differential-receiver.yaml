@@ -5,7 +5,7 @@ channels: 4
 interface: Differential Pairs
 notes: null
 price: 22
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 buffered: true
 url: https://microcyb.com

@@ -3,7 +3,7 @@ name: ESP Level Shifter
 manufacturer: null
 max_channels: 1
 pixel_types: Single
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 parent: ESP-01 (ESP8266)
 price: 9

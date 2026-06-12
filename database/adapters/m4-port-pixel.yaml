@@ -3,8 +3,8 @@ name: M4 Port Pixel
 manufacturer: Microcyb
 max_channels: 37
 pixel_types: Single
-max_voltage: 12V
-max_current: 30A
+max_voltage: 12
+max_current: 30
 parent: Raspberry Pi 3B+ or above
 price: 35
 output_connectors: Phoenix Screw

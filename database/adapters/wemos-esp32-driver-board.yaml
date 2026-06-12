@@ -3,7 +3,7 @@ name: Wemos ESP32 Driver Board
 manufacturer: Mottram Labs
 max_channels: 1
 pixel_types: Single and Clocked
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 parent: WeMos Mini
 price: 9

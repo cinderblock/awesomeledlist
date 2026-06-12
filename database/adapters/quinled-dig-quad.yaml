@@ -3,8 +3,8 @@ name: QuinLED-Dig-Quad
 manufacturer: Quindor / Intermittent Technology
 max_channels: 4
 pixel_types: Single or Clocked
-max_voltage: 24V
-max_current: 30A
+max_voltage: 24
+max_current: 30
 parent: ESP8266 or ESP32
 price: 38
 output_connectors: Screw Terminals
