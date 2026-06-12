@@ -28,10 +28,14 @@
       "type": ["string", "number", "null"]
     },
     "max_voltage": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Maximum voltage in volts"
     },
     "max_current": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "mA",
+      "description": "Maximum output current in milliamps"
     },
     "buffered": {
       "type": ["boolean", "null"]

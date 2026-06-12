@@ -22,10 +22,14 @@
       "type": ["string", "null"]
     },
     "max_voltage": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Maximum voltage in volts"
     },
     "max_current": {
-      "type": ["string", "number", "null"]
+      "type": ["number", "null"],
+      "unit": "A",
+      "description": "Maximum current in amps"
     },
     "parent": {
       "type": ["string", "null"],
