@@ -116,6 +116,7 @@ export function Home() {
             const count = getCategoryCount(category.id);
             const previews = categoryPreviews[category.id] || [];
             const isExpanding = expandingCard?.category.id === category.id;
+            const isOtherCard = expandingCard && !isExpanding;
 
             return (
               <a
@@ -130,7 +131,9 @@ export function Home() {
                 } as React.CSSProperties}
               >
                 <Card
-                  className={`category-card h-full overflow-hidden ${isExpanding ? "opacity-0" : ""}`}
+                  className={`category-card h-full overflow-hidden transition-opacity duration-200 ${
+                    isExpanding ? "opacity-0" : isOtherCard ? "opacity-0" : ""
+                  }`}
                 >
                   {previews.length > 0 && (
                     <div className="flex h-24 gap-0.5 overflow-hidden">
