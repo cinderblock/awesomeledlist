@@ -19,7 +19,7 @@ poe: null
 ethernet: Gigabit
 bluetooth: "5.0"
 storage: microSD
-bms: false
+bms: No
 imu: false
 price: 35
 release_year: 2019

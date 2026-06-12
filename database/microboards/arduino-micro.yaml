@@ -19,7 +19,7 @@ poe: null
 ethernet: null
 bluetooth: null
 storage: null
-bms: false
+bms: No
 imu: false
 price: null
 release_year: null

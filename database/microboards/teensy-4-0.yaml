@@ -19,7 +19,7 @@ poe: null
 ethernet: null
 bluetooth: null
 storage: null
-bms: false
+bms: No
 imu: false
 price: 20
 release_year: 2019

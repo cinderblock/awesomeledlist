@@ -19,7 +19,7 @@ poe: null
 ethernet: 100BASE-TX
 bluetooth: null
 storage: microSD
-bms: false
+bms: No
 imu: false
 price: 24
 release_year: null

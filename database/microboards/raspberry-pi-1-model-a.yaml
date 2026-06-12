@@ -19,7 +19,7 @@ poe: null
 ethernet: USB
 bluetooth: USB
 storage: microSD
-bms: false
+bms: No
 imu: false
 price: 20
 release_year: 2014
