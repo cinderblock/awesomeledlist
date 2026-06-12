@@ -3,15 +3,15 @@ name: GX-16
 manufacturer: Generic
 url: https://www.renhotecpro.com/gx16-connector-data-sheet/
 outline: Circular
-max_current: 7 A
-max_voltage: 100 V
+max_current: 7
+max_voltage: 100
 ip_rating: IP30
 locking: Screw Lock
 panel_mount: true
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 24 AWG
-largest_gauge: 20 AWG
+smallest_gauge: 24
+largest_gauge: 20
 pitch: null
 contact_type: Pins
 solder: true

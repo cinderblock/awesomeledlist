@@ -3,15 +3,15 @@ name: Rean RT4
 manufacturer: Rean / Neutrik
 url: https://www.rean-connectors.com/en/product/rt4fc-b-1
 outline: Circular
-max_current: 5 A
-max_voltage: 250 V
+max_current: 5
+max_voltage: 250
 ip_rating: IP40
 locking: Latching
 panel_mount: true
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 28 AWG
-largest_gauge: 24 AWG
+smallest_gauge: 28
+largest_gauge: 24
 pitch: null
 contact_type: Pins
 solder: true

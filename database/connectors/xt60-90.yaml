@@ -3,16 +3,17 @@ name: XT60/90
 manufacturer: Generic
 url: https://www.sparkfun.com/products/10474
 outline: Rectangular
-max_current: 60/90
-max_voltage: 42 V
+max_current: 60
+max_current_notes: 60 A (XT60) / 90 A (XT90)
+max_voltage: 42
 ip_rating: null
 locking: Friction
 panel_mount: false
 wire_to_wire: true
 pcb_mount: PTH
-smallest_gauge: 22 AWG
-largest_gauge: 10 AWG
-pitch: 10.0 mm
+smallest_gauge: 22
+largest_gauge: 10
+pitch: 10
 contact_type: Pins
 solder: true
 screw_terminal: false

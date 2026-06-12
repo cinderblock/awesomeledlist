@@ -3,16 +3,16 @@ name: Molex KK AKA KF2510
 manufacturer: Molex
 url: https://www.molex.com/molex/products/family/kk
 outline: Rectangular
-max_current: 4 A
-max_voltage: 250 V
+max_current: 4
+max_voltage: 250
 ip_rating: null
 locking: Latching
 panel_mount: false
 wire_to_wire: false
 pcb_mount: PTH
-smallest_gauge: 30 AWG
-largest_gauge: 22 AWG
-pitch: 2.54mm
+smallest_gauge: 30
+largest_gauge: 22
+pitch: 2.54
 contact_type: Pins
 solder: true
 screw_terminal: null

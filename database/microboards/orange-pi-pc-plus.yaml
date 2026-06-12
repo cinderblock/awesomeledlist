@@ -4,7 +4,7 @@ manufacturer: Shenzhen Xunlong Software
 soc: Allwinner Quad Core H3
 cpu: 4× ARM Cortex-A7
 isa: ARMv7-A
-clock_speed: 1.6GHz
+clock_speed: 1600
 flash: microSD
 ram: 1GB
 linux: true

@@ -3,15 +3,15 @@ name: SP17
 manufacturer: Weipu
 url: https://weipuconnector.com/product/38
 outline: Circular
-max_current: 10 A
-max_voltage: 500 V
+max_current: 10
+max_voltage: 500
 ip_rating: IP68
 locking: Screw Lock
 panel_mount: true
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 22 AWG
-largest_gauge: 14 AWG
+smallest_gauge: 22
+largest_gauge: 14
 pitch: null
 contact_type: Pins
 solder: true

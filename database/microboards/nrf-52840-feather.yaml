@@ -4,7 +4,7 @@ manufacturer: Adafruit
 soc: NRF 52840
 cpu: ARM Cortex-M4
 isa: ARMv7-M
-clock_speed: 64MHz
+clock_speed: 64
 flash: 1MB
 ram: 256kB
 linux: null

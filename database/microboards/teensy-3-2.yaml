@@ -4,14 +4,14 @@ manufacturer: PJRC
 soc: MK20DX256VLH7
 cpu: ARM Cortex-M4
 isa: ARMv7-M
-clock_speed: 72MHz
+clock_speed: 72
 flash: 256kB
 ram: 64kB
 linux: false
 max_outputs: 8
 min_input_voltage: null
-max_input_voltage: 5V
-gpio_voltage: 3.3V
+max_input_voltage: 5
+gpio_voltage: 3.3
 usb: OTG
 ttl_serial: true
 wifi: Shield

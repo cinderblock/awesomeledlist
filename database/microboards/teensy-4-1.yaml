@@ -4,7 +4,7 @@ manufacturer: PJRC
 soc: iMXRT1062
 cpu: ARM Cortex-M7
 isa: ARMv7-M
-clock_speed: 600MHz
+clock_speed: 600
 flash: 7936kB
 ram: 1024kB
 linux: false

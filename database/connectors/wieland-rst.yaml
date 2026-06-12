@@ -3,15 +3,15 @@ name: Wieland RST
 manufacturer: Wieland
 url: https://www.wieland-electric.com/en/products/electrical-installation/connection-systems-high-protection-class/rst-classic/
 outline: Circular
-max_current: 16 A
-max_voltage: 400 V
+max_current: 16
+max_voltage: 400
 ip_rating: IP69
 locking: Latching
 panel_mount: true
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 22 AWG
-largest_gauge: 12 AWG
+smallest_gauge: 22
+largest_gauge: 12
 pitch: null
 contact_type: Pins
 solder: false

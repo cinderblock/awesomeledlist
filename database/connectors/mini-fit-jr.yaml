@@ -3,16 +3,16 @@ name: Mini-Fit Jr
 manufacturer: Molex
 url: https://www.molex.com/molex/products/family/minifit_power_connector_solutions
 outline: Rectangular
-max_current: 13 A
-max_voltage: 600 V
+max_current: 13
+max_voltage: 600
 ip_rating: null
 locking: Latching
 panel_mount: false
 wire_to_wire: true
 pcb_mount: PTH
-smallest_gauge: 28 AWG
-largest_gauge: 16 AWG
-pitch: 4.2 mm
+smallest_gauge: 28
+largest_gauge: 16
+pitch: 4.2
 contact_type: Pins
 solder: false
 screw_terminal: null

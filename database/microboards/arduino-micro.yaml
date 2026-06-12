@@ -4,14 +4,14 @@ manufacturer: Arduino
 soc: ATmega32u4
 cpu: AVR
 isa: AVR5
-clock_speed: 16MHz
+clock_speed: 16
 flash: 32kB
 ram: 2.5kB
 linux: false
 max_outputs: null
 min_input_voltage: null
-max_input_voltage: 5V
-gpio_voltage: 5.0V
+max_input_voltage: 5
+gpio_voltage: 5
 usb: OTG
 ttl_serial: true
 wifi: null

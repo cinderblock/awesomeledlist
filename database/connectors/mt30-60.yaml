@@ -3,15 +3,16 @@ name: MT30/60
 manufacturer: Generic
 url: https://www.flyingtech.co.uk/cables-connectors/amass-nylon-mt60-3-pole-motor-esc-35mm-connector
 outline: Triangular
-max_current: 30/60
-max_voltage: 60 V
+max_current: 30
+max_current_notes: 30 A (MT30) / 60 A (MT60)
+max_voltage: 60
 ip_rating: IP20-IP65
 locking: Friction
 panel_mount: false
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 20 AWG
-largest_gauge: 16 AWG
+smallest_gauge: 20
+largest_gauge: 16
 pitch: null
 contact_type: Pins
 solder: true

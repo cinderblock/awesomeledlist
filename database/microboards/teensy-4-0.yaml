@@ -4,14 +4,14 @@ manufacturer: PJRC
 soc: iMXRT1062
 cpu: ARM Cortex-M7
 isa: ARMv7-M
-clock_speed: 600MHz
+clock_speed: 600
 flash: 2048kB
 ram: 1024kB
 linux: false
 max_outputs: null
 min_input_voltage: null
-max_input_voltage: 5V
-gpio_voltage: 3.3V
+max_input_voltage: 5
+gpio_voltage: 3.3
 usb: OTG
 ttl_serial: true
 wifi: null

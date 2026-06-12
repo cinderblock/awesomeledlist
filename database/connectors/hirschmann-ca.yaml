@@ -3,15 +3,15 @@ name: Hirschmann CA
 manufacturer: Lumberg /Belden
 url: https://uk.farnell.com/c/connectors/circular-connectors-components/circular-industrial-connectors?product-range=ca-series
 outline: Circular
-max_current: 16 A
-max_voltage: 400 V
+max_current: 16
+max_voltage: 400
 ip_rating: IP67
 locking: Screw Lock
 panel_mount: true
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 22 AWG
-largest_gauge: 12 AWG
+smallest_gauge: 22
+largest_gauge: 12
 pitch: null
 contact_type: Pins
 solder: true

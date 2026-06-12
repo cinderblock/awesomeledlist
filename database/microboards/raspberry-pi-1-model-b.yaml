@@ -4,14 +4,14 @@ manufacturer: Raspberry Pi Foundation
 soc: BCM2835
 cpu: ARM11
 isa: ARMv6Z
-clock_speed: 700MHz
+clock_speed: 700
 flash: microSD
 ram: 512MB
 linux: true
 max_outputs: 1
-min_input_voltage: 5V
-max_input_voltage: 5V
-gpio_voltage: 3.3V
+min_input_voltage: 5
+max_input_voltage: 5
+gpio_voltage: 3.3
 usb: OTG x4
 ttl_serial: true
 wifi: USB

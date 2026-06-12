@@ -3,8 +3,8 @@ name: SM
 manufacturer: JST
 url: http://www.jst-mfg.com/product/detail_e.php?series=238
 outline: Rectangular
-max_current: 3 A
-max_voltage: 250 V
+max_current: 3
+max_voltage: 250
 ip_rating: null
 locking: Latching
 panel_mount: true
@@ -12,7 +12,7 @@ wire_to_wire: true
 pcb_mount: false
 smallest_gauge: null
 largest_gauge: null
-pitch: 2.54 mm
+pitch: 2.54
 contact_type: Pins
 solder: true
 screw_terminal: null

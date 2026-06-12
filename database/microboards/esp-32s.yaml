@@ -11,7 +11,7 @@ linux: false
 max_outputs: null
 min_input_voltage: null
 max_input_voltage: null
-gpio_voltage: 3.3V
+gpio_voltage: 3.3
 usb: Power + UART
 ttl_serial: true
 wifi: 2.4GHz

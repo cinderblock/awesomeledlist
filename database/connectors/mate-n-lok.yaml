@@ -3,16 +3,16 @@ name: Mate-N-Lok
 manufacturer: TE /AMP
 url: https://www.te.com/usa-en/products/brands/mate-n-lok.html?tab=pgp-story
 outline: Rectangular
-max_current: 19 A
-max_voltage: 600 V
+max_current: 19
+max_voltage: 600
 ip_rating: null
 locking: Latching
 panel_mount: false
 wire_to_wire: true
 pcb_mount: PTH
-smallest_gauge: 30 AWG
-largest_gauge: 10 AWG
-pitch: 5.1 mm
+smallest_gauge: 30
+largest_gauge: 10
+pitch: 5.1
 contact_type: Pins
 solder: false
 screw_terminal: false

@@ -4,13 +4,13 @@ manufacturer: Arduino
 soc: ATmega2560
 cpu: AVR
 isa: null
-clock_speed: 16MHz
+clock_speed: 16
 flash: 256kB
 ram: 8kB
 linux: false
 max_outputs: 54
-min_input_voltage: 6V
-max_input_voltage: 20V
+min_input_voltage: 6
+max_input_voltage: 20
 gpio_voltage: null
 usb: Power + UART
 ttl_serial: null

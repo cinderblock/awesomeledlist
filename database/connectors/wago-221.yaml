@@ -3,16 +3,16 @@ name: Wago 221
 manufacturer: Wago
 url: https://www.wago.com/global/electrical-interconnections/discover-installation-terminal-blocks-and-connectors/221
 outline: Rectangular
-max_current: 32 A
-max_voltage: 450 V
+max_current: 32
+max_voltage: 450
 ip_rating: null
 locking: Latching
 panel_mount: false
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 28 AWG
-largest_gauge: 10 AWG
-pitch: 10.0 mm
+smallest_gauge: 28
+largest_gauge: 10
+pitch: 10
 contact_type: Spring
 solder: false
 screw_terminal: false

@@ -4,14 +4,14 @@ manufacturer: PJRC
 soc: MK66FX1M0VMD18
 cpu: ARM Cortex-M4
 isa: ARMv7-M
-clock_speed: 180MHz
+clock_speed: 180
 flash: 1024kB
 ram: 256kB
 linux: false
 max_outputs: null
 min_input_voltage: null
-max_input_voltage: 5V
-gpio_voltage: 3.3V
+max_input_voltage: 5
+gpio_voltage: 3.3
 usb: OTG
 ttl_serial: true
 wifi: Shield

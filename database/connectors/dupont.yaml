@@ -3,16 +3,16 @@ name: DuPont
 manufacturer: Harwin/ Generic
 url: https://www.mattmillman.com/info/crimpconnectors/dupont-and-dupont-connectors/
 outline: Rectangular
-max_current: 1 A
-max_voltage: 50 V
+max_current: 1
+max_voltage: 50
 ip_rating: null
 locking: Friction
 panel_mount: false
 wire_to_wire: true
 pcb_mount: PTH
-smallest_gauge: 28 AWG
-largest_gauge: 24 AWG
-pitch: 2.54mm
+smallest_gauge: 28
+largest_gauge: 24
+pitch: 2.54
 contact_type: Pins
 solder: true
 screw_terminal: null

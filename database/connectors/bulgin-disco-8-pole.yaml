@@ -3,15 +3,15 @@ name: Bulgin ` Disco`  8 pole
 manufacturer: Bulgin
 url: https://uk.farnell.com/bulgin/px0551/plug-8way-6a-free/dp/151740
 outline: Circular
-max_current: 6 A
-max_voltage: 250 V
+max_current: 6
+max_voltage: 250
 ip_rating: null
 locking: Friction
 panel_mount: true
 wire_to_wire: true
 pcb_mount: PTH
-smallest_gauge: 28 AWG
-largest_gauge: 18 AWG
+smallest_gauge: 28
+largest_gauge: 18
 pitch: null
 contact_type: Pins
 solder: true

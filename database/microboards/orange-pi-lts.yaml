@@ -4,7 +4,7 @@ manufacturer: Shenzhen Xunlong Software
 soc: Allwinner H2+
 cpu: 4× ARM Cortex-A7
 isa: ARMv7-A
-clock_speed: 1.2GHz
+clock_speed: 1200
 flash: microSD
 ram: 256MB+
 linux: true

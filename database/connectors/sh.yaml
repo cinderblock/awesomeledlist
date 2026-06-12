@@ -3,16 +3,16 @@ name: SH
 manufacturer: JST
 url: https://www.jst-mfg.com/product/detail_e.php?series=231
 outline: Rectangular
-max_current: 1 A
-max_voltage: 50 V
+max_current: 1
+max_voltage: 50
 ip_rating: null
 locking: Latching
 panel_mount: false
 wire_to_wire: true
 pcb_mount: Both
-smallest_gauge: 30 AWG
-largest_gauge: 28 AWG
-pitch: 1.0 mm
+smallest_gauge: 30
+largest_gauge: 28
+pitch: 1
 contact_type: Pins
 solder: true
 screw_terminal: null

@@ -3,16 +3,16 @@ name: DF62W
 manufacturer: Hirose
 url: https://www.hirose.com/product/series/DF62W#
 outline: Rectangular
-max_current: 4 A
-max_voltage: 30 V
+max_current: 4
+max_voltage: 30
 ip_rating: IP67
 locking: Latching
 panel_mount: true
 wire_to_wire: true
 pcb_mount: PTH
-smallest_gauge: 20 AWG
-largest_gauge: 26 AWG
-pitch: 2.2 mm
+smallest_gauge: 20
+largest_gauge: 26
+pitch: 2.2
 contact_type: Pins
 solder: false
 screw_terminal: null

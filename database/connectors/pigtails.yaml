@@ -3,15 +3,15 @@ name: Pigtails
 manufacturer: Generic
 url: https://www.wiredwatts.com/wire
 outline: Circular
-max_current: 5 A
-max_voltage: 50 V
+max_current: 5
+max_voltage: 50
 ip_rating: IP55
 locking: Friction
 panel_mount: false
 wire_to_wire: true
 pcb_mount: false
-smallest_gauge: 20 AWG
-largest_gauge: 18 AWG
+smallest_gauge: 20
+largest_gauge: 18
 pitch: null
 contact_type: Pins
 solder: true

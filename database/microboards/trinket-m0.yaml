@@ -4,14 +4,14 @@ manufacturer: Adafruit
 soc: ATSAMD21E18
 cpu: ARM Cortex-M0
 isa: ARMv6-M
-clock_speed: 48MHz
+clock_speed: 48
 flash: 256kB
 ram: 32kB
 linux: false
 max_outputs: 4
 min_input_voltage: null
-max_input_voltage: 5V
-gpio_voltage: 3.3V
+max_input_voltage: 5
+gpio_voltage: 3.3
 usb: OTG
 ttl_serial: true
 wifi: null
