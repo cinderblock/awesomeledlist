@@ -8,8 +8,8 @@ interfaces:
   - WiFi
 storage: null
 standalone: true
-max_voltage: 5V
-max_current: 120A
+max_voltage: 5
+max_current: 120
 buffered: true
 output_connectors: XLR5
 outputs: Single

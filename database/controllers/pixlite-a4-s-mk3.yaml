@@ -10,8 +10,8 @@ storage: SD
 standalone: true
 standalone_notes: SHOWTime - https://www.advateklights.com/advatek-showtime-2022
 pixel_types: both
-max_voltage: 24V
-max_current: 28A
+max_voltage: 24
+max_current: 28
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single or Clock

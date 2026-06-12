@@ -9,8 +9,8 @@ interfaces:
 storage: null
 standalone: false
 pixel_types: both
-max_voltage: 48V
-max_current: 1.8A
+max_voltage: 48
+max_current: 1.8
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single and Clock &DMX

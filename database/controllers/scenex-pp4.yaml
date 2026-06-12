@@ -10,8 +10,8 @@ interfaces:
 storage: null
 standalone: false
 pixel_types: both
-max_voltage: 5V
-max_current: 40A
+max_voltage: 5
+max_current: 40
 buffered: true
 output_connectors: 4 Pin XLR
 outputs: null

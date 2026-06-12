@@ -11,8 +11,8 @@ interfaces:
 storage: SD
 standalone: true
 pixel_types: both
-max_voltage: 12V
-max_current: 40A
+max_voltage: 12
+max_current: 40
 buffered: true
 output_connectors: Screw Terminal & RJ45
 outputs: Single and Clock

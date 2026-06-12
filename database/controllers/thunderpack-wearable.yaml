@@ -10,7 +10,7 @@ storage: Yes
 standalone: true
 pixel_types: both
 max_voltage: null
-max_current: 10A
+max_current: 10
 buffered: null
 output_connectors: Solder
 outputs: null

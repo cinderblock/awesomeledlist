@@ -10,8 +10,8 @@ interfaces:
 storage: SD
 standalone: true
 pixel_types: both
-max_voltage: 24V
-max_current: 5A
+max_voltage: 24
+max_current: 5
 buffered: true
 output_connectors: Phoenix Plug
 outputs: Data, Clock, SPI

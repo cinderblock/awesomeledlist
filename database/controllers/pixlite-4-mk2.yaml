@@ -13,8 +13,8 @@ storage: null
 standalone: false
 pixel_types: both
 pixel_types_notes: Single or Clock means output pins can be configured as one or the other
-max_voltage: 24V
-max_current: 30A
+max_voltage: 24
+max_current: 30
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single or Clock

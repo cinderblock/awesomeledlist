@@ -9,7 +9,7 @@ interfaces:
 storage: Yes
 standalone: true
 pixel_types: both
-max_voltage: 35V
+max_voltage: 35
 max_current: null
 buffered: true
 output_connectors: Phoenix Plug

@@ -9,7 +9,7 @@ interfaces:
 storage: SD
 standalone: true
 pixel_types: async
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 buffered: null
 output_connectors: Phoenix Screw

@@ -12,8 +12,8 @@ interfaces:
 storage: Yes
 standalone: true
 pixel_types: async
-max_voltage: 48V
-max_current: 10A
+max_voltage: 48
+max_current: 10
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single

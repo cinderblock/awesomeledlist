@@ -9,8 +9,8 @@ interfaces:
 storage: null
 standalone: null
 pixel_types: both
-max_voltage: 5V
-max_current: 6A
+max_voltage: 5
+max_current: 6
 buffered: true
 output_connectors: Proprietary
 outputs: Single and Clock

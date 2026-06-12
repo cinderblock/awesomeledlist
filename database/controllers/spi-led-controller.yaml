@@ -19,9 +19,9 @@ interfaces:
 storage: SD
 standalone: true
 pixel_types: both
-max_voltage: 24V
-max_current: 10A
-max_current_per_output: 10A
+max_voltage: 24
+max_current: 10
+max_current_per_output: 10
 buffered: true
 output_connectors: RJ-45 DMX, Phoenix Plug SPI
 outputs: Data, Clock, SPI

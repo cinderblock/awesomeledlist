@@ -8,8 +8,8 @@ interfaces:
   - Ethernet
 storage: Yes
 standalone: true
-max_voltage: 12V
-max_current: 6A
+max_voltage: 12
+max_current: 6
 buffered: null
 output_connectors: Phoenix
 outputs: null

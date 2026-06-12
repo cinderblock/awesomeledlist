@@ -9,7 +9,7 @@ interfaces:
 storage: null
 standalone: false
 pixel_types: both
-max_voltage: 25V
+max_voltage: 25
 max_current: null
 buffered: true
 output_connectors: Phoenix Screw

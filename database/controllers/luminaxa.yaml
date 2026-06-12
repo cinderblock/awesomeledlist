@@ -9,8 +9,8 @@ interfaces:
 storage: null
 standalone: true
 pixel_types: async
-max_voltage: 5V
-max_current: 1A
+max_voltage: 5
+max_current: 1
 buffered: true
 output_connectors: JST
 outputs: Single

@@ -10,8 +10,8 @@ interfaces:
 storage: null
 standalone: true
 pixel_types: async
-max_voltage: 5V
-max_current: 3A
+max_voltage: 5
+max_current: 3
 buffered: true
 output_connectors: Pigtail (included)
 outputs: Single

@@ -6,7 +6,7 @@ price: 13
 max_outputs: 1
 storage: null
 standalone: null
-max_voltage: 12V
+max_voltage: 12
 max_current: null
 buffered: null
 output_connectors: Screw

@@ -12,7 +12,7 @@ storage: SD (micro)
 standalone: null
 pixel_types: both
 max_voltage: null
-max_current: 60A
+max_current: 60
 buffered: null
 output_connectors: null
 outputs: null

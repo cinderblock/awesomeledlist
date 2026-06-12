@@ -9,8 +9,8 @@ interfaces:
 storage: Micro-SD
 standalone: true
 pixel_types: both
-max_voltage: 24V
-max_current: 100A
+max_voltage: 24
+max_current: 100
 buffered: true
 output_connectors: 5mm or 7.62mm screw terminal
 outputs: Single and Clock

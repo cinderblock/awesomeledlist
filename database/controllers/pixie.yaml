@@ -8,7 +8,7 @@ interfaces:
   - Ethernet
 storage: null
 standalone: false
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 buffered: null
 output_connectors: JST

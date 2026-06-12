@@ -10,8 +10,8 @@ interfaces:
 storage: null
 standalone: false
 pixel_types: async
-max_voltage: 12V
-max_current: 5A
+max_voltage: 12
+max_current: 5
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single

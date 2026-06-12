@@ -9,7 +9,7 @@ interfaces:
 storage: Yes
 standalone: true
 pixel_types: async
-max_voltage: 5V
+max_voltage: 5
 max_current: null
 buffered: null
 output_connectors: RJ45

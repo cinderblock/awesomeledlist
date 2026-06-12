@@ -9,8 +9,8 @@ interfaces:
 storage: null
 standalone: null
 pixel_types: async
-max_voltage: 24V
-max_current: 40A
+max_voltage: 24
+max_current: 40
 buffered: true
 output_connectors: Phoenix Screw
 outputs: null

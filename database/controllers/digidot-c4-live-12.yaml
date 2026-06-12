@@ -11,8 +11,8 @@ interfaces:
 storage: null
 standalone: false
 pixel_types: both
-max_voltage: 24V
-max_current: 0A
+max_voltage: 24
+max_current: 0
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single and Clock

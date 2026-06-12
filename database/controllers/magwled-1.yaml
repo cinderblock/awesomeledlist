@@ -9,8 +9,8 @@ interfaces:
 storage: null
 standalone: true
 pixel_types: async
-max_voltage: 12V
-max_current: 3A
+max_voltage: 12
+max_current: 3
 buffered: null
 output_connectors: Wago connector
 outputs: null

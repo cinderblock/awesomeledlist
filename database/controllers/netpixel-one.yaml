@@ -8,7 +8,7 @@ interfaces:
   - FPP
 storage: null
 standalone: false
-max_voltage: 24V
+max_voltage: 24
 max_current: null
 buffered: true
 output_connectors: JST

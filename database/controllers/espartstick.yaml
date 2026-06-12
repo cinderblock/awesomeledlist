@@ -10,8 +10,8 @@ interfaces:
 storage: Yes
 standalone: true
 pixel_types: both
-max_voltage: 12V
-max_current: 30A
+max_voltage: 12
+max_current: 30
 buffered: true
 output_connectors: Phoenix Screw
 outputs: Single or Clock

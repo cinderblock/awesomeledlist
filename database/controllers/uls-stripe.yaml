@@ -11,8 +11,8 @@ interfaces:
 storage: null
 standalone: null
 pixel_types: async
-max_voltage: 12V
-max_current: 18A
+max_voltage: 12
+max_current: 18
 buffered: true
 output_connectors: 5 Pin GX-16
 outputs: null

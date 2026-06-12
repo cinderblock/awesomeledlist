@@ -9,7 +9,7 @@ interfaces:
 storage: SD
 standalone: null
 pixel_types: both
-max_voltage: 28V
+max_voltage: 28
 max_current: null
 buffered: null
 output_connectors: null
