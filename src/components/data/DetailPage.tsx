@@ -15,6 +15,7 @@ import {
 } from "@/lib/data";
 import { CATEGORIES } from "@/lib/types";
 import { getUnit } from "@/lib/units";
+import type { DetailSection } from "@/lib/fields";
 
 // Link types that can appear on detail pages
 interface ExternalLinkInfo {
@@ -40,6 +41,8 @@ export interface DetailField {
 interface DetailPageProps<T extends BaseEntry> {
   item: T;
   fields: DetailField[];
+  /** Sectioned layout; when provided, renders one titled card per section instead of a flat Details card */
+  sections?: DetailSection[] | null;
   categoryName: string;
   categoryPath: string;
   categoryId: string;
@@ -49,6 +52,7 @@ interface DetailPageProps<T extends BaseEntry> {
 export function DetailPage<T extends BaseEntry>({
   item,
   fields,
+  sections,
   categoryName,
   categoryPath,
   categoryId,
@@ -198,32 +202,36 @@ export function DetailPage<T extends BaseEntry>({
           </Card>
         )}
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Details</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <dl className="space-y-4">
-              {fields.map((field) => {
-                const value = getValue(field.key);
-                if (value == null) return null;
+        {(sections?.length ? sections : [{ title: "Details", fields }]).map((section) => {
+          const rows = section.fields
+            .map((field) => ({ field, value: getValue(field.key) }))
+            .filter((row) => row.value != null);
+          if (rows.length === 0) return null;
 
-                return (
-                  <div key={field.key} className="grid grid-cols-3 gap-2">
-                    <dt className="text-muted-foreground font-medium">{field.label}</dt>
-                    <dd className="col-span-2">
-                      {field.render ? (
-                        field.render(value)
-                      ) : (
-                        <FieldValue value={value} unit={getUnit(categoryId, field.key)} />
-                      )}
-                    </dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </CardContent>
-        </Card>
+          return (
+            <Card key={section.title}>
+              <CardHeader>
+                <CardTitle>{section.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <dl className="space-y-4">
+                  {rows.map(({ field, value }) => (
+                    <div key={field.key} className="grid grid-cols-3 gap-2">
+                      <dt className="text-muted-foreground font-medium">{field.label}</dt>
+                      <dd className="col-span-2">
+                        {field.render ? (
+                          field.render(value)
+                        ) : (
+                          <FieldValue value={value} unit={getUnit(categoryId, field.key)} />
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </CardContent>
+            </Card>
+          );
+        })}
 
         {(notes || technicalNotes || datasheetDiscrepancies || availableLinks.length > 0) && (
           <Card>

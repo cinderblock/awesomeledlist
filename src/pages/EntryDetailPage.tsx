@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { CATEGORIES } from "@/lib/types";
 import { getEntryById } from "@/lib/data";
-import { getFieldsForCategory } from "@/lib/fields";
+import { getFieldsForCategory, getSectionsForCategory } from "@/lib/fields";
 import { DetailPage } from "@/components/data";
 import { usePageTitle } from "@/hooks";
 
@@ -35,11 +35,13 @@ export function EntryDetailPage() {
   }
 
   const fields = getFieldsForCategory(category.id);
+  const sections = getSectionsForCategory(category.id);
 
   return (
     <DetailPage
       item={entry}
       fields={fields}
+      sections={sections}
       categoryName={category.name}
       categoryPath={category.path}
       categoryId={category.id}
