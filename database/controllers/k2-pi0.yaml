@@ -1,14 +1,17 @@
 id: k2-pi0
 name: K2-Pi0
 manufacturer: KulpLights, LLC
-max_pixels: 1200
-price: 29
+max_pixels: 1600
+price: 28
 max_outputs: 2
 interfaces:
-  - Ethernet
-storage: Yes
+  - WiFi
+protocols:
+  - FPP
+storage: microSD
 standalone: true
-max_voltage: 12
+requires_host: Raspberry Pi Zero
+max_voltage: 24
 max_current: 6
 buffered: null
 output_connectors: Phoenix
@@ -16,8 +19,15 @@ outputs: null
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: Requires Raspberry Pi
+notes:
+  Raspberry Pi Zero cape running FPP (Pi Zero W/2W recommended; WiFi via
+  the Pi - corrected from Ethernet, the Zero has no Ethernet port). 2
+  eFuse-protected ports, up to 800 pixels each (with power injection) at
+  40FPS, 6A per port, 5-24V input powers both cape and Pi. Small GPIO/i2c
+  header; no OLED, buttons, or RTC.
 warranty: null
 release_year: null
-status: unknown
-url: null
+status: active
+url: https://kulplights.com/product/k2-pi0/
+related_microboards:
+  - raspberry-pi-zero-w
