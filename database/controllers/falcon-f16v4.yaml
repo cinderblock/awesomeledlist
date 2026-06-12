@@ -7,8 +7,8 @@ max_outputs: 16
 interfaces:
   - FPP
   - Ethernet
-  - Wifi
-storage: SD (micro)
+  - WiFi
+storage: microSD
 standalone: null
 pixel_types: both
 max_voltage: null

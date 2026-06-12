@@ -7,7 +7,7 @@ max_outputs: 4
 interfaces:
   - FPP
   - Ethernet
-  - Wifi
+  - WiFi
 storage: SD
 standalone: true
 pixel_types: both

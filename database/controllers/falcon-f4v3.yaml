@@ -6,7 +6,7 @@ price: 200
 max_outputs: 48
 interfaces:
   - Ethernet
-  - Wifi
+  - WiFi
 storage: SD
 standalone: null
 pixel_types: both

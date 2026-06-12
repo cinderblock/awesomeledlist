@@ -5,7 +5,7 @@ max_pixels: 5440
 price: 630
 max_outputs: 32
 interfaces:
-  - Wifi
+  - WiFi
 storage: null
 standalone: false
 pixel_types: both

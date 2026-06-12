@@ -5,7 +5,7 @@ max_pixels: 16320
 price: 950
 max_outputs: 32
 interfaces:
-  - wifi
+  - WiFi
 storage: SD
 standalone: true
 pixel_types: both

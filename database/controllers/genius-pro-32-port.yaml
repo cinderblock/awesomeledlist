@@ -7,7 +7,7 @@ max_outputs: 32
 interfaces:
   - FPP
   - Ethernet
-  - Wifi
+  - WiFi
 storage: null
 standalone: false
 pixel_types: async
