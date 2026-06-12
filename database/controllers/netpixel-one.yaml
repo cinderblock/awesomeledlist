@@ -4,20 +4,22 @@ manufacturer: SmartShow
 max_pixels: 5440
 price: 269
 max_outputs: 8
-interfaces: []
+interfaces:
+  - Ethernet
 protocols:
-  - FPP
+  - ArtNet
+  - sACN
 storage: null
 standalone: false
 max_voltage: 24
 max_current: null
 buffered: true
-output_connectors: JST
+output_connectors: 10-way plug-in harness
 outputs: Single
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: null
+notes: "Protocols corrected from FPP to ArtNet/sACN per official manual: decodes up to 32 ArtNet universes (5440 RGB pixels) or 28 sACN/E1.31 universes via isolated RJ45 Ethernet; FPP is not mentioned by the vendor. Outputs via 10-way plug-in cable harness (8 data + ground + 5-24V power). Drives WS281x, SK6812, UCS19xx, UCS2903, TM180x, INK1003."
 warranty: null
 release_year: null
 status: discontinued
