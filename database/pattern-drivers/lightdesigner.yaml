@@ -23,7 +23,7 @@ language: null
 other_inputs: GPIO pins
 other_outputs: Bluetooth/NFC to RocketLife hardware
 integrations: LightBox&LightBoard Mini
-notes: RocketLife controllers, serial/SPI pixels only
+notes: RocketLife controllers, serial/SPI pixels only. Dead - see Bekonix
 demo_available: null
-status: dead see bekonix
+status: discontinued
 url: https://www.rocketlife.com/technology/

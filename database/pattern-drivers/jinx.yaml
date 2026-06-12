@@ -25,5 +25,5 @@ other_outputs: null
 integrations: Should be solderlab.de (which is down)
 notes: Basically a mapper/pattern generator for microcontrollers with pixels. Development ceased
 demo_available: null
-status: no development
+status: end-of-life
 url: https://oneguyoneblog.com/download/glediator-v2-0-3/

@@ -9,7 +9,7 @@ platforms:
   - Raspberry Pi
 live: true
 designer: true
-visualizer: true
+visualizer: Yes
 protocols:
   artnet: Both
   sacn: Both
