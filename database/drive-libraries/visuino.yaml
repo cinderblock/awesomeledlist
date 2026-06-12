@@ -2,7 +2,17 @@ id: visuino
 name: Visuino
 developer: Mitov Software
 hardware: Arduino/Esp66/32/ RasPi/MicroBit/Teensy
+platforms:
+  - Windows
+  - Arduino
+  - ESP32
+  - ESP8266
+  - Teensy
+  - Raspberry Pi
+status: active
+supported_ics:
+  - WS2812
 features: Windows Graphical Development tool,simple no coding project deveopment.  Good support for WS2812.
-url: http://visuino.com/
+url: https://www.visuino.com/
 youtube_url: null
 instructional_resources: []
