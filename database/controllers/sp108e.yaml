@@ -4,11 +4,10 @@ manufacturer: Sperll
 max_pixels: 2048
 price: 25
 max_outputs: 1
-interfaces: []
-protocols:
-  - DMX
+interfaces:
+  - WiFi
 storage: null
-standalone: null
+standalone: true
 pixel_types: both
 max_voltage: 24
 max_current: null
@@ -18,8 +17,12 @@ outputs: Single and Clock
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: null
+notes:
+  WiFi app controller ('LED Shop' app); 5-24V. Supported-IC list includes
+  WS281x, SK6812(-RGBW), APA102/SK9822, LPD6803/8806, UCS1903, SM16703 and
+  DMX512-type pixel ICs - the source sheet's 'DMX' meant those ICs, not a
+  DMX input.
 warranty: null
 release_year: null
 status: active
-url: Amazon
+url: https://www.ledlightinghut.com/sp108e-wifi-spi-led-controller.html

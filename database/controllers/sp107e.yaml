@@ -4,11 +4,11 @@ manufacturer: Sperll
 max_pixels: 960
 price: 25
 max_outputs: 1
-interfaces: []
-protocols:
-  - DMX
+interfaces:
+  - Bluetooth
+  - Audio
 storage: null
-standalone: null
+standalone: true
 pixel_types: both
 max_voltage: 24
 max_current: null
@@ -18,8 +18,11 @@ outputs: Single and Clock
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: null
+notes:
+  Bluetooth app + music controller with built-in microphone and AUX audio
+  input; 5-24V. Source sheet listed 'DMX' which refers to DMX512-type pixel
+  ICs in its supported-chip list, not a DMX input.
 warranty: null
 release_year: null
 status: active
-url: Amazon
+url: https://www.superlightingled.com/dc524v-sp107e-wireless-bluetooth-spi-music-spectrum-controller-for-addressable-ws2812b-sk6812-led-strip-lights-p-1715.html
