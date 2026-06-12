@@ -4,8 +4,10 @@ manufacturer: Deskontrol
 max_pixels: 2720
 price: 363
 max_outputs: 16
-interfaces: []
+interfaces:
+  - Ethernet
 protocols:
+  - ArtNet
   - sACN
   - DDP
 storage: null
@@ -19,7 +21,7 @@ outputs: null
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: null
+notes: "Art-Net pixel controller configured via web browser over Ethernet; 8x RJ45 jacks each carry two data outputs (A-B), data-only (LEDs powered separately). Vendor product page now redirects to the LITE V3 line."
 warranty: null
 release_year: null
 status: discontinued
