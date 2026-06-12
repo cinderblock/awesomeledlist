@@ -4,6 +4,7 @@ import {
   DEFAULT_PIXEL_MW,
   FEED_AMPS,
   SERIOUS_WATTS,
+  buildDiagramSvg,
   checkCompatibility,
   estimatePower,
   injectionIntervalPx,
@@ -131,6 +132,37 @@ describe("injectionIntervalPx", () => {
     // 10A * 5V = 50W per feed / 0.3W per pixel = 166 px
     expect(p.amps).toBeGreaterThan(FEED_AMPS);
     expect(injectionIntervalPx(p)).toBe(166);
+  });
+});
+
+describe("buildDiagramSvg", () => {
+  const svgFor = (over: { needsShifter?: boolean; injectEvery?: number | null } = {}) => {
+    const p = pixel();
+    const c = controller();
+    return buildDiagramSvg({
+      pixel: p,
+      controller: c,
+      count: 500,
+      power: estimatePower(p, 500),
+      shareUrl: "https://awesomeledlist.com/wizard?pixel=test-pixel",
+      ...over,
+    });
+  };
+
+  it("embeds the selection as JSON metadata", () => {
+    const svg = svgFor();
+    expect(svg).toContain('<metadata id="awesomeledlist-config">');
+    expect(svg).toContain("&quot;pixel&quot;:&quot;test-pixel&quot;");
+  });
+
+  it("draws the level shifter stage only when needed", () => {
+    expect(svgFor()).not.toContain("Level Shifter");
+    expect(svgFor({ needsShifter: true })).toContain("Level Shifter");
+  });
+
+  it("draws the injection feed only when needed", () => {
+    expect(svgFor()).not.toContain("power feed every");
+    expect(svgFor({ injectEvery: 166 })).toContain("power feed every ~166 px");
   });
 });
 

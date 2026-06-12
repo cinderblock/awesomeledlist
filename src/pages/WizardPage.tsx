@@ -67,9 +67,19 @@ export function WizardPage() {
     [pixel, count, controllers]
   );
 
+  const needsShifter = checks.some((c) => c.link?.label === "74AHCT125");
+
   const diagramSvg = () =>
     pixel && controller && power
-      ? buildDiagramSvg({ pixel, controller, count, power, shareUrl: window.location.href })
+      ? buildDiagramSvg({
+          pixel,
+          controller,
+          count,
+          power,
+          shareUrl: window.location.href,
+          needsShifter,
+          injectEvery,
+        })
       : null;
 
   const downloadBlob = (blob: Blob, name: string) => {
@@ -92,10 +102,10 @@ export function WizardPage() {
     const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
     const img = new window.Image();
     img.onload = () => {
-      const scale = 2; // 1600x400 output
+      const scale = 2;
       const canvas = document.createElement("canvas");
-      canvas.width = 800 * scale;
-      canvas.height = 200 * scale;
+      canvas.width = img.naturalWidth * scale;
+      canvas.height = img.naturalHeight * scale;
       const ctx = canvas.getContext("2d")!;
       ctx.scale(scale, scale);
       ctx.drawImage(img, 0, 0);
@@ -304,15 +314,7 @@ export function WizardPage() {
           <CardContent className="space-y-4">
             <div
               className="overflow-x-auto rounded-md border bg-white"
-              dangerouslySetInnerHTML={{
-                __html: buildDiagramSvg({
-                  pixel,
-                  controller,
-                  count,
-                  power,
-                  shareUrl: window.location.href,
-                }),
-              }}
+              dangerouslySetInnerHTML={{ __html: diagramSvg() ?? "" }}
             />
             <div className="flex flex-wrap gap-2">
               <Button onClick={downloadSvg} variant="default" size="sm">

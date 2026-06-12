@@ -170,44 +170,88 @@ export function checkCompatibility(
   return checks;
 }
 
-/** Build a simple shareable system diagram. The wizard selection is embedded
- *  as JSON in <metadata>, draw.io-style, so the file carries its own source. */
+/** Build a shareable system diagram reflecting the recommended topology:
+ *  optional level shifter between controller and pixels, and dashed power
+ *  injection feeds when one feed can't carry the load. The wizard selection
+ *  is embedded as JSON in <metadata>, draw.io-style, so the file carries
+ *  its own source. */
 export function buildDiagramSvg(opts: {
   pixel: Pixel;
   controller: Controller;
   count: number;
   power: PowerEstimate;
   shareUrl: string;
+  needsShifter?: boolean;
+  injectEvery?: number | null;
 }): string {
-  const { pixel, controller, count, power, shareUrl } = opts;
+  const { pixel, controller, count, power, shareUrl, needsShifter = false, injectEvery = null } = opts;
   const esc = (s: string) =>
     s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const config = esc(
-    JSON.stringify({ generator: "awesomeledlist.com wizard", pixel: pixel.id, controller: controller.id, count, url: shareUrl })
+    JSON.stringify({
+      generator: "awesomeledlist.com wizard",
+      pixel: pixel.id,
+      controller: controller.id,
+      count,
+      needsShifter,
+      injectEvery,
+      url: shareUrl,
+    })
   );
   const psuLabel = `${power.recommendedPsuWatts}W @ ${power.volts}V PSU`;
-  const ctlLabel = esc(controller.name);
-  const pixLabel = `${count.toLocaleString()} x ${esc(pixel.name)}`;
-  const loadLabel = `${power.totalWatts.toFixed(1)}W / ${power.amps.toFixed(1)}A${power.estimated ? " (est.)" : ""}`;
+  const loadLabel = `${power.totalWatts.toFixed(1)}W / ${power.amps.toFixed(1)}A${power.estimated ? " (est.)" : ""} at full white`;
 
-  const box = (x: number, title: string, sub: string) => `
-    <rect x="${x}" y="60" width="200" height="80" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
-    <text x="${x + 100}" y="95" text-anchor="middle" font-weight="bold" font-size="14">${title}</text>
-    <text x="${x + 100}" y="118" text-anchor="middle" font-size="12" fill="#475569">${sub}</text>`;
-  const arrow = (x: number, label: string) => `
-    <line x1="${x}" y1="100" x2="${x + 60}" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#a)"/>
-    <text x="${x + 30}" y="90" text-anchor="middle" font-size="10" fill="#475569">${label}</text>`;
+  // Horizontal layout: boxes and arrows sized to fit the optional shifter
+  const BOX_W = needsShifter ? 180 : 200;
+  const GAP = needsShifter ? 50 : 60;
+  const stages: { title: string; sub: string; arrowLabel?: string }[] = [
+    { title: "Power Supply", sub: psuLabel },
+    { title: controller.name, sub: "controller", arrowLabel: `${power.volts}V` },
+    ...(needsShifter
+      ? [{ title: "Level Shifter", sub: "e.g. 74AHCT125", arrowLabel: "3.3V data" }]
+      : []),
+    {
+      title: "Pixels",
+      sub: `${count.toLocaleString()} x ${pixel.name}`,
+      arrowLabel: needsShifter ? "5V data" : "data",
+    },
+  ];
+  const width = 20 * 2 + stages.length * BOX_W + (stages.length - 1) * GAP;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" font-family="system-ui, sans-serif">
+  let x = 20;
+  let body = "";
+  let pixelBoxX = 0;
+  for (const [i, s] of stages.entries()) {
+    if (i > 0) {
+      body += `
+  <line x1="${x - GAP}" y1="100" x2="${x - 4}" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="${x - GAP / 2 - 2}" y="90" text-anchor="middle" font-size="10" fill="#475569">${esc(s.arrowLabel ?? "")}</text>`;
+    }
+    body += `
+  <rect x="${x}" y="60" width="${BOX_W}" height="80" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="${x + BOX_W / 2}" y="95" text-anchor="middle" font-weight="bold" font-size="14">${esc(s.title)}</text>
+  <text x="${x + BOX_W / 2}" y="118" text-anchor="middle" font-size="12" fill="#475569">${esc(s.sub)}</text>`;
+    if (s.title === "Pixels") pixelBoxX = x;
+    x += BOX_W + GAP;
+  }
+
+  // Dashed injection feed from the PSU under the row into the pixel box
+  if (injectEvery != null) {
+    const psuMidX = 20 + BOX_W / 2;
+    const pixMidX = pixelBoxX + BOX_W / 2;
+    body += `
+  <path d="M ${psuMidX} 140 L ${psuMidX} 165 L ${pixMidX} 165 L ${pixMidX} 144" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#b)"/>
+  <text x="${(psuMidX + pixMidX) / 2}" y="160" text-anchor="middle" font-size="10" fill="#b45309">power feed every ~${injectEvery.toLocaleString()} px (max ${FEED_AMPS}A per feed)</text>`;
+  }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="210" viewBox="0 0 ${width} 210" font-family="system-ui, sans-serif">
   <metadata id="awesomeledlist-config">${config}</metadata>
-  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
-  <rect width="800" height="200" fill="white"/>
-  ${box(20, "Power Supply", esc(psuLabel))}
-  ${arrow(220, `${power.volts}V`)}
-  ${box(280, ctlLabel, "controller")}
-  ${arrow(480, "data")}
-  ${box(540, "Pixels", `${pixLabel}`)}
-  <text x="640" y="160" text-anchor="middle" font-size="11" fill="#475569">${esc(loadLabel)} at full white</text>
-  <text x="400" y="188" text-anchor="middle" font-size="10" fill="#94a3b8">${esc(shareUrl)}</text>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker>
+  </defs>
+  <rect width="${width}" height="210" fill="white"/>${body}
+  <text x="${width - 20}" y="40" text-anchor="end" font-size="11" fill="#475569">${esc(loadLabel)}</text>
+  <text x="${width / 2}" y="200" text-anchor="middle" font-size="10" fill="#94a3b8">${esc(shareUrl)}</text>
 </svg>`;
 }
