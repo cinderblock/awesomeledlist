@@ -19,7 +19,9 @@
       "type": ["integer", "null"]
     },
     "pixel_types": {
-      "type": ["string", "null"]
+      "type": ["string", "null"],
+      "enum": ["async", "clocked", "both", null],
+      "description": "async (WS2812-style single wire), clocked (APA102-style double wire), or both; null for non-pixel-string adapters"
     },
     "max_voltage": {
       "type": ["number", "null"],
