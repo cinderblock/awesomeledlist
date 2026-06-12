@@ -102,8 +102,13 @@ export const adapterFields: DetailField[] = [
 
 export const driveLibraryFields: DetailField[] = [
   { key: "developer", label: "Developer" },
+  { key: "language", label: "Language" },
+  { key: "platforms", label: "Platforms" },
   { key: "hardware", label: "Hardware" },
+  { key: "supported_ics", label: "Supported ICs" },
+  { key: "license", label: "License" },
   { key: "features", label: "Features" },
+  { key: "status", label: "Status" },
 ];
 
 export const pixelDecoderFields: DetailField[] = [

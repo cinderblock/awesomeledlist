@@ -282,6 +282,9 @@ export function getRelatedItemConfigs(categoryId: string): RelatedItemConfig[] {
     pixels: [
       { field: "related_pixel_ics", targetCategory: "pixel-ics", label: "Pixel IC / Protocol" },
     ],
+    "drive-libraries": [
+      { field: "related_pixel_ics", targetCategory: "pixel-ics", label: "Supported Pixel ICs" },
+    ],
     microboards: [
       { field: "related_adapters", targetCategory: "adapters", label: "Compatible Adapters" },
     ],
