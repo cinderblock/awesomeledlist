@@ -1,18 +1,18 @@
 id: cs8812
 name: CS8812
 color_order: null
-led_voltage: 12V
+led_voltage: 12
 clocked: false
-vcc_voltage: 12V
-pwm_frequency: 8.0kHz
+vcc_voltage: 12
+pwm_frequency: 8
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
 gpio_min: null
 gpio_max: null
-wattage: 210.mW
-channel_current: 17.5mA
+wattage: 210
+channel_current: 17.5
 quiescent_current: null
 package_size: "5050"
 pin_count: null

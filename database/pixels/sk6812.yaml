@@ -2,22 +2,22 @@ id: sk6812
 name: SK6812
 manufacturer: Opsco/Newstar
 color_order: GRB & GRBW
-led_voltage: 5V
+led_voltage: 5
 led_voltage_notes: Datasheet claims "17V Vds, Max" but LEDs are built-in and share power with 5V VDD
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 4.7kHz
+vcc_voltage: 5
+pwm_frequency: 4.7
 pwm_frequency_notes: Datasheet claims 1.2kHz but testing shows 4.7kHz
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.4V
+gpio_min: 3.4
 gpio_min_notes: Not in datasheet
-gpio_max: 5V
-wattage: 104mW
-channel_current: 20mA
-quiescent_current: 1.0mA
+gpio_max: 5
+wattage: 104
+channel_current: 20
+quiescent_current: 1
 package_sizes:
   - "5050"
   - "3535"

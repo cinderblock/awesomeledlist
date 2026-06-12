@@ -11,7 +11,7 @@ pixel_data_size: null
 pixel_rate_max: null
 gpio_min: null
 gpio_max: null
-wattage: .mW
+wattage: null
 channel_current: null
 quiescent_current: null
 package_size: null

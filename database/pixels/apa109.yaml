@@ -1,17 +1,17 @@
 id: apa109
 name: APA109
 color_order: GRBW
-led_voltage: 5V
+led_voltage: 5
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 1.1kHz
+vcc_voltage: 5
+pwm_frequency: 1.1
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 25.0 k Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: .mW
+gpio_min: 3.5
+gpio_max: 5
+wattage: null
 channel_current: null
 quiescent_current: null
 package_size: "5050"

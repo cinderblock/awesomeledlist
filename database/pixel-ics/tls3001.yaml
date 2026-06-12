@@ -1,7 +1,7 @@
 id: tls3001
 name: TLS3001
 manufacturer: Tianli Tech
-pwm_frequency: 1.0kHz
+pwm_frequency: 1
 channels: 3
 channel_bits: 12
 aggregate_bits: null

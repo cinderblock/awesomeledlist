@@ -1,7 +1,7 @@
 id: my9291
 name: MY9291
 manufacturer: MY-Semi
-pwm_frequency: 2.0kHz
+pwm_frequency: 2
 channels: 4
 channel_bits: 16
 aggregate_bits: null

@@ -1,12 +1,12 @@
 id: ucs8904
 name: UCS8904
 manufacturer: Normand Electronics
-pwm_frequency: 1.0kHz
+pwm_frequency: 1
 channels: 4
 channel_bits: 16
 aggregate_bits: null
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 64 Bits/Pixel
 pixel_rate_max: 12.5 k Pixel / s
 output_voltage: 24V

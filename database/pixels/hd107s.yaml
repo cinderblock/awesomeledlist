@@ -2,21 +2,21 @@ id: hd107s
 name: HD107S
 manufacturer: Rose Lighting
 color_order: RGB
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 27.0kHz
+vcc_voltage: 5
+pwm_frequency: 27
 brightness_bits: 8+5
 brightness_control_method: global
 brightness_control_notes: Global 5-bit brightness control
-data_bitrate: 40MHz
+data_bitrate: 40
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 1.25 M Pixel / s
-gpio_min: 3.4V
-gpio_max: 5V
+gpio_min: 3.4
+gpio_max: 5
 wattage: null
-channel_current: 17mA
-quiescent_current: 0.1mA
+channel_current: 17
+quiescent_current: 0.1
 package_sizes:
   - "5050"
   - "2020"

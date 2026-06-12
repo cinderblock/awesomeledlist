@@ -1,18 +1,18 @@
 id: lpd6803
 name: LPD6803
 manufacturer: Greeled Electronic
-pwm_frequency: 1.0kHz
+pwm_frequency: 1
 channels: 3
 channel_bits: 5
 aggregate_bits: 5
 clocked: true
-data_bitrate: 15MHz
+data_bitrate: 15
 pixel_data_size: 16 Bits/Pixel
 pixel_rate_max: 0.94 M Pixel / s
 output_voltage: 12V
 supply_voltage: 5V
 gpio_min: null
-gpio_max: 5V
+gpio_max: 5
 max_current: 45mA
 quiescent_current: null
 package_size: SOP16/QFN16

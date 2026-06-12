@@ -1,17 +1,17 @@
 id: pl9823
 name: PL9823
 color_order: RGB
-led_voltage: 6V
+led_voltage: 6
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 800Hz
+vcc_voltage: 5
+pwm_frequency: 0.8
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: .mW
+gpio_min: 3.5
+gpio_max: 5
+wattage: null
 channel_current: null
 quiescent_current: null
 package_size: 5/8mm T style

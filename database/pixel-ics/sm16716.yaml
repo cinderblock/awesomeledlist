@@ -1,7 +1,7 @@
 id: sm16716
 name: SM16716
 manufacturer: Shenzhen Sunmoon Microelectronics
-pwm_frequency: 2.5kHz
+pwm_frequency: 2.5
 channels: 3
 channel_bits: 8
 aggregate_bits: null

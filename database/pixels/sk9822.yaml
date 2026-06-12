@@ -2,22 +2,22 @@ id: sk9822
 name: SK9822
 manufacturer: Opsco/Newstar
 color_order: BGR
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 4.6kHz
+vcc_voltage: 5
+pwm_frequency: 4.6
 brightness_bits: 8+5
 brightness_control_method: current
 brightness_control_notes: Extra 5-bit brightness control by LED current, not PWM - superior to APA102's PWM-based brightness
-data_bitrate: 30MHz
+data_bitrate: 30
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 0.94 M Pixel / s
 gpio_min: null
-gpio_max: 5V
-wattage: 100mW
-channel_current: 20mA
+gpio_max: 5
+wattage: 100
+channel_current: 20
 channel_current_notes: 19-22mA in 5050 package, 10mA for 2020 package; extra 5 bits control current, not PWM
-quiescent_current: 1.0mA
+quiescent_current: 1
 package_sizes:
   - "5050"
   - "2020"

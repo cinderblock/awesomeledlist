@@ -1,12 +1,12 @@
 id: ucs2904
 name: UCS2904
 manufacturer: Normand Electronics
-pwm_frequency: 1.2kHz
+pwm_frequency: 1.2
 channels: 4
 channel_bits: 8
 aggregate_bits: null
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: null
 pixel_rate_max: null
 output_voltage: 30V

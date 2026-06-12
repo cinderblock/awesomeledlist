@@ -1,7 +1,7 @@
 id: sm16511
 name: SM16511
 manufacturer: Shenzhen Sunmoon Microelectronics
-pwm_frequency: 3.3kHz
+pwm_frequency: 3.3
 channels: 4
 channel_bits: 8
 aggregate_bits: null

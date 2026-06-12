@@ -1,20 +1,20 @@
 id: ucs8903
 name: UCS8903
 manufacturer: Normand Electronics
-pwm_frequency: 1.0kHz
+pwm_frequency: 1
 channels: 3
 channel_bits: 16
 aggregate_bits: null
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 48 Bits/Pixel
 pixel_rate_max: 16.7 k Pixel / s
 output_voltage: 26V
 supply_voltage: 5V
-gpio_min: 3.0V
-gpio_max: 5V
+gpio_min: 3
+gpio_max: 5
 max_current: 17mA
-quiescent_current: 1.0mA
+quiescent_current: 1
 package_size: SOP8
 pin_count: 8
 data_type: UCS8903

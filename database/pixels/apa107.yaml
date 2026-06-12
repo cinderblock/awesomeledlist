@@ -1,19 +1,19 @@
 id: apa107
 name: APA107
 color_order: BGR
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 9.0kHz
+vcc_voltage: 5
+pwm_frequency: 9
 brightness_bits: 8+5
-data_bitrate: 30MHz
+data_bitrate: 30
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 0.94 M Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: 110.mW
-channel_current: 22.0mA
-quiescent_current: 1.0mA
+gpio_min: 3.5
+gpio_max: 5
+wattage: 110
+channel_current: 22
+quiescent_current: 1
 package_size: "5050"
 pin_count: 6
 data_type: APA102

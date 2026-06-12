@@ -1,20 +1,20 @@
 id: tm1804
 name: TM1804
 manufacturer: Titan Micro Electronics
-pwm_frequency: 286Hz
+pwm_frequency: 0.286
 channels: 3
 channel_bits: 8
 aggregate_bits: null
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
 output_voltage: 24V
 supply_voltage: 5V
-gpio_min: 3.8V
-gpio_max: 5V
+gpio_min: 3.8
+gpio_max: 5
 max_current: 60mA
-quiescent_current: 3.0mA
+quiescent_current: 3
 package_size: SOP8
 pin_count: 8
 data_type: WS2811/12

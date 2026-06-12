@@ -1,19 +1,19 @@
 id: ws2851
 name: WS2851
 color_order: RGB
-led_voltage: 12V
+led_voltage: 12
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 2.0kHz
+vcc_voltage: 5
+pwm_frequency: 2
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.0V
-gpio_max: 5V
-wattage: 92.5mW
-channel_current: 18.5mA
-quiescent_current: 2.1mA
+gpio_min: 3
+gpio_max: 5
+wattage: 92.5
+channel_current: 18.5
+quiescent_current: 2.1
 package_size: "5050"
 pin_count: 8
 data_type: WS2811/12

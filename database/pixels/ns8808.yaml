@@ -1,19 +1,19 @@
 id: ns8808
 name: NS8808
 color_order: RGB
-led_voltage: 12V
+led_voltage: 12
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 8.0kHz
+vcc_voltage: 5
+pwm_frequency: 8
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: 45.mW
-channel_current: 9.0mA
-quiescent_current: 2.0mA
+gpio_min: 3.5
+gpio_max: 5
+wattage: 45
+channel_current: 9
+quiescent_current: 2
 package_size: "5050"
 pin_count: 6
 data_type: UCS1903

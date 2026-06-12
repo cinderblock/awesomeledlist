@@ -1,7 +1,7 @@
 id: tm1814
 name: TM1814
 manufacturer: Titan Micro Electronics
-pwm_frequency: 1.0kHz
+pwm_frequency: 1
 channels: 4
 channel_bits: 8
 aggregate_bits: null

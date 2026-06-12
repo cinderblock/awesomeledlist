@@ -2,23 +2,23 @@ id: ws2815
 name: WS2815
 manufacturer: WorldSemi/Newstar
 color_order: RGB
-led_voltage: 12V
+led_voltage: 12
 led_voltage_notes: Datasheet 9.5-13.5V range
 clocked: false
-vcc_voltage: 5V
+vcc_voltage: 5
 vcc_voltage_notes: Internal regulator drops 12V to 5V for logic. Can use external resistor to supply 5V Vdd from higher system voltage
-pwm_frequency: 2.0kHz
+pwm_frequency: 2
 pwm_frequency_notes: 2kHz according to datasheet
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.5V
+gpio_min: 3.5
 gpio_min_notes: Datasheet says 0.7*VDD which would be 8.4V at 12V - this appears to be a copy-paste error. Actual Vdd is internal 5V bus, so 3.5V threshold
-gpio_max: 5V
-wattage: 120mW
-channel_current: 10mA
-quiescent_current: 2.1mA
+gpio_max: 5
+wattage: 120
+channel_current: 10
+quiescent_current: 2.1
 quiescent_current_notes: At 12V supply
 package_sizes:
   - "5050"

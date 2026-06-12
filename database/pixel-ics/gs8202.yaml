@@ -1,7 +1,7 @@
 id: gs8202
 name: GS8202
 manufacturer: Shenzhen Greesit Technology
-pwm_frequency: 8.0kHz
+pwm_frequency: 8
 channels: 3
 channel_bits: 8
 aggregate_bits: 12

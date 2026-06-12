@@ -2,23 +2,23 @@ id: gs8208
 name: GS8208
 manufacturer: Genesis Systec
 color_order: RGB
-led_voltage: 12V
+led_voltage: 12
 led_voltage_notes: Datasheet 10.8-13.2V
 clocked: false
-vcc_voltage: 12V
-pwm_frequency: 8.0kHz
+vcc_voltage: 12
+pwm_frequency: 8
 pwm_frequency_notes: 8kHz according to datasheet - uses MPWM to effectively multiply 2kHz PWM to 8kHz
 brightness_bits: 8
 brightness_control_notes: 36 bits interpolated 12 bits gamma correction per colour
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: 120mW
-channel_current: 10mA
+gpio_min: 3.5
+gpio_max: 5
+wattage: 120
+channel_current: 10
 channel_current_notes: Measured current across 3 LEDs at 12V. Datasheet claims 15mA
-quiescent_current: 2.5mA
+quiescent_current: 2.5
 package_sizes:
   - "5050"
 package_size: "5050"

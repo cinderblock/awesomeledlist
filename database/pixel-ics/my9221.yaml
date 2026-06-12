@@ -1,7 +1,7 @@
 id: my9221
 name: MY9221
 manufacturer: MY-Semi
-pwm_frequency: 1.0kHz
+pwm_frequency: 1
 channels: 3
 channel_bits: 16
 aggregate_bits: null

@@ -1,18 +1,18 @@
 id: p9813
 name: P9813
 manufacturer: WorldSemi
-pwm_frequency: 4.7kHz
+pwm_frequency: 4.7
 channels: 3
 channel_bits: 8
 aggregate_bits: 8
 clocked: true
-data_bitrate: 20MHz
+data_bitrate: 20
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 625.0 k Pixel / s
 output_voltage: 12V
 supply_voltage: 5V
-gpio_min: 3.5V
-gpio_max: 5V
+gpio_min: 3.5
+gpio_max: 5
 max_current: 45mA
 quiescent_current: null
 package_size: SOP14/DIP14

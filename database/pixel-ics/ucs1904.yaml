@@ -1,7 +1,7 @@
 id: ucs1904
 name: UCS1904
 manufacturer: Normand Electronics
-pwm_frequency: 1.5kHz
+pwm_frequency: 1.5
 channels: 3
 channel_bits: 8
 aggregate_bits: null

@@ -1,12 +1,12 @@
 id: sk6812-5050
 name: SK6812(5050)
 manufacturer: Opsco Optoelectronics
-pwm_frequency: 1.2kHz
+pwm_frequency: 1.2
 channels: 3
 channel_bits: 8
 aggregate_bits: null
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
 output_voltage: null
@@ -14,7 +14,7 @@ supply_voltage: 5V
 gpio_min: null
 gpio_max: null
 max_current: null
-quiescent_current: 1.0mA
+quiescent_current: 1
 package_size: null
 pin_count: null
 data_type: null

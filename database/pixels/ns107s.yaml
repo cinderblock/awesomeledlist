@@ -1,19 +1,19 @@
 id: ns107s
 name: NS107S
 color_order: BGR
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 27.0kHz
+vcc_voltage: 5
+pwm_frequency: 27
 brightness_bits: 8+5
-data_bitrate: 30MHz
+data_bitrate: 30
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 0.94 M Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: 100.mW
-channel_current: 20.0mA
-quiescent_current: 0.1mA
+gpio_min: 3.5
+gpio_max: 5
+wattage: 100
+channel_current: 20
+quiescent_current: 0.1
 package_size: 5050, 3535, 2020
 pin_count: 6
 data_type: APA102

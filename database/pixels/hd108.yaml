@@ -1,19 +1,19 @@
 id: hd108
 name: HD108
 color_order: RGB
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 27.0kHz
+vcc_voltage: 5
+pwm_frequency: 27
 brightness_bits: 15
-data_bitrate: 40MHz
+data_bitrate: 40
 pixel_data_size: 64 Bits/Pixel
 pixel_rate_max: 625.0 k Pixel / s
-gpio_min: 3.4V
-gpio_max: 5V
-wattage: "#VALUE!"
-channel_current: 17.0mA
-quiescent_current: 0.1mA
+gpio_min: 3.4
+gpio_max: 5
+wattage: null
+channel_current: 17
+quiescent_current: 0.1
 package_size: 5050, 2020
 pin_count: 6
 data_type: APA102

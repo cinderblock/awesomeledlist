@@ -1,20 +1,20 @@
 id: ws2801
 name: WS2801
 manufacturer: WorldSemi
-pwm_frequency: 2.5kHz
+pwm_frequency: 2.5
 channels: 3
 channel_bits: 8
 aggregate_bits: null
 clocked: true
-data_bitrate: 25MHz
+data_bitrate: 25
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 1.04 M Pixel / s
 output_voltage: 7V
 supply_voltage: 5V
-gpio_min: 4.0V
-gpio_max: 5V
+gpio_min: 4
+gpio_max: 5
 max_current: 50mA
-quiescent_current: 1.5mA
+quiescent_current: 1.5
 package_size: SO14/DIP14
 pin_count: 14
 data_type: WS2801

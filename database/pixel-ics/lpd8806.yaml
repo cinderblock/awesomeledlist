@@ -1,18 +1,18 @@
 id: lpd8806
 name: LPD8806
 manufacturer: Greeled Electronic
-pwm_frequency: 9.4kHz
+pwm_frequency: 9.4
 channels: 3
 channel_bits: 8
 aggregate_bits: 7
 clocked: true
-data_bitrate: 20MHz
+data_bitrate: 20
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 625.0 k Pixel / s
 output_voltage: 12V
 supply_voltage: 5V
 gpio_min: null
-gpio_max: 5V
+gpio_max: 5
 max_current: 20mA
 quiescent_current: null
 package_size: SOP16/QFN16

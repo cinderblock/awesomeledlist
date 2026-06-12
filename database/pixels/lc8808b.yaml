@@ -1,19 +1,19 @@
 id: lc8808b
 name: LC8808B
 color_order: BGR
-led_voltage: 12V
+led_voltage: 12
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 8.0kHz
+vcc_voltage: 5
+pwm_frequency: 8
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 4.0V
-gpio_max: 13V
-wattage: 65.mW
-channel_current: 13.0mA
-quiescent_current: 2.5mA
+gpio_min: 4
+gpio_max: 13
+wattage: 65
+channel_current: 13
+quiescent_current: 2.5
 package_size: "5050"
 pin_count: 6
 data_type: null

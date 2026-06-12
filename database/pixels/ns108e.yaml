@@ -1,19 +1,19 @@
 id: ns108e
 name: NS108E
 color_order: RGB
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 4.0kHz
+vcc_voltage: 5
+pwm_frequency: 4
 brightness_bits: 16+5
-data_bitrate: 30MHz
+data_bitrate: 30
 pixel_data_size: 64 Bits/Pixel
 pixel_rate_max: 468.8 k Pixel / s
-gpio_min: 3.0V
-gpio_max: 6V
-wattage: 91.8mW
-channel_current: 18.0mA
-quiescent_current: 3.6mA
+gpio_min: 3
+gpio_max: 6
+wattage: 91.8
+channel_current: 18
+quiescent_current: 3.6
 package_size: 5050, 3535, 2020
 pin_count: 6
 data_type: SK9826

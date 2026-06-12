@@ -1,7 +1,7 @@
 id: ws2814
 name: WS2814
 manufacturer: WorldSemi
-pwm_frequency: 2.0kHz
+pwm_frequency: 2
 channels: 4
 channel_bits: 8
 aggregate_bits: null

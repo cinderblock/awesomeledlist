@@ -1,27 +1,27 @@
 id: ws2811
 name: WS2811
 manufacturer: WorldSemi
-pwm_frequency: 2.0kHz
+pwm_frequency: 2
 pwm_frequency_notes: 400Hz was old spec. Newer WS2811 chips have 2kHz PWM like WS2812B post-2018
 channels: 3
 channel_bits: 8
 aggregate_bits: 24
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
 output_voltage: 12V
 output_voltage_notes: Vds max - can drive LEDs at various voltages up to 12V via constant current
 supply_voltage: 5V
 supply_voltage_notes: VCC range 4.5-5.5V
-gpio_min: 3.0V
+gpio_min: 3
 gpio_min_notes: 0.6*VDD at 5V supply
-gpio_max: 5V
+gpio_max: 5
 max_current: 19mA
 max_current_notes: Constant current driver, actual current set by external resistor
 current_programmable: true
 current_range: 3-60mA typical depending on Rext
-quiescent_current: 0.7mA
+quiescent_current: 0.7
 package_sizes:
   - SOIC8
   - DIP8

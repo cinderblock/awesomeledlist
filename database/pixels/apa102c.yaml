@@ -2,23 +2,23 @@ id: apa102c
 name: APA102C
 manufacturer: APA Electronics
 color_order: BGR
-led_voltage: 5V
+led_voltage: 5
 led_voltage_notes: Datasheet claims "26V Vds, Max" but LEDs are built-in and share power with 5V VDD
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 19.2kHz
+vcc_voltage: 5
+pwm_frequency: 19.2
 brightness_bits: 8+5
 brightness_control_method: pwm
 brightness_control_notes: Extra 5-bit brightness control by overlaying 400Hz PWM on LEDs
-data_bitrate: 30MHz
+data_bitrate: 30
 pixel_data_size: 32 Bits/Pixel
 pixel_rate_max: 0.94 M Pixel / s
-gpio_min: 3.5V
-gpio_max: 5V
-wattage: 110mW
-channel_current: 22mA
+gpio_min: 3.5
+gpio_max: 5
+wattage: 110
+channel_current: 22
 channel_current_notes: 19-22mA in 5050 package, 10mA for 2020 package; extra 5 bits control PWM, not current
-quiescent_current: 1.0mA
+quiescent_current: 1
 package_sizes:
   - "5050"
   - "2020"

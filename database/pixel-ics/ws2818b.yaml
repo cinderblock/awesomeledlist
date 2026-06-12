@@ -1,20 +1,20 @@
 id: ws2818b
 name: WS2818B
 manufacturer: WorldSemi
-pwm_frequency: 2.0kHz
+pwm_frequency: 2
 channels: 3
 channel_bits: 8
 aggregate_bits: null
 clocked: false
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
 output_voltage: 12V
 supply_voltage: 5V
-gpio_min: 3.0V
-gpio_max: 5V
+gpio_min: 3
+gpio_max: 5
 max_current: 16mA
-quiescent_current: 2.1mA
+quiescent_current: 2.1
 package_size: SOP8,CPC8
 pin_count: 8
 data_type: WS2811/12

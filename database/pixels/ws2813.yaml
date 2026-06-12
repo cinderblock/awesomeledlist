@@ -2,21 +2,21 @@ id: ws2813
 name: WS2813
 manufacturer: WorldSemi/Newstar
 color_order: RGB
-led_voltage: 5V
+led_voltage: 5
 clocked: false
-vcc_voltage: 5V
-pwm_frequency: 2.0kHz
+vcc_voltage: 5
+pwm_frequency: 2
 pwm_frequency_notes: 2kHz according to datasheet
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: 33.3 k Pixel / s
-gpio_min: 3.0V
-gpio_max: 5V
-wattage: 90mW
-channel_current: 18mA
+gpio_min: 3
+gpio_max: 5
+wattage: 90
+channel_current: 18
 channel_current_notes: Also has a 5mA version available
-quiescent_current: 0.7mA
+quiescent_current: 0.7
 package_sizes:
   - "5050"
 package_size: "5050"

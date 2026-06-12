@@ -1,7 +1,7 @@
 id: tm1809
 name: TM1809
 manufacturer: Titan Micro Electronics
-pwm_frequency: 400Hz
+pwm_frequency: 0.4
 channels: 3
 channel_bits: 8
 aggregate_bits: null

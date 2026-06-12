@@ -1,19 +1,19 @@
 id: ns108
 name: NS108
 color_order: BGR
-led_voltage: 5V
+led_voltage: 5
 clocked: true
-vcc_voltage: 5V
-pwm_frequency: 27.0kHz
+vcc_voltage: 5
+pwm_frequency: 27
 brightness_bits: 16+5
-data_bitrate: 30MHz
+data_bitrate: 30
 pixel_data_size: 64 Bits/Pixel
 pixel_rate_max: 468.8 k Pixel / s
-gpio_min: 3.0V
-gpio_max: 6V
-wattage: 102.mW
-channel_current: 20.0mA
-quiescent_current: 1.0mA
+gpio_min: 3
+gpio_max: 6
+wattage: 102
+channel_current: 20
+quiescent_current: 1
 package_size: 5050, 3535, 2020
 pin_count: 6
 data_type: APA102

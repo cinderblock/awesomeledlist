@@ -1,17 +1,17 @@
 id: sk6813
 name: SK6813
 color_order: null
-led_voltage: 5V
+led_voltage: 5
 clocked: false
 vcc_voltage: null
-pwm_frequency: 1.2kHz
+pwm_frequency: 1.2
 brightness_bits: 8
-data_bitrate: 800kHz
+data_bitrate: 0.8
 pixel_data_size: 24 Bits/Pixel
 pixel_rate_max: null
 gpio_min: null
 gpio_max: null
-wattage: .mW
+wattage: null
 channel_current: null
 quiescent_current: null
 package_size: "5050"
