@@ -14,7 +14,7 @@ pixel_types: both
 max_voltage: null
 max_current: null
 buffered: true
-output_connectors: RJ-45
+output_connectors: RJ45
 outputs: null
 waterproof: null
 auxiliary_outputs: null

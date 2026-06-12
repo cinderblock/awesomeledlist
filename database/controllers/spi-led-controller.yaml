@@ -23,7 +23,7 @@ max_voltage: 24
 max_current: 10
 max_current_per_output: 10
 buffered: true
-output_connectors: RJ-45 DMX, Phoenix Plug SPI
+output_connectors: RJ45 DMX, Phoenix Plug SPI
 outputs: Data, Clock, SPI
 waterproof: null
 auxiliary_outputs: DMX

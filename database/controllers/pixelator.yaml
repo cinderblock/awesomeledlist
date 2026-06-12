@@ -13,7 +13,7 @@ pixel_types: async
 max_voltage: null
 max_current: null
 buffered: true
-output_connectors: RJ-45
+output_connectors: RJ45
 outputs: Proprietary
 waterproof: null
 auxiliary_outputs: null
