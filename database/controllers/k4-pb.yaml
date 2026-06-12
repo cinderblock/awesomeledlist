@@ -2,12 +2,17 @@ id: k4-pb
 name: K4-PB
 manufacturer: KulpLights, LLC
 max_pixels: 6400
-price: 70
+price: 55
 max_outputs: 4
 interfaces:
   - Ethernet
-storage: Yes
+  - WiFi
+  - USB
+protocols:
+  - FPP
+storage: microSD
 standalone: true
+requires_host: PocketBeagle
 pixel_types: async
 max_voltage: 12
 max_current: 20
@@ -17,8 +22,16 @@ outputs: Single
 waterproof: null
 auxiliary_outputs: DMX
 wled_compatible: null
-notes: eFuse power distribution
+notes:
+  PocketBeagle/PocketBeagle2 cape running FPP (networking via USB adapter on
+  the host - Ethernet preferred, WiFi works; FPP image on the host microSD).
+  4 eFused ports with current monitoring, pixel counting, and fuse alerts;
+  each port drives 800+ pixels at 40FPS with power injection. 3-pin UART
+  header for one DMX universe or PixelNet/Renard/LOR. 5V/12V selectable via
+  jumpers.
 warranty: null
 release_year: null
 status: active
 url: https://kulplights.com/product/k4-pb/
+related_microboards:
+  - pocketbeagle
