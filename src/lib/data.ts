@@ -151,6 +151,10 @@ export interface Pixel extends BaseEntry {
   brightness_bits: string | null;
   /** MHz */
   data_bitrate: number | null;
+  /** Volts — lowest voltage registering as logic high */
+  gpio_min: number | null;
+  /** Volts — max voltage allowed at the data pin */
+  gpio_max: number | null;
   data_type: string | null;
   backup_data_line: boolean | null;
   package_size: string | null;

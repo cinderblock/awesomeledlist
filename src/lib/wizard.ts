@@ -36,6 +36,8 @@ export type WarningLevel = "none" | "advisory" | "serious";
 export interface CompatCheck {
   level: "ok" | "warn" | "error";
   message: string;
+  /** Optional in-app link with more help (e.g. a suggested part) */
+  link?: { to: string; label: string };
 }
 
 function ledVolts(pixel: Pixel): { volts: number; known: boolean } {
@@ -62,6 +64,38 @@ export function powerWarningLevel(totalWatts: number): WarningLevel {
   if (totalWatts > SERIOUS_WATTS) return "serious";
   if (totalWatts > ADVISORY_WATTS) return "advisory";
   return "none";
+}
+
+/** Max amps a single power feed should carry before injecting elsewhere. */
+export const FEED_AMPS = 10;
+
+/**
+ * How many pixels one power feed can serve before exceeding FEED_AMPS,
+ * or null when a single feed handles the whole run.
+ */
+export function injectionIntervalPx(power: PowerEstimate): number | null {
+  if (power.amps <= FEED_AMPS) return null;
+  return Math.max(1, Math.floor((FEED_AMPS * power.volts * 1000) / power.perPixelMw));
+}
+
+export interface ControllerRanking {
+  compatible: Controller[];
+  other: Controller[];
+}
+
+/** Split controllers into hard-compatible vs the rest for the chosen pixel/count. */
+export function rankControllers(
+  pixel: Pixel,
+  count: number,
+  controllers: Controller[]
+): ControllerRanking {
+  const compatible: Controller[] = [];
+  const other: Controller[] = [];
+  for (const c of controllers) {
+    const hasError = checkCompatibility(pixel, c, count).some((r) => r.level === "error");
+    (hasError ? other : compatible).push(c);
+  }
+  return { compatible, other };
 }
 
 export function checkCompatibility(
@@ -101,6 +135,23 @@ export function checkCompatibility(
     );
   } else {
     checks.push({ level: "warn", message: `${controller.name}: max pixel capacity unverified in the database` });
+  }
+
+  // Logic level: pixels whose input-high threshold sits above 3.3V need
+  // 5V-level data; buffered controllers provide it, otherwise suggest a shifter
+  if (typeof pixel.gpio_min === "number" && pixel.gpio_min > 3.3) {
+    if (controller.buffered === true) {
+      checks.push({
+        level: "ok",
+        message: `Data level fine: ${pixel.name} needs >${pixel.gpio_min}V data and the controller has buffered (5V) outputs`,
+      });
+    } else {
+      checks.push({
+        level: "warn",
+        message: `${pixel.name} needs data above ${pixel.gpio_min}V - if the controller's outputs are unbuffered 3.3V, add a level shifter`,
+        link: { to: "/level-converters/sn74ahct125", label: "74AHCT125" },
+      });
+    }
   }
 
   // Voltage: only meaningful when the string shares power with the controller

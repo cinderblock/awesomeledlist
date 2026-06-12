@@ -1,23 +1,27 @@
 import { useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { AlertTriangle, Check, CircleAlert, Download, Link2, Zap } from "lucide-react";
+import { AlertTriangle, Check, CircleAlert, Download, Image, Link2, Zap } from "lucide-react";
 import { getCategoryData } from "@/lib/data";
 import type { Controller, Pixel } from "@/lib/data";
 import {
   buildDiagramSvg,
   checkCompatibility,
   estimatePower,
+  injectionIntervalPx,
   powerWarningLevel,
+  rankControllers,
 } from "@/lib/wizard";
 import { usePageTitle } from "@/hooks";
 
@@ -55,22 +59,52 @@ export function WizardPage() {
   const power = pixel ? estimatePower(pixel, count) : null;
   const warning = power ? powerWarningLevel(power.totalWatts) : "none";
   const checks = pixel && controller ? checkCompatibility(pixel, controller, count) : [];
+  const injectEvery = power ? injectionIntervalPx(power) : null;
 
-  const downloadSvg = () => {
-    if (!pixel || !controller || !power) return;
-    const svg = buildDiagramSvg({
-      pixel,
-      controller,
-      count,
-      power,
-      shareUrl: window.location.href,
-    });
-    const blob = new Blob([svg], { type: "image/svg+xml" });
+  // With pixels chosen, group the controller list: hard-compatible first
+  const ranking = useMemo(
+    () => (pixel ? rankControllers(pixel, count, controllers) : null),
+    [pixel, count, controllers]
+  );
+
+  const diagramSvg = () =>
+    pixel && controller && power
+      ? buildDiagramSvg({ pixel, controller, count, power, shareUrl: window.location.href })
+      : null;
+
+  const downloadBlob = (blob: Blob, name: string) => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `led-system-${pixel.id}-${controller.id}.svg`;
+    a.download = name;
     a.click();
     URL.revokeObjectURL(a.href);
+  };
+
+  const downloadSvg = () => {
+    const svg = diagramSvg();
+    if (!svg || !pixel || !controller) return;
+    downloadBlob(new Blob([svg], { type: "image/svg+xml" }), `led-system-${pixel.id}-${controller.id}.svg`);
+  };
+
+  const downloadPng = () => {
+    const svg = diagramSvg();
+    if (!svg || !pixel || !controller) return;
+    const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+    const img = new window.Image();
+    img.onload = () => {
+      const scale = 2; // 1600x400 output
+      const canvas = document.createElement("canvas");
+      canvas.width = 800 * scale;
+      canvas.height = 200 * scale;
+      const ctx = canvas.getContext("2d")!;
+      ctx.scale(scale, scale);
+      ctx.drawImage(img, 0, 0);
+      canvas.toBlob((blob) => {
+        if (blob) downloadBlob(blob, `led-system-${pixel.id}-${controller.id}.png`);
+      }, "image/png");
+      URL.revokeObjectURL(url);
+    };
+    img.src = url;
   };
 
   const copyLink = () => navigator.clipboard.writeText(window.location.href);
@@ -110,6 +144,14 @@ export function WizardPage() {
                 ))}
               </SelectContent>
             </Select>
+            {pixel && (
+              <Link
+                to={`/pixels/${pixel.id}`}
+                className="text-primary text-xs hover:underline"
+              >
+                View {pixel.name} details
+              </Link>
+            )}
           </div>
           <div className="space-y-1">
             <label className="text-sm font-medium">How many</label>
@@ -128,13 +170,46 @@ export function WizardPage() {
                 <SelectValue placeholder="Choose a controller" />
               </SelectTrigger>
               <SelectContent>
-                {controllers.map((c) => (
-                  <SelectItem key={c.id} value={c.id}>
-                    {c.name}
-                  </SelectItem>
-                ))}
+                {ranking ? (
+                  <>
+                    <SelectGroup>
+                      <SelectLabel>
+                        Compatible ({ranking.compatible.length})
+                      </SelectLabel>
+                      {ranking.compatible.map((c) => (
+                        <SelectItem key={c.id} value={c.id}>
+                          {c.name}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                    {ranking.other.length > 0 && (
+                      <SelectGroup>
+                        <SelectLabel>Incompatible or unverified</SelectLabel>
+                        {ranking.other.map((c) => (
+                          <SelectItem key={c.id} value={c.id}>
+                            {c.name}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    )}
+                  </>
+                ) : (
+                  controllers.map((c) => (
+                    <SelectItem key={c.id} value={c.id}>
+                      {c.name}
+                    </SelectItem>
+                  ))
+                )}
               </SelectContent>
             </Select>
+            {controller && (
+              <Link
+                to={`/controllers/${controller.id}`}
+                className="text-primary text-xs hover:underline"
+              >
+                View {controller.name} details
+              </Link>
+            )}
           </div>
         </CardContent>
       </Card>
@@ -149,7 +224,17 @@ export function WizardPage() {
               {checks.map((c, i) => (
                 <li key={i} className="flex items-start gap-2">
                   {checkIcon[c.level]}
-                  <span>{c.message}</span>
+                  <span>
+                    {c.message}
+                    {c.link && (
+                      <>
+                        {" "}
+                        <Link to={c.link.to} className="text-primary hover:underline">
+                          {c.link.label}
+                        </Link>
+                      </>
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -188,10 +273,11 @@ export function WizardPage() {
               </div>
             </dl>
 
-            {power.amps > 10 && (
+            {injectEvery != null && (
               <p className="text-sm text-amber-700 dark:text-amber-400">
-                Over 10 A on one run - plan power injection at multiple points and size your
-                wiring accordingly.
+                Over 10 A total - plan a power feed roughly every{" "}
+                {injectEvery.toLocaleString()} pixels (keeping each feed under 10 A) and size
+                your wiring accordingly.
               </p>
             )}
             {warning === "advisory" && (
@@ -228,9 +314,12 @@ export function WizardPage() {
                 }),
               }}
             />
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button onClick={downloadSvg} variant="default" size="sm">
                 <Download /> Download SVG
+              </Button>
+              <Button onClick={downloadPng} variant="outline" size="sm">
+                <Image /> Download PNG
               </Button>
               <Button onClick={copyLink} variant="outline" size="sm">
                 <Link2 /> Copy share link

@@ -2,10 +2,13 @@ import { describe, expect, it } from "vitest";
 import {
   ADVISORY_WATTS,
   DEFAULT_PIXEL_MW,
+  FEED_AMPS,
   SERIOUS_WATTS,
   checkCompatibility,
   estimatePower,
+  injectionIntervalPx,
   powerWarningLevel,
+  rankControllers,
 } from "@/lib/wizard";
 import type { Controller, Pixel } from "@/lib/data";
 
@@ -97,5 +100,47 @@ describe("checkCompatibility", () => {
       10
     );
     expect(checks.some((c) => c.level === "warn" && /separately/.test(c.message))).toBe(true);
+  });
+
+  it("suggests a level shifter for >3.3V data pixels on unbuffered controllers", () => {
+    const checks = checkCompatibility(
+      pixel({ gpio_min: 3.5 }),
+      controller({ buffered: null }),
+      10
+    );
+    const shifter = checks.find((c) => c.link?.label === "74AHCT125");
+    expect(shifter?.level).toBe("warn");
+
+    const buffered = checkCompatibility(
+      pixel({ gpio_min: 3.5 }),
+      controller({ buffered: true }),
+      10
+    );
+    expect(buffered.some((c) => c.level === "ok" && /buffered/.test(c.message))).toBe(true);
+  });
+});
+
+describe("injectionIntervalPx", () => {
+  it("is null when one feed suffices", () => {
+    const p = estimatePower(pixel(), 100); // 30W @5V = 6A
+    expect(injectionIntervalPx(p)).toBeNull();
+  });
+
+  it("computes pixels per feed at the feed-amp limit", () => {
+    const p = estimatePower(pixel({ wattage: 300, led_voltage: 5 }), 1000); // 60A
+    // 10A * 5V = 50W per feed / 0.3W per pixel = 166 px
+    expect(p.amps).toBeGreaterThan(FEED_AMPS);
+    expect(injectionIntervalPx(p)).toBe(166);
+  });
+});
+
+describe("rankControllers", () => {
+  it("splits hard-incompatible controllers from compatible ones", () => {
+    const clockedOnly = controller({ id: "c1", pixel_types: "clocked" });
+    const bothTypes = controller({ id: "c2", pixel_types: "both" });
+    const tiny = controller({ id: "c3", max_pixels: 10 });
+    const { compatible, other } = rankControllers(pixel(), 500, [clockedOnly, bothTypes, tiny]);
+    expect(compatible.map((c) => c.id)).toEqual(["c2"]);
+    expect(other.map((c) => c.id).sort()).toEqual(["c1", "c3"]);
   });
 });
