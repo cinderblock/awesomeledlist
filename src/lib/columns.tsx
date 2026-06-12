@@ -3,6 +3,7 @@
  */
 
 import { Badge } from "@/components/ui/badge";
+import { TermBadge } from "@/components/ui/term-badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ExternalLink, FileText, ShoppingCart, Youtube } from "lucide-react";
 import type { Column } from "@/components/data";
@@ -106,9 +107,7 @@ function renderBadgeArray(v: unknown) {
   return (
     <div className="flex flex-wrap gap-1">
       {v.slice(0, 3).map((i, idx) => (
-        <Badge key={idx} variant="outline" className="text-xs">
-          {String(i)}
-        </Badge>
+        <TermBadge key={idx} term={String(i)} className="text-xs" />
       ))}
       {v.length > 3 && (
         <Badge variant="secondary" className="text-xs">

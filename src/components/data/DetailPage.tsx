@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
+import { TermBadge } from "@/components/ui/term-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ImageGallery } from "@/components/ui/image-cell";
@@ -417,9 +418,7 @@ function FieldValue({ value, unit }: { value: unknown; unit?: string }) {
     return (
       <div className="flex flex-wrap gap-1">
         {value.map((v, i) => (
-          <Badge key={i} variant="outline">
-            {String(v)}
-          </Badge>
+          <TermBadge key={i} term={String(v)} />
         ))}
       </div>
     );
