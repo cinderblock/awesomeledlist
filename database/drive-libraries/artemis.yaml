@@ -2,6 +2,15 @@ id: artemis
 name: Artemis
 developer: Robert Beekman
 hardware: PC /  Video source
+platforms:
+  - Windows
+  - Linux
+  - macOS
+language: C#
+license: PolyForm-Noncommercial-1.0.0
+status: active
+supported_ics:
+  - WS281X
 features: Artemis is a lighting software for gamers that creates realistic lighting effects by using device location.
 url: https://artemis-rgb.com/
 youtube_url: null
