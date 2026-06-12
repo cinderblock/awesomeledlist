@@ -32,6 +32,12 @@ async function main() {
   const ajv = new Ajv({ allErrors: true, strict: false });
   addFormats(ajv);
 
+  // Register shared definitions so cross-schema $refs (common.json#/definitions/*) resolve
+  const commonSchema = JSON.parse(
+    readFileSync(join(SCHEMA_DIR, "common.json"), "utf-8")
+  );
+  ajv.addSchema(commonSchema);
+
   let totalFiles = 0;
   let validFiles = 0;
   let errorCount = 0;
