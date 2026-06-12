@@ -4,7 +4,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { TermBadge } from "@/components/ui/term-badge";
-import { getUnit } from "@/lib/units";
+import { getUnit, humanizeQuantity } from "@/lib/units";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ExternalLink, FileText, ShoppingCart, Youtube } from "lucide-react";
 import type { Column } from "@/components/data";
@@ -185,11 +185,16 @@ function formatNumericWithUnit(v: unknown, unitWidth?: string, schemaUnit?: stri
   }
 
   const numStr = match[1] ?? "";
-  const unit = match[2] || schemaUnit || "";
-  const num = parseFloat(numStr.replace(/,/g, ""));
+  let unit = match[2] || schemaUnit || "";
+  let num = parseFloat(numStr.replace(/,/g, ""));
 
   if (isNaN(num)) {
     return <span>{str}</span>;
+  }
+
+  // Bare numbers in a schema unit climb the display ladder (1048576 kB -> 1 GB)
+  if (typeof v === "number" && schemaUnit && unit === schemaUnit) {
+    ({ value: num, unit } = humanizeQuantity(num, schemaUnit));
   }
 
   return (

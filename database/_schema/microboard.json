@@ -30,10 +30,14 @@
       "description": "CPU clock speed in MHz"
     },
     "flash": {
-      "type": ["string", "null"]
+      "type": ["number", "string", "null"],
+      "unit": "kB",
+      "description": "Onboard program flash in kB (null for SBCs that boot from the storage field; UI humanizes to MB/GB). Strings only for variant lists."
     },
     "ram": {
-      "type": ["string", "null"]
+      "type": ["number", "string", "null"],
+      "unit": "kB",
+      "description": "RAM in kB (UI humanizes to MB/GB). Strings only for variant lists or qualified values."
     },
     "linux": {
       "type": ["boolean", "null"]

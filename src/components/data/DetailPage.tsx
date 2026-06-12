@@ -14,7 +14,7 @@ import {
   getReferencingEntries,
 } from "@/lib/data";
 import { CATEGORIES } from "@/lib/types";
-import { getUnit } from "@/lib/units";
+import { getUnit, humanizeQuantity } from "@/lib/units";
 import type { DetailSection } from "@/lib/fields";
 
 // Link types that can appear on detail pages
@@ -409,10 +409,11 @@ function FieldValue({ value, unit }: { value: unknown; unit?: string }) {
 
   // Bare numbers carry their canonical unit in the JSON Schema ("unit" keyword)
   if (typeof value === "number" && unit) {
+    const h = humanizeQuantity(value, unit);
     return (
       <span>
-        <span className="tabular-nums">{value.toLocaleString()}</span>
-        <span className="text-muted-foreground ml-1">{unit}</span>
+        <span className="tabular-nums">{h.value.toLocaleString()}</span>
+        <span className="text-muted-foreground ml-1">{h.unit}</span>
       </span>
     );
   }
