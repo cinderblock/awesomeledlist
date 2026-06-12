@@ -133,14 +133,24 @@ export interface Controller extends BaseEntry {
   url: string | null;
 }
 
+/** Numeric range in a field's canonical unit (common.json#/definitions/range) */
+export interface Range {
+  min: number;
+  max: number;
+}
+
 export interface Pixel extends BaseEntry {
   color_order: string | null;
-  led_voltage: string | null;
+  /** Volts (or {min,max} range) — canonical unit lives in the JSON Schema */
+  led_voltage: number | Range | null;
   clocked: boolean | null;
-  vcc_voltage: string | null;
-  pwm_frequency: string | null;
+  /** Volts */
+  vcc_voltage: number | null;
+  /** kHz */
+  pwm_frequency: number | null;
   brightness_bits: string | null;
-  data_bitrate: string | null;
+  /** MHz */
+  data_bitrate: number | null;
   data_type: string | null;
   backup_data_line: boolean | null;
   package_size: string | null;
@@ -150,10 +160,12 @@ export interface Pixel extends BaseEntry {
 }
 
 export interface PixelIC extends BaseEntry {
-  pwm_frequency: string | null;
+  /** kHz */
+  pwm_frequency: number | null;
   channels: number | null;
   clocked: boolean | null;
-  data_bitrate: string | null;
+  /** MHz */
+  data_bitrate: number | null;
   data_type: string | null;
   package_size: string | null;
   notes: string | null;

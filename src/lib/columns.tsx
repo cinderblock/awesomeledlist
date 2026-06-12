@@ -4,6 +4,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { TermBadge } from "@/components/ui/term-badge";
+import { getUnit } from "@/lib/units";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ExternalLink, FileText, ShoppingCart, Youtube } from "lucide-react";
 import type { Column } from "@/components/data";
@@ -154,6 +155,26 @@ function formatPrice(v: unknown) {
 function formatNumericWithUnit(v: unknown, unitWidth?: string, schemaUnit?: string) {
   if (v == null) return <span className="text-muted-foreground">-</span>;
 
+  // {min, max} range objects (common.json#/definitions/range)
+  if (typeof v === "object" && "min" in v && "max" in v) {
+    const r = v as { min: number; max: number };
+    return (
+      <span className="inline-flex w-full items-baseline justify-end">
+        <span className="tabular-nums">
+          {r.min.toLocaleString()}&ndash;{r.max.toLocaleString()}
+        </span>
+        {schemaUnit && (
+          <span
+            className="text-muted-foreground ml-1 inline-block text-left"
+            style={unitWidth ? { width: unitWidth } : undefined}
+          >
+            {schemaUnit}
+          </span>
+        )}
+      </span>
+    );
+  }
+
   const str = String(v);
 
   // Parse number and unit from string like "30 A", "5V", "800kHz", "2.0kHz"
@@ -233,10 +254,25 @@ export const pixelColumns: Column<Pixel>[] = [
   { key: "name", label: "Name" },
   { key: "manufacturer", label: "Manufacturer" },
   { key: "color_order", label: "Color Order" },
-  { key: "led_voltage", label: "LED Voltage", render: formatVoltage, className: "text-right" },
-  { key: "vcc_voltage", label: "VCC", render: formatVoltage, className: "text-right" },
+  {
+    key: "led_voltage",
+    label: "LED Voltage",
+    render: createUnitFormatter("1ch", getUnit("pixels", "led_voltage")),
+    className: "text-right",
+  },
+  {
+    key: "vcc_voltage",
+    label: "VCC",
+    render: createUnitFormatter("1ch", getUnit("pixels", "vcc_voltage")),
+    className: "text-right",
+  },
   { key: "clocked", label: "Clocked", render: renderBool },
-  { key: "data_bitrate", label: "Data Rate", render: formatFrequency, className: "text-right" },
+  {
+    key: "data_bitrate",
+    label: "Data Rate",
+    render: createUnitFormatter("3ch", getUnit("pixels", "data_bitrate")),
+    className: "text-right",
+  },
   { key: "package_size", label: "Package" },
 ];
 
@@ -250,8 +286,18 @@ export const pixelICColumns: Column<PixelIC>[] = [
   { key: "name", label: "Name" },
   { key: "channels", label: "Channels", render: formatNumericValue, className: "text-right" },
   { key: "clocked", label: "Clocked", render: renderBool },
-  { key: "pwm_frequency", label: "PWM Freq", render: formatFrequency, className: "text-right" },
-  { key: "data_bitrate", label: "Data Rate", render: formatFrequency, className: "text-right" },
+  {
+    key: "pwm_frequency",
+    label: "PWM Freq",
+    render: createUnitFormatter("3ch", getUnit("pixel-ics", "pwm_frequency")),
+    className: "text-right",
+  },
+  {
+    key: "data_bitrate",
+    label: "Data Rate",
+    render: createUnitFormatter("3ch", getUnit("pixel-ics", "data_bitrate")),
+    className: "text-right",
+  },
   { key: "package_size", label: "Package" },
 ];
 

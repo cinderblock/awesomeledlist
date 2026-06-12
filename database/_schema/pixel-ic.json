@@ -17,8 +17,9 @@
       "type": ["string", "null"]
     },
     "pwm_frequency": {
-      "type": ["string", "number", "null"],
-      "description": "PWM frequency of outputs"
+      "type": ["number", "null"],
+      "unit": "kHz",
+      "description": "PWM frequency of outputs in kHz"
     },
     "pwm_frequency_notes": {
       "type": ["string", "null"],
@@ -49,8 +50,9 @@
       "description": "Requires separate clock line"
     },
     "data_bitrate": {
-      "type": ["string", "null"],
-      "description": "Data communication speed"
+      "type": ["number", "null"],
+      "unit": "MHz",
+      "description": "Data communication speed in MHz"
     },
     "data_bitrate_notes": {
       "type": ["string", "null"],
@@ -81,12 +83,14 @@
       "description": "Additional supply voltage details"
     },
     "gpio_min": {
-      "type": ["string", "number", "null"],
-      "description": "Minimum high-level input voltage"
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Minimum high-level input voltage in volts"
     },
     "gpio_max": {
-      "type": ["string", "number", "null"],
-      "description": "Maximum input voltage"
+      "type": ["number", "null"],
+      "unit": "V",
+      "description": "Maximum input voltage in volts"
     },
     "gpio_notes": {
       "type": ["string", "null"],
@@ -109,8 +113,9 @@
       "description": "Programmable current range if applicable"
     },
     "quiescent_current": {
-      "type": ["string", "number", "null"],
-      "description": "Current draw when outputs off"
+      "type": ["number", "null"],
+      "unit": "mA",
+      "description": "Current draw in milliamps when outputs off"
     },
     "package_sizes": {
       "type": "array",

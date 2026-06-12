@@ -45,6 +45,16 @@
     "year": {
       "oneOf": [{ "type": "integer", "minimum": 1990, "maximum": 2030 }, { "type": "null" }]
     },
+    "range": {
+      "type": "object",
+      "description": "Numeric range in the field's canonical unit (see the field's 'unit' annotation)",
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      },
+      "required": ["min", "max"],
+      "additionalProperties": false
+    },
     "datasheet_mirror": {
       "type": ["object", "null"],
       "description": "Repo-managed copy of the datasheet, hosted on R2. Written by CI (scripts/mirror-datasheets.ts) - do not edit by hand. The original author/source stays in datasheet_url.",

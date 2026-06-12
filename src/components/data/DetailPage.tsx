@@ -409,6 +409,19 @@ function FieldValue({ value, unit }: { value: unknown; unit?: string }) {
     );
   }
 
+  // {min, max} range objects (common.json#/definitions/range)
+  if (typeof value === "object" && value !== null && "min" in value && "max" in value) {
+    const r = value as { min: number; max: number };
+    return (
+      <span>
+        <span className="tabular-nums">
+          {r.min.toLocaleString()}&ndash;{r.max.toLocaleString()}
+        </span>
+        {unit && <span className="text-muted-foreground ml-1">{unit}</span>}
+      </span>
+    );
+  }
+
   if (Array.isArray(value)) {
     // Check if array contains objects (like price_tiers or variants)
     if (value.length > 0 && typeof value[0] === "object" && value[0] !== null) {
