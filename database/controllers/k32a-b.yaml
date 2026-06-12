@@ -5,7 +5,8 @@ max_pixels: 72000
 price: 195
 max_outputs: 48
 interfaces:
-  - Ethernet PoE++
+  - Ethernet
+poe_support: PoE++
 storage: Yes
 standalone: true
 pixel_types: async

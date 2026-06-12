@@ -4,7 +4,8 @@ manufacturer: SmartShow
 max_pixels: 5440
 price: 269
 max_outputs: 8
-interfaces:
+interfaces: []
+protocols:
   - FPP
 storage: null
 standalone: false

@@ -5,9 +5,10 @@ max_pixels: 16384
 price: 275
 max_outputs: 16
 interfaces:
-  - FPP
   - Ethernet
   - WiFi
+protocols:
+  - FPP
 storage: microSD
 standalone: null
 pixel_types: both

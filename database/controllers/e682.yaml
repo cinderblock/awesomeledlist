@@ -5,7 +5,9 @@ max_pixels: 6120
 price: 180
 max_outputs: 16
 interfaces:
-  - Ethernet & DMX
+  - Ethernet
+protocols:
+  - DMX
 storage: null
 standalone: false
 pixel_types: both

@@ -5,7 +5,9 @@ max_pixels: 170
 price: 14
 max_outputs: 1
 interfaces:
-  - ArtNet Ethernet
+  - Ethernet
+protocols:
+  - ArtNet
 storage: null
 standalone: false
 pixel_types: both

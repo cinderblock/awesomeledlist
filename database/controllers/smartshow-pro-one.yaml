@@ -5,9 +5,10 @@ max_pixels: 5440
 price: 300
 max_outputs: 8
 interfaces:
-  - FPP
   - Ethernet
   - WiFi
+protocols:
+  - FPP
 storage: null
 standalone: false
 pixel_types: both

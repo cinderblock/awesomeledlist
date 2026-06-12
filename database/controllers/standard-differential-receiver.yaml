@@ -4,7 +4,8 @@ manufacturer: Microcyb
 max_pixels: 6400
 price: 22
 max_outputs: 4
-interfaces:
+interfaces: []
+protocols:
   - DMX
 storage: null
 standalone: true

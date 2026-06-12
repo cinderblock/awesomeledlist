@@ -5,7 +5,9 @@ max_pixels: 8160
 price: 169
 max_outputs: 8
 interfaces:
-  - Ethernet  Artnet
+  - Ethernet
+protocols:
+  - ArtNet
   - sACN
 storage: null
 standalone: false

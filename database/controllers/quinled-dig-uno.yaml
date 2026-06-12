@@ -4,7 +4,8 @@ manufacturer: Quindor / Intermittent Technology
 max_pixels: 2048
 price: 25
 max_outputs: 2
-interfaces:
+interfaces: []
+protocols:
   - DMX
 storage: null
 standalone: true

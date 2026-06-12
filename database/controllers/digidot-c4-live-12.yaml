@@ -5,9 +5,11 @@ max_pixels: 8192
 price: 330
 max_outputs: 4
 interfaces:
-  - FPP
-  - USB Ethernet
+  - Ethernet
+  - USB
   - WiFi
+protocols:
+  - FPP
 storage: null
 standalone: false
 pixel_types: both

@@ -5,9 +5,10 @@ max_pixels: 4080
 price: 299
 max_outputs: 4
 interfaces:
-  - FPP
   - Ethernet
   - WiFi
+protocols:
+  - FPP
 storage: SD
 standalone: true
 pixel_types: both

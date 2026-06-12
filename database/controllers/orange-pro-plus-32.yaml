@@ -4,7 +4,8 @@ manufacturer: Winterlights India
 max_pixels: 48000
 price: 275
 max_outputs: 32
-interfaces:
+interfaces: []
+protocols:
   - FPP
 storage: SD
 standalone: true

@@ -5,7 +5,8 @@ max_pixels: 40000
 price: 189
 max_outputs: 32
 interfaces:
-  - Ethernet & USB
+  - Ethernet
+  - USB
 storage: SD
 standalone: true
 pixel_types: async

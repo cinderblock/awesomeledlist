@@ -6,6 +6,7 @@ price: 200
 max_outputs: 48
 interfaces:
   - Ethernet
+protocols:
   - DMX
 storage: null
 standalone: null

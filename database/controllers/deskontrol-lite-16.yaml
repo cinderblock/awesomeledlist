@@ -4,7 +4,8 @@ manufacturer: Deskontrol
 max_pixels: 2720
 price: 363
 max_outputs: 16
-interfaces:
+interfaces: []
+protocols:
   - sACN
   - DDP
 storage: null

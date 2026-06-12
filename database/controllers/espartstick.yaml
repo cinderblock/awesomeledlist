@@ -5,8 +5,9 @@ max_pixels: 1024
 price: 28
 max_outputs: 2
 interfaces:
+  - Wireless DMX
+protocols:
   - DMX
-  - WirelessDMX
 storage: Yes
 standalone: true
 pixel_types: both

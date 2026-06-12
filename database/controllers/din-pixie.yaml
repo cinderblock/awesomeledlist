@@ -8,7 +8,8 @@ price: 100
 max_outputs: 2
 interfaces:
   - Ethernet
-  - Art-Net
+protocols:
+  - ArtNet
 storage: Yes
 standalone: true
 pixel_types: async

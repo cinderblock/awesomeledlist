@@ -4,7 +4,8 @@ manufacturer: KulpLights, LLC
 max_pixels: 80000
 price: 270
 max_outputs: 128
-interfaces:
+interfaces: []
+protocols:
   - FPP
 storage: Yes
 standalone: true

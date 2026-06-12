@@ -4,7 +4,8 @@ manufacturer: Sperll
 max_pixels: 2048
 price: 25
 max_outputs: 1
-interfaces:
+interfaces: []
+protocols:
   - DMX
 storage: null
 standalone: null

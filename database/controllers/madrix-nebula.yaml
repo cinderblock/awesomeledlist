@@ -5,10 +5,10 @@ max_pixels: 2048
 price: 350
 max_outputs: 2
 interfaces:
-  - RFRemote
-  - Bluettooth
-  - audio
-  - switch
+  - RF Remote
+  - Bluetooth
+  - Audio
+  - Switch
 storage: null
 standalone: false
 max_voltage: 24

@@ -5,7 +5,7 @@ max_pixels: 1000
 price: 399
 max_outputs: 2
 interfaces:
-  - TTL Serial
+  - Serial
 storage: Yes
 standalone: true
 pixel_types: both

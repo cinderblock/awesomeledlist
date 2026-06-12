@@ -6,8 +6,9 @@ price: 200
 max_outputs: 8
 interfaces:
   - Ethernet
-  - DMX
   - SD Card
+protocols:
+  - DMX
 storage: SD
 standalone: true
 pixel_types: both

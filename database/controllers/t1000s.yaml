@@ -5,8 +5,9 @@ max_pixels: 2048
 price: 28
 max_outputs: 1
 interfaces:
-  - DMX
   - USB
+protocols:
+  - DMX
 storage: SD
 standalone: true
 pixel_types: both

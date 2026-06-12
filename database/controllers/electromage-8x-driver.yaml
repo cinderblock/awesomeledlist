@@ -5,7 +5,9 @@ max_pixels: 6400
 price: 15
 max_outputs: 8
 interfaces:
-  - ArtNet Ethernet internal switch
+  - Ethernet
+protocols:
+  - ArtNet
 storage: null
 standalone: false
 pixel_types: both
@@ -17,7 +19,7 @@ outputs: Configurable
 waterproof: null
 auxiliary_outputs: null
 wled_compatible: null
-notes: Stacks up to 8 on a bus
+notes: Stacks up to 8 on a bus via internal Ethernet switch
 warranty: null
 release_year: 2019
 status: active
