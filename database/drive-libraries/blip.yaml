@@ -2,6 +2,16 @@ id: blip
 name: BLIP
 developer: Benjamin Kuperberg
 hardware: ESP32
+platforms:
+  - ESP32
+language: C++
+license: GPL-3.0
+status: active
+supported_ics:
+  - WS2812B
+  - WS2816
+  - SK9822
+  - HD108
 features: OSCQuery Enabled, ArtNet multi-ledstrip controller and multi purpose firmware (GPIO, motors, etc.) with a unified control system. ESPNow compatible
 url: https://github.com/Golden-Geek/BLIP/
 youtube_url: null
