@@ -1,0 +1,42 @@
+id: sk6805
+name: SK6805
+manufacturer: Opsco/Newstar
+color_order: GRB
+led_voltage: 5
+clocked: false
+vcc_voltage: 5
+vcc_voltage_notes: EC15 datasheet allows 3.7-5.5V supply
+pwm_frequency: 1.2
+pwm_frequency_notes: Datasheet typical; family sibling SK6812 tested well above its datasheet figure, so verify
+brightness_bits: 8
+data_bitrate: 0.8
+pixel_data_size: 24 Bits/Pixel
+gpio_min: null
+gpio_max: null
+wattage: null
+channel_current: 5
+channel_current_notes: 5mA per channel - the low-current sibling of the 12mA SK6812; designed for high-density arrays
+quiescent_current: null
+package_sizes:
+  - "2427"
+  - "1515"
+  - "1010"
+package_size: 2427,1515,1010
+pin_count: 4
+data_type: WS2811/12
+related_pixel_ics:
+  - ws2811
+backup_data_line: false
+max_pixels_per_string: null
+release_year: null
+notes:
+  Tiny high-density packages (down to 1.0mm EC10) used in dense matrices,
+  wearables, and "NeoPixel Nano" products; protocol-compatible with the
+  WS2812/SK6812 family
+technical_notes:
+  - Fixed 5mA constant-current per channel keeps color consistent as voltage sags
+  - Package variants include EC15 (1.5mm), EC14, EC10, 2427 (SK6805MICRO)
+datasheet_url: https://cdn-shop.adafruit.com/product-files/3484/3484_Datasheet.pdf
+other_links:
+  - NeoPixel Nano 2427 at Adafruit (product 3484)
+status: active
