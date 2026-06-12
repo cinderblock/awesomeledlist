@@ -1,0 +1,44 @@
+id: rj45
+name: RJ45 (8P8C Modular)
+manufacturer: Generic
+url: https://www.newark.com/c/connectors/modular-connectors/modular-ethernet-connectors?no-of-positions-loaded-contacts-per-port-=8p8c
+outline: Rectangular
+max_current: 1.5
+max_current_notes: 1.5 A per contact (typical modular plug rating); pixel controllers using RJ45 outputs gang multiple contacts for power or carry data only
+max_voltage: 125
+ip_rating: null
+ip_rating_notes: Standard jacks unrated; ruggedized variants (Neutrik etherCON) available
+locking: Latching
+panel_mount: true
+wire_to_wire: false
+pcb_mount: Both
+smallest_gauge: 28
+largest_gauge: 22
+pitch: 1.02
+contact_type: Blades
+solder: false
+screw_terminal: false
+crimp: true
+crimp_tool: 8P8C modular crimper
+idc: true
+board_fingers: false
+gendered: true
+min_pins: 8
+max_pins: 8
+rows: 1
+year_introduced: null
+pinout: null
+convention: Common on controllers for differential pixel data to long-range receivers (one or more data pairs per jack); also DMX-over-RJ45 on some boards
+colors: Clear plugs; jacks any color
+aliases:
+  - 8P8C
+  - Ethernet connector
+  - Modular connector
+common_applications:
+  - Differential pixel data to smart/long-range receivers
+  - DMX / RS-485 outputs on pixel controllers
+  - Ethernet (the network kind, not pixel data)
+notes:
+  Ubiquitous and cheap with pre-made cables everywhere, but carrying pixel
+  power or non-Ethernet data over RJ45 invites accidental plugging into real
+  network gear - label clearly
