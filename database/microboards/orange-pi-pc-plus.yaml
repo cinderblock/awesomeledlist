@@ -5,8 +5,8 @@ soc: Allwinner Quad Core H3
 cpu: 4× ARM Cortex-A7
 isa: ARMv7-A
 clock_speed: 1600
-flash: microSD
-ram: 1GB
+flash: null
+ram: 1048576
 linux: true
 max_outputs: null
 min_input_voltage: null

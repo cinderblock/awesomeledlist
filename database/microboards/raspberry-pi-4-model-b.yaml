@@ -5,7 +5,7 @@ soc: BCM2711
 cpu: 4× ARM Cortex-A72
 isa: ARMv8-A
 clock_speed: 1500
-flash: microSD
+flash: null
 ram: 1GB or 2GB or 4GB
 linux: true
 max_outputs: null

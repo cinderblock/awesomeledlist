@@ -5,8 +5,8 @@ soc: BCM2837B0
 cpu: 4× ARM Cortex-A53
 isa: ARMv8
 clock_speed: 1400
-flash: microSD
-ram: 512MB
+flash: null
+ram: 524288
 linux: true
 max_outputs: 1
 min_input_voltage: 5

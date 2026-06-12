@@ -5,8 +5,8 @@ soc: ATtiny85
 cpu: AVR
 isa: AVR2.5
 clock_speed: 16
-flash: 8kB
-ram: 512B
+flash: 8
+ram: 0.5
 linux: false
 max_outputs: 6
 min_input_voltage: null

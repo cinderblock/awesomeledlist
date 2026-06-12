@@ -5,8 +5,8 @@ soc: MK66FX1M0VMD18
 cpu: ARM Cortex-M4
 isa: ARMv7-M
 clock_speed: 180
-flash: 1024kB
-ram: 256kB
+flash: 1024
+ram: 256
 linux: false
 max_outputs: null
 min_input_voltage: null

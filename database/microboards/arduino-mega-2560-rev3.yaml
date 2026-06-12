@@ -5,8 +5,8 @@ soc: ATmega2560
 cpu: AVR
 isa: null
 clock_speed: 16
-flash: 256kB
-ram: 8kB
+flash: 256
+ram: 8
 linux: false
 max_outputs: 54
 min_input_voltage: 6

@@ -5,7 +5,7 @@ soc: ESP32 S3
 cpu: null
 isa: Xtensa
 clock_speed: null
-flash: microSD
+flash: null
 ram: null
 linux: null
 max_outputs: null

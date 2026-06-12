@@ -5,7 +5,7 @@ soc: Allwinner H2+
 cpu: 4× ARM Cortex-A7
 isa: ARMv7-A
 clock_speed: 1200
-flash: microSD
+flash: null
 ram: 256MB+
 linux: true
 max_outputs: null

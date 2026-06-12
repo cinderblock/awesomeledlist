@@ -5,8 +5,8 @@ soc: MK20DX256VLH7
 cpu: ARM Cortex-M4
 isa: ARMv7-M
 clock_speed: 72
-flash: 256kB
-ram: 64kB
+flash: 256
+ram: 64
 linux: false
 max_outputs: 8
 min_input_voltage: null

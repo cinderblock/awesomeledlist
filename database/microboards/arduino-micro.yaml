@@ -5,8 +5,8 @@ soc: ATmega32u4
 cpu: AVR
 isa: AVR5
 clock_speed: 16
-flash: 32kB
-ram: 2.5kB
+flash: 32
+ram: 2.5
 linux: false
 max_outputs: null
 min_input_voltage: null

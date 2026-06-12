@@ -5,8 +5,8 @@ soc: am3358
 cpu: Cortex-A8, 2x PRUSS
 isa: ARMv7
 clock_speed: 1000
-flash: microSD
-ram: 512MB
+flash: null
+ram: 524288
 linux: true
 max_outputs: 40
 min_input_voltage: 5

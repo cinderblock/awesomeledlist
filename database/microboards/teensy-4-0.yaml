@@ -5,8 +5,8 @@ soc: iMXRT1062
 cpu: ARM Cortex-M7
 isa: ARMv7-M
 clock_speed: 600
-flash: 2048kB
-ram: 1024kB
+flash: 2048
+ram: 1024
 linux: false
 max_outputs: null
 min_input_voltage: null

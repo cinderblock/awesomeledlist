@@ -5,7 +5,7 @@ soc: ESP32
 cpu: Xtensa LX6
 isa: Xtensa
 clock_speed: null
-flash: 32Mbit
+flash: 4096
 ram: null
 linux: null
 max_outputs: null

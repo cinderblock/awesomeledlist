@@ -5,8 +5,8 @@ soc: MK64FX512VMD12
 cpu: ARM Cortex-M4
 isa: ARMv7-M
 clock_speed: 120
-flash: 512kB
-ram: 256kB
+flash: 512
+ram: 256
 linux: false
 max_outputs: null
 min_input_voltage: null

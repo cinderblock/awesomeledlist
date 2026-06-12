@@ -5,8 +5,8 @@ soc: AT90USB1286
 cpu: AVR
 isa: AVR5
 clock_speed: 16
-flash: 127kB
-ram: 8kB
+flash: 127
+ram: 8
 linux: false
 max_outputs: null
 min_input_voltage: null
