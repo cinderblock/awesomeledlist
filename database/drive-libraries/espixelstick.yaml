@@ -2,6 +2,33 @@ id: espixelstick
 name: ESPixelstick
 developer: Shelby Merrick
 hardware: ESP8266/32
+platforms:
+  - ESP8266
+  - ESP32
+language: C++
+status: active
+supported_ics:
+  - WS2811
+  - WS2812
+  - WS2801
+  - APA102
+  - GECE
+  - GS8208
+  - TLS3001
+  - TM1814
+  - UCS1903
+  - UCS8903
+  - DMX512
+  - Renard
+related_pixel_ics:
+  - ws2811
+  - ws2801
+  - gs8208
+  - tls3001
+  - tm1814
+  - ucs1903
+  - ucs8903
+  - dmx512
 features: null
 url: https://github.com/forkineye/ESPixelStick
 youtube_url: null
