@@ -60,7 +60,7 @@
     },
     "storage": {
       "type": ["string", "null"],
-      "description": "Onboard storage type (SD, Flash, No, etc.)"
+      "description": "Onboard storage type. Canonical values: SD, microSD, Flash, USB, No; 'Yes' when storage exists but the type is unverified"
     },
     "standalone": {
       "type": ["boolean", "null"],
@@ -72,7 +72,8 @@
     },
     "pixel_types": {
       "type": ["string", "null"],
-      "description": "Async (WS2812-style single wire), Clocked (APA102-style double wire), or Both"
+      "enum": ["async", "clocked", "both", null],
+      "description": "async (WS2812-style single wire), clocked (APA102-style double wire), or both"
     },
     "pixel_types_notes": {
       "type": ["string", "null"],
